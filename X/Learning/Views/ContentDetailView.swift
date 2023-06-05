@@ -1,4 +1,4 @@
-///
+//
 //  LessonContentView.swift
 //  Learning App
 //

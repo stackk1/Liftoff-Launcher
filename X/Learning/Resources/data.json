@@ -185,7 +185,7 @@
                 },
                 {
                     "id": 9,
-                    "content": "How should you deal with an error?",
+                    "content": "How can you deal with an error?",
                     "correctIndex": 3,
                     "answers": [
                         "By correcting the problem",
