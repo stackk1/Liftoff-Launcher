@@ -13,7 +13,7 @@ struct RandomView: View {
     var body: some View {
         
         //MARK: Meal selector and nav interface
-        NavigationView{
+  
             VStack(alignment: .center, spacing: 0) {
                 Text("What would you like for:")
                     .fontWeight(.bold)
@@ -64,7 +64,7 @@ struct RandomView: View {
             .navigationTitle("Meal Picker")
             .padding(.horizontal)
             
-        }
+        
         .onAppear(perform: {randomRecipe = model.randomRecipe(meal: "Dinner")})
         .padding(.bottom, 80)
     }
