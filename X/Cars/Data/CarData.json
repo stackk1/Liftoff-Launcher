@@ -1,0 +1,62 @@
+[
+    {"Make":"Honda",
+        "Model":"Prelude",
+        "Year":1991,
+        "Colour":"White",
+        "VIN":"0001",
+        "Engine": "2.0L B20A DOHC I4",
+        "image": "1991Prelude",
+        "imagecount": 3
+    },
+    
+    {"Make":"Honda",
+        "Model":"Prelude",
+        "Year":1991,
+        "Colour":"Blue",
+        "VIN":"0002",
+        "Engine": "2.1L B21A DOHC I4",
+        "image":"1991-2Prelude",
+        "imagecount": 7
+    },
+    
+    {"Make":"Honda",
+        "Model":"Prelude",
+        "Year":2001,
+        "Colour":"Black",
+        "VIN":"0003",
+        "Engine": "2.2 L H22A VTEC I4",
+        "image":"2001Prelude",
+        "imagecount": 4
+    },
+    
+    {"Make":"Geo",
+        "Model":"Tracker",
+        "Year":1992,
+        "Colour":"Black",
+        "VIN":"0004",
+        "Engine": "1.6L G16 (LS5/L01) I4",
+        "image":"1993Tracker",
+        "imagecount": 2
+    },
+    
+    {"Make":"Honda",
+        "Model":"Prelude",
+        "Year":1991,
+        "Colour":"Blue",
+        "VIN":"0005",
+        "Engine": "2.1L B21A DOHC I4",
+        "image":"1991-3Prelude",
+        "imagecount": 4
+    },
+    
+    {"Make":"Subaru",
+        "Model":"Baja",
+        "Year":2003,
+        "Colour":"Black",
+        "VIN":"0006",
+        "Engine": "2.5L EJ251 H4 ",
+        "image":"2003Baja",
+        "imagecount": 4
+    }
+    
+]
