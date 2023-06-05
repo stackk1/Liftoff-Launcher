@@ -29,7 +29,7 @@ struct BookDetailView: View {
                         .frame(height: 400)
                         .padding(.vertical)
                 })
-            .navigationBarHidden(true)
+           
             NavigationLink(
                 destination: {
                     ReaderView(book: book)
@@ -98,18 +98,18 @@ struct BookDetailView: View {
         
     }
     //custom back button experiment
-    var backButton: some View {
-        Button(action: {
-            presentationMode.wrappedValue.dismiss()
-        })
-        {
-            HStack {
-                Image(systemName: "chevron.left")
-                Text("Library")
-            }
-            
-        }
-    }
+//    var backButton: some View {
+//        Button(action: {
+//            presentationMode.wrappedValue.dismiss()
+//        })
+//        {
+//            HStack {
+//                Image(systemName: "chevron.left")
+//                Text("Library")
+//            }
+//
+//        }
+//    }
     
     
 }
