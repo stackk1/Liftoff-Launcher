@@ -44,7 +44,7 @@ struct BookDetailView: View {
                     
                     
                 })
-            .navigationBarHidden(false)
+
             //Custom back button insert
             //  .navigationBarBackButtonHidden(true)
             //   .navigationBarItems(leading: backButton)

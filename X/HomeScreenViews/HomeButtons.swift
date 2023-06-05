@@ -11,7 +11,7 @@ struct HomeButtons: View {
     var body: some View {
         Rectangle()
             .foregroundColor(RandomColour.colorView())
-            .cornerRadius(10)
+            .cornerRadius(25)
             .frame(width: 100,height: 100)
     }
 }

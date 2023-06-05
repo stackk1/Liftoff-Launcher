@@ -17,6 +17,18 @@ struct LauncherView: View {
                         .ignoresSafeArea()
                         .foregroundColor(.black)
                     VStack{
+                        ZStack{
+                            Rectangle()
+                                .frame(width: 300, height: 200)
+                                .foregroundColor(RandomColour.colorView())
+                                .cornerRadius(25)
+                            VStack{
+                                Image(systemName: "cloud.sun.rain")
+                                    .imageScale(.large)
+                                Text("Weather")
+                            }
+                            
+                        }
                         HStack{
                             NavigationLink(
                                 destination:
@@ -89,12 +101,14 @@ struct LauncherView: View {
                             ZStack{
                                 HomeButtons()
                                 VStack{
-                                    Image(systemName: "cloud.sun")
+                                    Image(systemName: "clock")
                                         .imageScale(.large)
-                                    Text("Weather")
+                                    Text("Clock")
                                 }
                             }
                         }
+                        
+                    Spacer()
                     }
                 }
                 .foregroundColor(.white)

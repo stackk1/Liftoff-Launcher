@@ -52,9 +52,9 @@ struct ReaderView: View {
             ScrollView{
                 Text(model.allContent).padding()
             }
-            .navigationBarHidden(false)
-            .navigationBarBackButtonHidden(true)
-            .navigationBarItems(leading: backButton)
+//            .navigationBarHidden(false)
+//            .navigationBarBackButtonHidden(true)
+//            .navigationBarItems(leading: backButton)
 
         }
     }
