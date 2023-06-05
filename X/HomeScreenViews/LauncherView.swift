@@ -37,7 +37,7 @@ struct LauncherView: View {
                                     ZStack{
                                         HomeButtons()
                                         VStack{
-                                            Image(systemName: "globe")
+                                            Image(systemName: "gamecontroller")
                                                 .imageScale(.large)
                                             Text("Games")
                                             
