@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4932F8322A2E8D7700C3C9B0 /* HomeButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4932F8312A2E8D7700C3C9B0 /* HomeButtons.swift */; };
 		4975BE902A2D7F140093C029 /* CasinoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4975BE8F2A2D7F140093C029 /* CasinoView.swift */; };
 		4975BE932A2D7F2A0093C029 /* GameCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4975BE912A2D7F2A0093C029 /* GameCardView.swift */; };
 		4975BE942A2D7F2A0093C029 /* GameSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4975BE922A2D7F2A0093C029 /* GameSettingsView.swift */; };
@@ -70,6 +71,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4932F8312A2E8D7700C3C9B0 /* HomeButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeButtons.swift; sourceTree = "<group>"; };
 		4975BE8F2A2D7F140093C029 /* CasinoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CasinoView.swift; sourceTree = "<group>"; };
 		4975BE912A2D7F2A0093C029 /* GameCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameCardView.swift; sourceTree = "<group>"; };
 		4975BE922A2D7F2A0093C029 /* GameSettingsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameSettingsView.swift; sourceTree = "<group>"; };
@@ -146,6 +148,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4932F8302A2E8D5A00C3C9B0 /* HomeScreenViews */ = {
+			isa = PBXGroup;
+			children = (
+				49ED9C1B2A2B362900481BDB /* LauncherView.swift */,
+				4932F8312A2E8D7700C3C9B0 /* HomeButtons.swift */,
+			);
+			path = HomeScreenViews;
+			sourceTree = "<group>";
+		};
 		4975BE952A2D7F380093C029 /* Casino */ = {
 			isa = PBXGroup;
 			children = (
@@ -434,7 +445,7 @@
 			isa = PBXGroup;
 			children = (
 				49ED9C192A2B362900481BDB /* XApp.swift */,
-				49ED9C1B2A2B362900481BDB /* LauncherView.swift */,
+				4932F8302A2E8D5A00C3C9B0 /* HomeScreenViews */,
 				4975BF002A2D86D60093C029 /* Learning */,
 				4975BEE22A2D86500093C029 /* Recipes */,
 				4975BEC72A2D84F80093C029 /* Books */,
@@ -541,6 +552,7 @@
 				4975BE942A2D7F2A0093C029 /* GameSettingsView.swift in Sources */,
 				4975BEFE2A2D86720093C029 /* Recipe.swift in Sources */,
 				4975BF152A2D86EF0093C029 /* Models.swift in Sources */,
+				4932F8322A2E8D7700C3C9B0 /* HomeButtons.swift in Sources */,
 				4975BEA82A2D7F620093C029 /* RandomColor.swift in Sources */,
 				4975BEDA2A2D85D20093C029 /* ReaderView.swift in Sources */,
 				4975BED92A2D85D20093C029 /* BookDetailView.swift in Sources */,
