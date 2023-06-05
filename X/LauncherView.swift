@@ -9,61 +9,94 @@ import SwiftUI
 
 struct LauncherView: View {
     var body: some View {
-        VStack(spacing: 20) {
+        VStack{
             NavigationView{
                 VStack{
                     NavigationLink(
                         destination:
-                            CasinoView()
-                            //.environmentObject(GameModel())
-                        ,
+                            CasinoView(),
                         label: {
-                            Image(systemName: "globe")
-                                .imageScale(.large)
-                                .foregroundColor(.accentColor)
-                            Text("Games")
+                            ZStack{
+                                Rectangle()
+                                    .foregroundColor(RandomColour.colorView())
+                                    .cornerRadius(10)
+                                    .frame(width: 200)
+                                VStack{
+                                    Image(systemName: "globe")
+                                        .imageScale(.large)
+                                        
+                                    Text("Games")
+                                    
+                                }.foregroundColor(.white)
+                            }
                         })
                     NavigationLink(
                         destination:
                             CarListView(),
                         label: {
-                            Image(systemName: "car")
-                                .imageScale(.large)
-                                .foregroundColor(.accentColor)
-                            Text("Cars")
+                            ZStack{
+                                Rectangle()
+                                    .foregroundColor(RandomColour.colorView())
+                                    .cornerRadius(10)
+                                    .frame(width: 200)
+                                VStack{
+                                    Image(systemName: "car")
+                                        .imageScale(.large)
+                                        
+                                    Text("Cars")
+                                }.foregroundColor(.white)
+                            }
                         })
                     NavigationLink(
                         destination:
-                            BookListView()
-                           // .environmentObject(BookModel())
-                        ,
+                            BookListView(),
                         label: {
-                            Image(systemName: "book")
-                                .imageScale(.large)
-                                .foregroundColor(.accentColor)
-                            Text("Books")
+                            ZStack{
+                                Rectangle()
+                                    .foregroundColor(RandomColour.colorView())
+                                    .cornerRadius(10)
+                                    .frame(width: 200)
+                                VStack{
+                                    Image(systemName: "book")
+                                        .imageScale(.large)
+                                        
+                                    Text("Books")
+                                }.foregroundColor(.white)
+                            }
                         })
                     NavigationLink(
                         destination:
-                            RecipeTabView()
-                            //.environmentObject(RecipeModel())
-                        ,
+                            RecipeTabView(),
                         label: {
-                            Image(systemName: "list.bullet.rectangle.portrait.fill")
-                                .imageScale(.large)
-                                .foregroundColor(.accentColor)
-                            Text("Recipes")
+                            ZStack{
+                                Rectangle()
+                                    .foregroundColor(RandomColour.colorView())
+                                    .cornerRadius(10)
+                                    .frame(width: 200)
+                                VStack{
+                                    Image(systemName: "list.bullet.rectangle.portrait.fill")
+                                        .imageScale(.large)
+                                        
+                                    Text("Recipes")
+                                }.foregroundColor(.white)
+                            }
                         })
                     NavigationLink(
                         destination:
-                            HomeView()
-                            //.environmentObject(ContentModel())
-                        ,
+                            HomeView(),
                         label: {
-                            Image(systemName: "text.book.closed")
-                                .imageScale(.large)
-                                .foregroundColor(.accentColor)
-                            Text("Learning")
+                            ZStack{
+                                Rectangle()
+                                    .foregroundColor(RandomColour.colorView())
+                                    .cornerRadius(10)
+                                    .frame(width: 200)
+                                VStack{
+                                    Image(systemName: "text.book.closed")
+                                        .imageScale(.large)
+                                        
+                                    Text("Learning")
+                                }.foregroundColor(.white)
+                            }
                         })
                 }
             }
@@ -74,5 +107,9 @@ struct LauncherView: View {
 struct LauncherView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+            .environmentObject(GameModel())
+            .environmentObject(BookModel())
+            .environmentObject(RecipeModel())
+            .environmentObject(ContentModel())
     }
 }
