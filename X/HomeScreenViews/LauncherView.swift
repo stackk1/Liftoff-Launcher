@@ -10,86 +10,94 @@ import SwiftUI
 struct LauncherView: View {
     var body: some View {
         
-            VStack{
-                NavigationView{
-                    ZStack {
-                        Rectangle()
-                            .ignoresSafeArea()
-                            .foregroundColor(.black)
+        VStack{
+            NavigationView{
+                ZStack {
+                    Rectangle()
+                        .ignoresSafeArea()
+                        .foregroundColor(.black)
                     VStack{
-                        NavigationLink(
-                            destination:
-                                CasinoView(),
-                            label: {
-                                ZStack{
-                                    HomeButtons()
-                                    VStack{
-                                        Image(systemName: "globe")
-                                            .imageScale(.large)
+                        HStack{
+                            NavigationLink(
+                                destination:
+                                    CasinoView(),
+                                label: {
+                                    ZStack{
+                                        HomeButtons()
+                                        VStack{
+                                            Image(systemName: "globe")
+                                                .imageScale(.large)
+                                            Text("Games")
                                             
-                                        Text("Games")
-                                        
-                                    }.foregroundColor(.white)
+                                        }
+                                    }
+                                })
+                            NavigationLink(
+                                destination:
+                                    CarListView(),
+                                label: {
+                                    ZStack{
+                                        HomeButtons()
+                                        VStack{
+                                            Image(systemName: "car")
+                                                .imageScale(.large)
+                                            Text("Cars")
+                                        }
+                                    }
+                                })
+                            NavigationLink(
+                                destination:
+                                    BookListView(),
+                                label: {
+                                    ZStack{
+                                        HomeButtons()
+                                        VStack{
+                                            Image(systemName: "book")
+                                                .imageScale(.large)
+                                            Text("Books")
+                                        }
+                                    }
+                                })
+                        }
+                        HStack{
+                            NavigationLink(
+                                destination:
+                                    RecipeTabView(),
+                                label: {
+                                    ZStack{
+                                        HomeButtons()
+                                        VStack{
+                                            Image(systemName: "list.bullet.rectangle.portrait.fill")
+                                                .imageScale(.large)
+                                            Text("Recipes")
+                                        }
+                                    }
+                                })
+                            NavigationLink(
+                                destination:
+                                    HomeView(),
+                                label: {
+                                    ZStack{
+                                        HomeButtons()
+                                        VStack{
+                                            Image(systemName: "text.book.closed")
+                                                .imageScale(.large)
+                                            Text("Learning")
+                                        }
+                                    }
+                                })
+                            ZStack{
+                                HomeButtons()
+                                VStack{
+                                    Image(systemName: "cloud.sun")
+                                        .imageScale(.large)
+                                    Text("Weather")
                                 }
-                            })
-                        NavigationLink(
-                            destination:
-                                CarListView(),
-                            label: {
-                                ZStack{
-                                    HomeButtons()
-                                    VStack{
-                                        Image(systemName: "car")
-                                            .imageScale(.large)
-                                            
-                                        Text("Cars")
-                                    }.foregroundColor(.white)
-                                }
-                            })
-                        NavigationLink(
-                            destination:
-                                BookListView(),
-                            label: {
-                                ZStack{
-                                    HomeButtons()
-                                    VStack{
-                                        Image(systemName: "book")
-                                            .imageScale(.large)
-                                            
-                                        Text("Books")
-                                    }.foregroundColor(.white)
-                                }
-                            })
-                        NavigationLink(
-                            destination:
-                                RecipeTabView(),
-                            label: {
-                                ZStack{
-                                    HomeButtons()
-                                    VStack{
-                                        Image(systemName: "list.bullet.rectangle.portrait.fill")
-                                            .imageScale(.large)
-                                            
-                                        Text("Recipes")
-                                    }.foregroundColor(.white)
-                                }
-                            })
-                        NavigationLink(
-                            destination:
-                                HomeView(),
-                            label: {
-                                ZStack{
-                                    HomeButtons()
-                                    VStack{
-                                        Image(systemName: "text.book.closed")
-                                            .imageScale(.large)
-                                            
-                                        Text("Learning")
-                                    }.foregroundColor(.white)
-                                }
-                            })
+                            }
+                        }
                     }
                 }
+                .foregroundColor(.white)
             }
         }
     }
