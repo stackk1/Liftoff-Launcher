@@ -12,9 +12,7 @@ struct FavouriteView: View {
     var body: some View {
         //create array of only favourite recipes
         let favourites = model.recipes.filter {$0.favourite == true}
-        
-        
-        NavigationView{
+
             VStack{
                 //Recipe cards
                 TabView(selection: $recipeIndex) {
@@ -45,7 +43,7 @@ struct FavouriteView: View {
             .navigationTitle("Favourites")
             .padding(.horizontal)
             .padding(.bottom, 80)
-        }
+        
     }
 }
 
