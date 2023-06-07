@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct LauncherView: View {
+    @State var colorMode = true
     var body: some View {
         
         VStack{
@@ -98,17 +99,29 @@ struct LauncherView: View {
                                         }
                                     }
                                 })
-                            ZStack{
-                                HomeButtons()
-                                VStack{
-                                    Image(systemName: "clock")
-                                        .imageScale(.large)
-                                    Text("Clock")
-                                }
-                            }
+                            
+                                Button(
+                                    // Use clock place holder as secret button to refresh display
+                                    action:{
+                                        colorMode.toggle()
+                                        print(colorMode)
+                                    },
+                                    label:{
+                                        ZStack{
+                                        HomeButtons()
+                                        VStack{
+                                            Image(systemName: "clock")
+                                                .imageScale(.large)
+                                            Text("Clock")
+                                        }
+                                    }
+                            })
                         }
+                        MapView()
+                            .frame(width: 300, height: 200)
+                            .cornerRadius(25)
                         
-                    Spacer()
+                        Spacer()
                     }
                 }
                 .foregroundColor(.white)

@@ -64,6 +64,7 @@
 		4975BF1C2A2D86F00093C029 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4975BF102A2D86EE0093C029 /* ContentView.swift */; };
 		4975BF1D2A2D86F00093C029 /* ContentDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4975BF112A2D86EE0093C029 /* ContentDetailView.swift */; };
 		4975BF202A2D86F70093C029 /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4975BF1F2A2D86F50093C029 /* AVKit.framework */; };
+		49C208962A30FB1B00CA7257 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C208952A30FB1B00CA7257 /* MapView.swift */; };
 		49ED9C1A2A2B362900481BDB /* XApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49ED9C192A2B362900481BDB /* XApp.swift */; };
 		49ED9C1C2A2B362900481BDB /* LauncherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49ED9C1B2A2B362900481BDB /* LauncherView.swift */; };
 		49ED9C1E2A2B362B00481BDB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49ED9C1D2A2B362B00481BDB /* Assets.xcassets */; };
@@ -129,6 +130,7 @@
 		4975BF102A2D86EE0093C029 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		4975BF112A2D86EE0093C029 /* ContentDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentDetailView.swift; sourceTree = "<group>"; };
 		4975BF1F2A2D86F50093C029 /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
+		49C208952A30FB1B00CA7257 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		49ED9C162A2B362900481BDB /* X.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = X.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49ED9C192A2B362900481BDB /* XApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XApp.swift; sourceTree = "<group>"; };
 		49ED9C1B2A2B362900481BDB /* LauncherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LauncherView.swift; sourceTree = "<group>"; };
@@ -153,6 +155,7 @@
 			children = (
 				49ED9C1B2A2B362900481BDB /* LauncherView.swift */,
 				4932F8312A2E8D7700C3C9B0 /* HomeButtons.swift */,
+				49C208952A30FB1B00CA7257 /* MapView.swift */,
 			);
 			path = HomeScreenViews;
 			sourceTree = "<group>";
@@ -578,6 +581,7 @@
 				4975BEC12A2D846B0093C029 /* CarDetailsListView.swift in Sources */,
 				49ED9C1C2A2B362900481BDB /* LauncherView.swift in Sources */,
 				4975BEF42A2D86720093C029 /* RecipeService.swift in Sources */,
+				49C208962A30FB1B00CA7257 /* MapView.swift in Sources */,
 				4975BEC42A2D846B0093C029 /* CarService.swift in Sources */,
 				4975BE902A2D7F140093C029 /* CasinoView.swift in Sources */,
 				4975BF192A2D86F00093C029 /* LearningCardView.swift in Sources */,
