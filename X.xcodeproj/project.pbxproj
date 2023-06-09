@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		491C6A352A32A87D00611DCE /* CodeTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491C6A342A32A87D00611DCE /* CodeTextView.swift */; };
 		4932F8322A2E8D7700C3C9B0 /* HomeButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4932F8312A2E8D7700C3C9B0 /* HomeButtons.swift */; };
 		4975BE902A2D7F140093C029 /* CasinoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4975BE8F2A2D7F140093C029 /* CasinoView.swift */; };
 		4975BE932A2D7F2A0093C029 /* GameCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4975BE912A2D7F2A0093C029 /* GameCardView.swift */; };
@@ -72,6 +73,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		491C6A342A32A87D00611DCE /* CodeTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodeTextView.swift; sourceTree = "<group>"; };
 		4932F8312A2E8D7700C3C9B0 /* HomeButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeButtons.swift; sourceTree = "<group>"; };
 		4975BE8F2A2D7F140093C029 /* CasinoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CasinoView.swift; sourceTree = "<group>"; };
 		4975BE912A2D7F2A0093C029 /* GameCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameCardView.swift; sourceTree = "<group>"; };
@@ -408,6 +410,7 @@
 		4975BF0A2A2D86EE0093C029 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				491C6A342A32A87D00611DCE /* CodeTextView.swift */,
 				4975BF0B2A2D86EE0093C029 /* LessonCardView.swift */,
 				4975BF0C2A2D86EE0093C029 /* ContentViewRow.swift */,
 				4975BF0D2A2D86EE0093C029 /* LearningCardView.swift */,
@@ -564,6 +567,7 @@
 				4975BF162A2D86EF0093C029 /* ContentModel.swift in Sources */,
 				4975BEAF2A2D83950093C029 /* GameModel.swift in Sources */,
 				4975BEF92A2D86720093C029 /* RandomView.swift in Sources */,
+				491C6A352A32A87D00611DCE /* CodeTextView.swift in Sources */,
 				4975BEE12A2D85D20093C029 /* BookBackButton.swift in Sources */,
 				4975BEFA2A2D86720093C029 /* imageView.swift in Sources */,
 				4975BED72A2D85D20093C029 /* Book.swift in Sources */,

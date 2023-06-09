@@ -21,10 +21,7 @@ struct ContentDetailView: View {
                     .aspectRatio(CGSize(width: 16, height: 9),contentMode: .fit)
                     .cornerRadius(10)
             }
-            ScrollView{
-                //TODO: HTML Formatting
-                Text(lesson?.explanation ?? "")
-            }
+            CodeTextView()
             .padding(.vertical)
                 .navigationTitle(lesson?.title ?? "")
  
@@ -55,5 +52,6 @@ struct ContentDetailView: View {
 struct ContentDetailView_Previews: PreviewProvider {
     static var previews: some View {
         ContentDetailView()
+            .environmentObject(ContentModel())
     }
 }

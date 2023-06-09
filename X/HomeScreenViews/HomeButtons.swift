@@ -12,7 +12,7 @@ struct HomeButtons: View {
         Rectangle()
             .foregroundColor(RandomColour.colorView())
             .cornerRadius(25)
-            .frame(width: 100,height: 100)
+            .frame(width: 85, height: 85)
     }
 }
 

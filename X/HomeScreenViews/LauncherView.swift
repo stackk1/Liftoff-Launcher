@@ -17,10 +17,10 @@ struct LauncherView: View {
                     Rectangle()
                         .ignoresSafeArea()
                         .foregroundColor(.black)
-                    VStack{
+                    VStack(alignment: .center){
                         ZStack{
                             Rectangle()
-                                .frame(width: 300, height: 200)
+                                .frame(width: 350, height: 200)
                                 .foregroundColor(RandomColour.colorView())
                                 .cornerRadius(25)
                             VStack{
@@ -30,7 +30,7 @@ struct LauncherView: View {
                             }
                             
                         }
-                        HStack{
+                        HStack(spacing: 30){
                             NavigationLink(
                                 destination:
                                     CasinoView(),
@@ -72,7 +72,7 @@ struct LauncherView: View {
                                     }
                                 })
                         }
-                        HStack{
+                        HStack(spacing: 30){
                             NavigationLink(
                                 destination:
                                     RecipeTabView(),
@@ -118,7 +118,7 @@ struct LauncherView: View {
                             })
                         }
                         MapView()
-                            .frame(width: 300, height: 200)
+                            .frame(width: 350, height: 250)
                             .cornerRadius(25)
                         
                         Spacer()
