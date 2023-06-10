@@ -18,18 +18,23 @@ struct LauncherView: View {
                         .ignoresSafeArea()
                         .foregroundColor(.black)
                     VStack(alignment: .center){
-                        ZStack{
-                            Rectangle()
-                                .frame(width: 350, height: 200)
-                                .foregroundColor(RandomColour.colorView())
-                                .cornerRadius(25)
-                            VStack{
-                                Image(systemName: "cloud.sun.rain")
-                                    .imageScale(.large)
-                                Text("Weather")
-                            }
-                            
-                        }
+                        
+                        WeatherView()
+                            .frame(width: 350, height: 200)
+                            .cornerRadius(25)
+                            .padding(.bottom)
+//                        ZStack{
+//                            Rectangle()
+//                                .frame(width: 350, height: 200)
+//                                .foregroundColor(RandomColour.colorView())
+//                                .cornerRadius(25)
+//                            VStack{
+//                                Image(systemName: "cloud.sun.rain")
+//                                    .imageScale(.large)
+//                                Text("Weather")
+//                            }
+//
+//                        }
                         HStack(spacing: 30){
                             NavigationLink(
                                 destination:

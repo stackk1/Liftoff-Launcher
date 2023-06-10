@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		491C6A352A32A87D00611DCE /* CodeTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491C6A342A32A87D00611DCE /* CodeTextView.swift */; };
+		491C6A372A32ACC000611DCE /* WeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491C6A362A32ACC000611DCE /* WeatherView.swift */; };
+		491C6A392A33B97200611DCE /* MediaPlaybackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491C6A382A33B97200611DCE /* MediaPlaybackView.swift */; };
 		4932F8322A2E8D7700C3C9B0 /* HomeButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4932F8312A2E8D7700C3C9B0 /* HomeButtons.swift */; };
 		4975BE902A2D7F140093C029 /* CasinoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4975BE8F2A2D7F140093C029 /* CasinoView.swift */; };
 		4975BE932A2D7F2A0093C029 /* GameCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4975BE912A2D7F2A0093C029 /* GameCardView.swift */; };
@@ -74,6 +76,8 @@
 
 /* Begin PBXFileReference section */
 		491C6A342A32A87D00611DCE /* CodeTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodeTextView.swift; sourceTree = "<group>"; };
+		491C6A362A32ACC000611DCE /* WeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherView.swift; sourceTree = "<group>"; };
+		491C6A382A33B97200611DCE /* MediaPlaybackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaPlaybackView.swift; sourceTree = "<group>"; };
 		4932F8312A2E8D7700C3C9B0 /* HomeButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeButtons.swift; sourceTree = "<group>"; };
 		4975BE8F2A2D7F140093C029 /* CasinoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CasinoView.swift; sourceTree = "<group>"; };
 		4975BE912A2D7F2A0093C029 /* GameCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameCardView.swift; sourceTree = "<group>"; };
@@ -158,6 +162,8 @@
 				49ED9C1B2A2B362900481BDB /* LauncherView.swift */,
 				4932F8312A2E8D7700C3C9B0 /* HomeButtons.swift */,
 				49C208952A30FB1B00CA7257 /* MapView.swift */,
+				491C6A362A32ACC000611DCE /* WeatherView.swift */,
+				491C6A382A33B97200611DCE /* MediaPlaybackView.swift */,
 			);
 			path = HomeScreenViews;
 			sourceTree = "<group>";
@@ -593,10 +599,12 @@
 				4975BF1C2A2D86F00093C029 /* ContentView.swift in Sources */,
 				4975BEAA2A2D7F620093C029 /* DiceType.swift in Sources */,
 				4975BF1D2A2D86F00093C029 /* ContentDetailView.swift in Sources */,
+				491C6A372A32ACC000611DCE /* WeatherView.swift in Sources */,
 				49ED9C1A2A2B362900481BDB /* XApp.swift in Sources */,
 				4975BEF52A2D86720093C029 /* RecipeTabView.swift in Sources */,
 				4975BF1B2A2D86F00093C029 /* TestCardView.swift in Sources */,
 				4975BF172A2D86EF0093C029 /* LessonCardView.swift in Sources */,
+				491C6A392A33B97200611DCE /* MediaPlaybackView.swift in Sources */,
 				4975BF182A2D86F00093C029 /* ContentViewRow.swift in Sources */,
 				4975BE9F2A2D7F5A0093C029 /* CardFlipperView.swift in Sources */,
 				4975BEC02A2D846B0093C029 /* CarDetailView.swift in Sources */,
