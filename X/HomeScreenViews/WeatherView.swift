@@ -11,12 +11,12 @@ struct WeatherView: View {
     var body: some View {
         GeometryReader{ geo in
             Rectangle()
-                .foregroundColor(RandomColour.colorView())
+                .foregroundColor(ColourService.randomRGB())
             VStack{
                 HStack {
                     VStack(alignment: .leading){
                         Text("Weather")
-                        Text("Kelowna B.C.")
+                        Text("City")
                     }
                     .fontWeight(.bold)
                     .foregroundColor(.white)

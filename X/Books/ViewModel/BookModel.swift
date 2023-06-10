@@ -21,10 +21,8 @@ class BookModel:ObservableObject {
     }
     // compile all pages into one for scroll view
     func compilePages(forId: Int) -> String {
-        // loop through pages
-        
         for index in 0..<books[forId].content.count {
-            allContent += books[forId].content[index]
+            allContent.self += books[forId].content[index]
         }
         return allContent
     }

@@ -9,7 +9,7 @@ import SwiftUI
 import Foundation
 
 
-struct RandomColour {
+struct ColourService {
     static func generate() -> UIColor {
         let red = CGFloat.random(in: 0...1)
         let green = CGFloat.random(in: 0...1)
@@ -17,8 +17,9 @@ struct RandomColour {
         
         return UIColor(red: red, green: green, blue: blue, alpha: 0.8)}
     
-    static func colorView() -> Color {
-        return Color(RandomColour.generate())
+    static func randomRGB() -> Color {
+        return Color(ColourService.generate())
         
     }
 }
+let allColors: [Color] = [.pink, .red, .orange, .yellow, .green, .mint, .teal, .cyan, .blue, .indigo, .purple, .brown, .gray]

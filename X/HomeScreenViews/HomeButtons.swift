@@ -10,7 +10,7 @@ import SwiftUI
 struct HomeButtons: View {
     var body: some View {
         Rectangle()
-            .foregroundColor(RandomColour.colorView())
+            .foregroundColor(ColourService.randomRGB())
             .cornerRadius(25)
             .frame(width: 85, height: 85)
     }
