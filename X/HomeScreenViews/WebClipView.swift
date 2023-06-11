@@ -9,15 +9,15 @@ import SwiftUI
 import WebKit
 
 struct WebClipView: UIViewRepresentable {
-        
-        let url = URL(string: ("https://stackk.me"))
+    var url: String
+    
         
         //build UIRepresentable
         func makeUIView(context: Context) -> some UIView {
             let webView = WKWebView()
-            
+            let trueurl = URL(string: (url))
             //create and load web request
-            let request = URLRequest(url: url!)
+            let request = URLRequest(url: trueurl!)
             webView.load(request)
             return webView
         }
@@ -28,6 +28,6 @@ struct WebClipView: UIViewRepresentable {
 
 struct WebClipView_Previews: PreviewProvider {
     static var previews: some View {
-        WebClipView()
+        WebClipView(url: "https://stackk.me")
     }
 }

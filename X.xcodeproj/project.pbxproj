@@ -10,7 +10,7 @@
 		491C6A352A32A87D00611DCE /* CodeTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491C6A342A32A87D00611DCE /* CodeTextView.swift */; };
 		491C6A372A32ACC000611DCE /* WeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491C6A362A32ACC000611DCE /* WeatherView.swift */; };
 		491C6A392A33B97200611DCE /* MediaPlaybackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491C6A382A33B97200611DCE /* MediaPlaybackView.swift */; };
-		4932F8322A2E8D7700C3C9B0 /* HomeButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4932F8312A2E8D7700C3C9B0 /* HomeButtons.swift */; };
+		4932F8322A2E8D7700C3C9B0 /* AppButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4932F8312A2E8D7700C3C9B0 /* AppButton.swift */; };
 		4975BE902A2D7F140093C029 /* CasinoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4975BE8F2A2D7F140093C029 /* CasinoView.swift */; };
 		4975BE932A2D7F2A0093C029 /* GameCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4975BE912A2D7F2A0093C029 /* GameCardView.swift */; };
 		4975BE942A2D7F2A0093C029 /* GameSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4975BE922A2D7F2A0093C029 /* GameSettingsView.swift */; };
@@ -70,6 +70,7 @@
 		49C208962A30FB1B00CA7257 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C208952A30FB1B00CA7257 /* MapView.swift */; };
 		49D4F9CD2A36252100E83559 /* WebClipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D4F9CC2A36252100E83559 /* WebClipView.swift */; };
 		49D4F9CF2A36255E00E83559 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49D4F9CE2A36255E00E83559 /* WebKit.framework */; };
+		49D4F9D12A362F9E00E83559 /* StackServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D4F9D02A362F9E00E83559 /* StackServer.swift */; };
 		49ED9C1A2A2B362900481BDB /* XApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49ED9C192A2B362900481BDB /* XApp.swift */; };
 		49ED9C1C2A2B362900481BDB /* LauncherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49ED9C1B2A2B362900481BDB /* LauncherView.swift */; };
 		49ED9C1E2A2B362B00481BDB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49ED9C1D2A2B362B00481BDB /* Assets.xcassets */; };
@@ -80,7 +81,7 @@
 		491C6A342A32A87D00611DCE /* CodeTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodeTextView.swift; sourceTree = "<group>"; };
 		491C6A362A32ACC000611DCE /* WeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherView.swift; sourceTree = "<group>"; };
 		491C6A382A33B97200611DCE /* MediaPlaybackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaPlaybackView.swift; sourceTree = "<group>"; };
-		4932F8312A2E8D7700C3C9B0 /* HomeButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeButtons.swift; sourceTree = "<group>"; };
+		4932F8312A2E8D7700C3C9B0 /* AppButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppButton.swift; sourceTree = "<group>"; };
 		4975BE8F2A2D7F140093C029 /* CasinoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CasinoView.swift; sourceTree = "<group>"; };
 		4975BE912A2D7F2A0093C029 /* GameCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameCardView.swift; sourceTree = "<group>"; };
 		4975BE922A2D7F2A0093C029 /* GameSettingsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameSettingsView.swift; sourceTree = "<group>"; };
@@ -140,6 +141,7 @@
 		49C208952A30FB1B00CA7257 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		49D4F9CC2A36252100E83559 /* WebClipView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebClipView.swift; sourceTree = "<group>"; };
 		49D4F9CE2A36255E00E83559 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		49D4F9D02A362F9E00E83559 /* StackServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackServer.swift; sourceTree = "<group>"; };
 		49ED9C162A2B362900481BDB /* X.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = X.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49ED9C192A2B362900481BDB /* XApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XApp.swift; sourceTree = "<group>"; };
 		49ED9C1B2A2B362900481BDB /* LauncherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LauncherView.swift; sourceTree = "<group>"; };
@@ -164,6 +166,7 @@
 			isa = PBXGroup;
 			children = (
 				4975BEA42A2D7F610093C029 /* ColourService.swift */,
+				49D4F9D02A362F9E00E83559 /* StackServer.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -172,7 +175,7 @@
 			isa = PBXGroup;
 			children = (
 				49ED9C1B2A2B362900481BDB /* LauncherView.swift */,
-				4932F8312A2E8D7700C3C9B0 /* HomeButtons.swift */,
+				4932F8312A2E8D7700C3C9B0 /* AppButton.swift */,
 				49C208952A30FB1B00CA7257 /* MapView.swift */,
 				491C6A362A32ACC000611DCE /* WeatherView.swift */,
 				491C6A382A33B97200611DCE /* MediaPlaybackView.swift */,
@@ -577,7 +580,7 @@
 				4975BE942A2D7F2A0093C029 /* GameSettingsView.swift in Sources */,
 				4975BEFE2A2D86720093C029 /* Recipe.swift in Sources */,
 				4975BF152A2D86EF0093C029 /* Models.swift in Sources */,
-				4932F8322A2E8D7700C3C9B0 /* HomeButtons.swift in Sources */,
+				4932F8322A2E8D7700C3C9B0 /* AppButton.swift in Sources */,
 				4975BEA82A2D7F620093C029 /* ColourService.swift in Sources */,
 				4975BEDA2A2D85D20093C029 /* ReaderView.swift in Sources */,
 				4975BED92A2D85D20093C029 /* BookDetailView.swift in Sources */,
@@ -588,6 +591,7 @@
 				4975BEF92A2D86720093C029 /* RandomView.swift in Sources */,
 				491C6A352A32A87D00611DCE /* CodeTextView.swift in Sources */,
 				4975BEE12A2D85D20093C029 /* BookBackButton.swift in Sources */,
+				49D4F9D12A362F9E00E83559 /* StackServer.swift in Sources */,
 				4975BEFA2A2D86720093C029 /* imageView.swift in Sources */,
 				4975BED72A2D85D20093C029 /* Book.swift in Sources */,
 				4975BEC32A2D846B0093C029 /* CarModel.swift in Sources */,

@@ -10,141 +10,43 @@ import SwiftUI
 struct LauncherView: View {
     @State var colorMode = true
     var body: some View {
+        let ss = StackServer()
+        let columns = [GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible())]
         
         VStack{
-            
             NavigationView{
-                TabView{
                 ZStack {
                     Rectangle()
                         .ignoresSafeArea()
                         .foregroundColor(.black)
                     
-                        VStack(alignment: .center){
-                            Spacer()
-                            WeatherView()
-                                .frame(width: 350, height: 200)
-                                .cornerRadius(25)
-                                .padding(.bottom)
-                            //                        ZStack{
-                            //                            Rectangle()
-                            //                                .frame(width: 350, height: 200)
-                            //                                .foregroundColor(RandomColour.colorView())
-                            //                                .cornerRadius(25)
-                            //                            VStack{
-                            //                                Image(systemName: "cloud.sun.rain")
-                            //                                    .imageScale(.large)
-                            //                                Text("Weather")
-                            //                            }
-                            //
-                            //                        }
-                            HStack(spacing: 30){
-                                NavigationLink(
-                                    destination:
-                                        CasinoView(),
-                                    label: {
-                                        ZStack{
-                                            HomeButtons()
-                                            VStack{
-                                                Image(systemName: "gamecontroller")
-                                                    .imageScale(.large)
-                                                Text("Games")
-                                                
-                                            }
-                                        }
-                                    })
-                                NavigationLink(
-                                    destination:
-                                        CarListView(),
-                                    label: {
-                                        ZStack{
-                                            HomeButtons()
-                                            VStack{
-                                                Image(systemName: "car")
-                                                    .imageScale(.large)
-                                                Text("Cars")
-                                            }
-                                        }
-                                    })
-                                NavigationLink(
-                                    destination:
-                                        BookListView(),
-                                    label: {
-                                        ZStack{
-                                            HomeButtons()
-                                            VStack{
-                                                Image(systemName: "book")
-                                                    .imageScale(.large)
-                                                Text("Books")
-                                            }
-                                        }
-                                    })
-                            }
-                            HStack(spacing: 30){
-                                NavigationLink(
-                                    destination:
-                                        RecipeTabView(),
-                                    label: {
-                                        ZStack{
-                                            HomeButtons()
-                                            VStack{
-                                                Image(systemName: "list.bullet.rectangle.portrait.fill")
-                                                    .imageScale(.large)
-                                                Text("Recipes")
-                                            }
-                                        }
-                                    })
-                                NavigationLink(
-                                    destination:
-                                        HomeView(),
-                                    label: {
-                                        ZStack{
-                                            HomeButtons()
-                                            VStack{
-                                                Image(systemName: "text.book.closed")
-                                                    .imageScale(.large)
-                                                Text("Learning")
-                                            }
-                                        }
-                                    })
-                                
-                                Button(
-                                    // Use clock place holder as secret button to refresh display
-                                    action:{
-                                        colorMode.toggle()
-                                        print(colorMode)
-                                    },
-                                    label:{
-                                        ZStack{
-                                            HomeButtons()
-                                            VStack{
-                                                Image(systemName: "clock")
-                                                    .imageScale(.large)
-                                                Text("Clock")
-                                            }
-                                        }
-                                    })
-                            }
-                            MapView()
-                                .frame(width: 350, height: 250)
-                                .cornerRadius(25)
+                    VStack {
+                        WeatherView()
+                            .frame(width: 330, height: 200)
+                            .cornerRadius(25)
+                        
+                        LazyVGrid(columns: columns){
                             
-                            Spacer()
+                            AppButton(app: CasinoView(), image: "gamecontroller", label: "Games")
+                            AppButton(app: CarListView(), image: "car", label: "Cars")
+                            AppButton(app: BookListView(), image: "book", label: "Books")
+                            AppButton(app: RecipeTabView(), image: "list.bullet.rectangle.portrait.fill", label: "Recipes")
+                            AppButton(app: HomeView(), image: "text.book.closed", label: "Learning")
+                            AppButton(app: MapView(), image: "map.fill", label: "Map")
+                            AppButton(app: AnyView(WebClipView(url: ss.sonarr)), image: "lifepreserver", label: "Sonarr")
+                            AppButton(app: AnyView(WebClipView(url: ss.radarr)), image: "lifepreserver", label: "Radarr")
+                            AppButton(app: AnyView(WebClipView(url: ss.lidarr)), image: "music.note.list", label: "Lidarr")
+                            AppButton(app: AnyView(WebClipView(url: ss.requestpage)), image: "arrow.down.message", label: "Requests")
+//                            AppButton(app: AnyView(WebClipView(url: ss.pihole)), image: "hand.raised", label: "Pihole")
+//                            AppButton(app: AnyView(WebClipView(url: ss.homebridge)), image: "house.fill", label: "Homebridge")
+                            
                         }
                     }
-                .foregroundColor(.white)
-                    ZStack{
-                        Rectangle()
-                            
-                            .foregroundColor(.black)
-                        WebClipView()
-                    }
                 }
-                .tabViewStyle(PageTabViewStyle(indexDisplayMode: .always))
-                    .ignoresSafeArea()
-                
             }
         }
+        .ignoresSafeArea()
+        
     }
 }
 
