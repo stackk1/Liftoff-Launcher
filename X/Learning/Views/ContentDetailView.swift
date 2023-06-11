@@ -45,7 +45,9 @@ struct ContentDetailView: View {
                     }
                 })
             }
-        }.padding()
+        }
+        .padding()
+        .navigationTitle(lesson?.title ?? "")
     }
 }
 

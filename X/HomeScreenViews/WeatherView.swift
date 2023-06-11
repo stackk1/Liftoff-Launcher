@@ -23,7 +23,7 @@ struct WeatherView: View {
                     Spacer()
                 }
                 .padding(.bottom, 10)
-                Grid{
+                Grid(horizontalSpacing: 10){
                     // Days of the week
                     GridRow{
                         Text("Mon")
