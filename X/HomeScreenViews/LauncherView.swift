@@ -12,99 +12,102 @@ struct LauncherView: View {
     var body: some View {
         
         VStack{
+            
             NavigationView{
+                TabView{
                 ZStack {
                     Rectangle()
                         .ignoresSafeArea()
                         .foregroundColor(.black)
-                    VStack(alignment: .center){
-                        
-                        WeatherView()
-                            .frame(width: 350, height: 200)
-                            .cornerRadius(25)
-                            .padding(.bottom)
-//                        ZStack{
-//                            Rectangle()
-//                                .frame(width: 350, height: 200)
-//                                .foregroundColor(RandomColour.colorView())
-//                                .cornerRadius(25)
-//                            VStack{
-//                                Image(systemName: "cloud.sun.rain")
-//                                    .imageScale(.large)
-//                                Text("Weather")
-//                            }
-//
-//                        }
-                        HStack(spacing: 30){
-                            NavigationLink(
-                                destination:
-                                    CasinoView(),
-                                label: {
-                                    ZStack{
-                                        HomeButtons()
-                                        VStack{
-                                            Image(systemName: "gamecontroller")
-                                                .imageScale(.large)
-                                            Text("Games")
-                                            
+                    
+                        VStack(alignment: .center){
+                            Spacer()
+                            WeatherView()
+                                .frame(width: 350, height: 200)
+                                .cornerRadius(25)
+                                .padding(.bottom)
+                            //                        ZStack{
+                            //                            Rectangle()
+                            //                                .frame(width: 350, height: 200)
+                            //                                .foregroundColor(RandomColour.colorView())
+                            //                                .cornerRadius(25)
+                            //                            VStack{
+                            //                                Image(systemName: "cloud.sun.rain")
+                            //                                    .imageScale(.large)
+                            //                                Text("Weather")
+                            //                            }
+                            //
+                            //                        }
+                            HStack(spacing: 30){
+                                NavigationLink(
+                                    destination:
+                                        CasinoView(),
+                                    label: {
+                                        ZStack{
+                                            HomeButtons()
+                                            VStack{
+                                                Image(systemName: "gamecontroller")
+                                                    .imageScale(.large)
+                                                Text("Games")
+                                                
+                                            }
                                         }
-                                    }
-                                })
-                            NavigationLink(
-                                destination:
-                                    CarListView(),
-                                label: {
-                                    ZStack{
-                                        HomeButtons()
-                                        VStack{
-                                            Image(systemName: "car")
-                                                .imageScale(.large)
-                                            Text("Cars")
+                                    })
+                                NavigationLink(
+                                    destination:
+                                        CarListView(),
+                                    label: {
+                                        ZStack{
+                                            HomeButtons()
+                                            VStack{
+                                                Image(systemName: "car")
+                                                    .imageScale(.large)
+                                                Text("Cars")
+                                            }
                                         }
-                                    }
-                                })
-                            NavigationLink(
-                                destination:
-                                    BookListView(),
-                                label: {
-                                    ZStack{
-                                        HomeButtons()
-                                        VStack{
-                                            Image(systemName: "book")
-                                                .imageScale(.large)
-                                            Text("Books")
+                                    })
+                                NavigationLink(
+                                    destination:
+                                        BookListView(),
+                                    label: {
+                                        ZStack{
+                                            HomeButtons()
+                                            VStack{
+                                                Image(systemName: "book")
+                                                    .imageScale(.large)
+                                                Text("Books")
+                                            }
                                         }
-                                    }
-                                })
-                        }
-                        HStack(spacing: 30){
-                            NavigationLink(
-                                destination:
-                                    RecipeTabView(),
-                                label: {
-                                    ZStack{
-                                        HomeButtons()
-                                        VStack{
-                                            Image(systemName: "list.bullet.rectangle.portrait.fill")
-                                                .imageScale(.large)
-                                            Text("Recipes")
+                                    })
+                            }
+                            HStack(spacing: 30){
+                                NavigationLink(
+                                    destination:
+                                        RecipeTabView(),
+                                    label: {
+                                        ZStack{
+                                            HomeButtons()
+                                            VStack{
+                                                Image(systemName: "list.bullet.rectangle.portrait.fill")
+                                                    .imageScale(.large)
+                                                Text("Recipes")
+                                            }
                                         }
-                                    }
-                                })
-                            NavigationLink(
-                                destination:
-                                    HomeView(),
-                                label: {
-                                    ZStack{
-                                        HomeButtons()
-                                        VStack{
-                                            Image(systemName: "text.book.closed")
-                                                .imageScale(.large)
-                                            Text("Learning")
+                                    })
+                                NavigationLink(
+                                    destination:
+                                        HomeView(),
+                                    label: {
+                                        ZStack{
+                                            HomeButtons()
+                                            VStack{
+                                                Image(systemName: "text.book.closed")
+                                                    .imageScale(.large)
+                                                Text("Learning")
+                                            }
                                         }
-                                    }
-                                })
-                            
+                                    })
+                                
                                 Button(
                                     // Use clock place holder as secret button to refresh display
                                     action:{
@@ -113,23 +116,33 @@ struct LauncherView: View {
                                     },
                                     label:{
                                         ZStack{
-                                        HomeButtons()
-                                        VStack{
-                                            Image(systemName: "clock")
-                                                .imageScale(.large)
-                                            Text("Clock")
+                                            HomeButtons()
+                                            VStack{
+                                                Image(systemName: "clock")
+                                                    .imageScale(.large)
+                                                Text("Clock")
+                                            }
                                         }
-                                    }
-                            })
+                                    })
+                            }
+                            MapView()
+                                .frame(width: 350, height: 250)
+                                .cornerRadius(25)
+                            
+                            Spacer()
                         }
-                        MapView()
-                            .frame(width: 350, height: 250)
-                            .cornerRadius(25)
-                        
-                        Spacer()
+                    }
+                .foregroundColor(.white)
+                    ZStack{
+                        Rectangle()
+                            
+                            .foregroundColor(.black)
+                        WebClipView()
                     }
                 }
-                .foregroundColor(.white)
+                .tabViewStyle(PageTabViewStyle(indexDisplayMode: .always))
+                    .ignoresSafeArea()
+                
             }
         }
     }
