@@ -68,5 +68,68 @@
             landmarkType = "14">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C291D8B5-6D7D-4610-8630-2F1FE528C25D"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "X/Books/Views/BookSettingView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "5"
+            endingLineNumber = "5"
+            landmarkName = "BookSettingView"
+            landmarkType = "14">
+            <Locations>
+               <Location
+                  uuid = "C291D8B5-6D7D-4610-8630-2F1FE528C25D - d9976f80196ceaaf"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "X.BookSettingView.init() -&gt; X.BookSettingView"
+                  moduleName = "X"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/andrew/Documents/xcode/myapps/X%20copy/X/Books/Views/BookSettingView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "6"
+                  endingLineNumber = "6"
+                  offsetFromSymbolStart = "19">
+               </Location>
+               <Location
+                  uuid = "C291D8B5-6D7D-4610-8630-2F1FE528C25D - 1335f6dde653fc06"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "X.BookSettingView.init(model: SwiftUI.EnvironmentObject&lt;X.BookModel&gt;) -&gt; X.BookSettingView"
+                  moduleName = "X"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/andrew/Documents/xcode/myapps/X%20copy/X/Books/Views/BookSettingView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "10">
+               </Location>
+               <Location
+                  uuid = "C291D8B5-6D7D-4610-8630-2F1FE528C25D - d9976f80196ceaaf"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "X.BookSettingView.init() -&gt; X.BookSettingView"
+                  moduleName = "X"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/andrew/Documents/xcode/myapps/X%20copy/X/Books/Views/BookSettingView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "6"
+                  endingLineNumber = "6"
+                  offsetFromSymbolStart = "32">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

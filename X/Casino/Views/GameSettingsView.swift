@@ -9,7 +9,6 @@ import SwiftUI
 
 struct GameSettingsView: View {
     @EnvironmentObject var gm: GameModel
-    // @State var selectedWP = "Wood"
     
     var body: some View {
         

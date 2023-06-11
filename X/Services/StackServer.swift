@@ -21,6 +21,7 @@ struct StackServer {
     let tdarr = "http://10.0.0.10:7265/#/"
     let pihole = "http://10.0.0.14/admin/"
     let homebridge = "http://10.0.0.4:8581/"
-    let main = "http://10.0.0.10:999/Main"
+    let storage = "http://10.0.0.10:999/Main"
+    let main = "https://stackk.me"
     
 }

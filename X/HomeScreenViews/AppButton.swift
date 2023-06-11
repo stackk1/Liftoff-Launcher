@@ -24,19 +24,22 @@ struct AppButton<Content: View>: View {
             destination:
                 appView,
             label: {
-                ZStack{
-                    Rectangle()
-                        .foregroundColor(ColourService.randomRGB())
-                        .cornerRadius(25)
-                        .frame(width: 85, height: 85)
-                    
-                    VStack{
+                VStack{
+                    ZStack{
+                        Rectangle()
+                            .foregroundColor(ColourService.randomRGB())
+                            .cornerRadius(20)
+                            .frame(width: 75, height: 75)
                         Image(systemName: imageName)
-                            .imageScale(.large)
-                        Text(appLabel)
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 45, height: 45)
+                            
                     }
-                    .foregroundColor(.white)
+                        Text(appLabel)
+                    
                 }
+                .foregroundColor(.white)
                 })
             }
 }

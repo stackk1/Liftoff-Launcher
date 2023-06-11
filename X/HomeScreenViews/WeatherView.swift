@@ -9,13 +9,15 @@ import SwiftUI
 
 struct WeatherView: View {
     var body: some View {
-        GeometryReader{ geo in
+
+        ZStack{
             Rectangle()
                 .foregroundColor(ColourService.randomRGB())
             VStack{
                 HStack {
                     VStack(alignment: .leading){
                         Text("Weather")
+                            .font(.system(size:20))
                         Text("City")
                     }
                     .fontWeight(.bold)
@@ -23,7 +25,7 @@ struct WeatherView: View {
                     Spacer()
                 }
                 .padding(.bottom, 10)
-                Grid(horizontalSpacing: 10){
+                Grid(horizontalSpacing: 15){
                     // Days of the week
                     GridRow{
                         Text("Mon")
@@ -34,6 +36,8 @@ struct WeatherView: View {
                         Text("Sat")
                         Text("Sun")
                     }
+                    .font(.system(size:16))
+                    .fontWeight(.bold)
                     //Conditions
                     GridRow{
                         Image(systemName: "sun.max")
@@ -75,8 +79,7 @@ struct WeatherView: View {
                   
             }
             .padding()
-            
-            //.postion(geo.frame(in: .local).midX)
+
             
         }
     }
