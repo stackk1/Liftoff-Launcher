@@ -19,11 +19,12 @@ struct WebClipView: UIViewRepresentable {
             //create and load web request
             let request = URLRequest(url: trueurl!)
             webView.load(request)
-            return webView
-        }
+            return webView                
+                }
         func updateUIView(_ uiView: UIViewType, context: Context){
             return
         }
+        
     }
 
 struct WebClipView_Previews: PreviewProvider {

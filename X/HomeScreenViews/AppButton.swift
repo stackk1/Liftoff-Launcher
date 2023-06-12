@@ -23,7 +23,8 @@ struct AppButton<Content: View>: View {
     var body: some View {
         NavigationLink(
             destination:
-                appView,
+                appView
+                .navigationBarHidden(true),
             tag: appLabel,
             selection: $nav.currentApp,
             label: {
