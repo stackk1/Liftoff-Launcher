@@ -10,6 +10,9 @@ struct CarListView: View {
  
             ScrollView{
                 VStack{
+                    Text("My Cars")
+                        .font(.title)
+                        .fontWeight(.bold)
                     ForEach(model.cars) { c in
                         NavigationLink(
                             destination: CarDetailView(car: c),
@@ -19,7 +22,8 @@ struct CarListView: View {
                     }
                 }
             }
-            .navigationTitle("Cars")
+          //  .navigationTitle("Cars")
+            .navigationBarHidden(true)
             
         
     }

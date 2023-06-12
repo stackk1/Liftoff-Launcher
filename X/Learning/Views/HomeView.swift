@@ -38,7 +38,7 @@ struct HomeView: View {
                 
             }
         }.navigationTitle("Get Started")
-        
+            .navigationBarHidden(true)
             .navigationViewStyle(.stack)
     }
 }

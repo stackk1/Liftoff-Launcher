@@ -37,7 +37,7 @@ struct CasinoView: View {
                 }
                 
             }
-        
+        .navigationBarHidden(true)
     }
     
 }

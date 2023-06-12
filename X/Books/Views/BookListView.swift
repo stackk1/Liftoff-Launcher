@@ -40,7 +40,7 @@ struct BookListView: View {
                     }
                 }
             }
-
+            .navigationBarHidden(true)
         
     }
 }
