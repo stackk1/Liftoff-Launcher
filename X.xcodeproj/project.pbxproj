@@ -11,6 +11,7 @@
 		491C6A372A32ACC000611DCE /* WeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491C6A362A32ACC000611DCE /* WeatherView.swift */; };
 		491C6A392A33B97200611DCE /* MediaPlaybackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491C6A382A33B97200611DCE /* MediaPlaybackView.swift */; };
 		4932F8322A2E8D7700C3C9B0 /* AppButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4932F8312A2E8D7700C3C9B0 /* AppButton.swift */; };
+		496F25AD2A3789B4003BBF58 /* ButtonBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496F25AC2A3789B4003BBF58 /* ButtonBackgroundView.swift */; };
 		4970E2FB2A36765000962705 /* SettingsMasterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4970E2FA2A36765000962705 /* SettingsMasterView.swift */; };
 		4970E2FD2A3677CD00962705 /* WPService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4970E2FC2A3677CD00962705 /* WPService.swift */; };
 		4975BE902A2D7F140093C029 /* CasinoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4975BE8F2A2D7F140093C029 /* CasinoView.swift */; };
@@ -84,6 +85,7 @@
 		491C6A362A32ACC000611DCE /* WeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherView.swift; sourceTree = "<group>"; };
 		491C6A382A33B97200611DCE /* MediaPlaybackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaPlaybackView.swift; sourceTree = "<group>"; };
 		4932F8312A2E8D7700C3C9B0 /* AppButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppButton.swift; sourceTree = "<group>"; };
+		496F25AC2A3789B4003BBF58 /* ButtonBackgroundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonBackgroundView.swift; sourceTree = "<group>"; };
 		4970E2FA2A36765000962705 /* SettingsMasterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsMasterView.swift; sourceTree = "<group>"; };
 		4970E2FC2A3677CD00962705 /* WPService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WPService.swift; sourceTree = "<group>"; };
 		4975BE8F2A2D7F140093C029 /* CasinoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CasinoView.swift; sourceTree = "<group>"; };
@@ -436,6 +438,7 @@
 		4975BF0A2A2D86EE0093C029 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				496F25AC2A3789B4003BBF58 /* ButtonBackgroundView.swift */,
 				491C6A342A32A87D00611DCE /* CodeTextView.swift */,
 				4975BF0B2A2D86EE0093C029 /* LessonCardView.swift */,
 				4975BF0C2A2D86EE0093C029 /* ContentViewRow.swift */,
@@ -604,6 +607,7 @@
 				4970E2FB2A36765000962705 /* SettingsMasterView.swift in Sources */,
 				4975BE932A2D7F2A0093C029 /* GameCardView.swift in Sources */,
 				4975BEBE2A2D846B0093C029 /* CarCardView.swift in Sources */,
+				496F25AD2A3789B4003BBF58 /* ButtonBackgroundView.swift in Sources */,
 				4975BEF82A2D86720093C029 /* RecipeDetailView.swift in Sources */,
 				49D4F9CD2A36252100E83559 /* WebClipView.swift in Sources */,
 				4975BEFD2A2D86720093C029 /* RecipeModel.swift in Sources */,

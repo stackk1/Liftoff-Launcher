@@ -32,12 +32,25 @@ struct ContentDetailView: View {
                 },label: {
                     
                     ZStack {
-                        Rectangle()
-                            .cornerRadius(10)
-                            .foregroundColor(.green)
-                            .shadow(radius: 5)
-                            .frame(height: 48)
+                        ButtonBackgroundView()
                         Text("Next Lesson: \(model.currentModule!.content.lessons[model.currentLessonIndex + 1].title)")
+                            .foregroundColor(.white)
+                            .fontWeight(.bold)
+                            
+                            
+                    }
+                })
+            }
+            else{
+                //Show the complete button
+                Button(
+                    action:{
+                    model.currentContent = nil
+                },
+                    label: {
+                    ZStack {
+                        ButtonBackgroundView(color:.blue)
+                        Text("Complete")
                             .foregroundColor(.white)
                             .fontWeight(.bold)
                             

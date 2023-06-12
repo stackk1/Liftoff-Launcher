@@ -11,34 +11,35 @@ struct HomeView: View {
     @EnvironmentObject var model: ContentModel
     
     var body: some View {
-    
-            VStack(alignment: .leading){
-                
-                Text("What would you like to do today?")
-                    .font(.subheadline)
-                    .padding(.leading)
+        
+        VStack(alignment: .leading){
             
-                ScrollView {
-                    LazyVStack{
-                        ForEach(model.modules) {module in
-                            NavigationLink(
-                                destination: {ContentView()
+            Text("What would you like to do today?")
+                .font(.subheadline)
+                .padding(.leading)
+            
+            ScrollView {
+                LazyVStack{
+                    ForEach(model.modules) {module in
+                        NavigationLink(
+                            destination:
+                                ContentView()
                                     .onAppear(perform: {
                                         model.beginModule(module.id)
-                                    })
-                                
-                            },
-                                label: {LearningCardView(module: module)
+                                    }),
+                            tag: module.id,
+                            selection: $model.currentContent,
+                            label: {LearningCardView(module: module)
                             })
-                            TestCardView(module: module)
-                            //TODO Add Navigation Link
-                        }
+                        TestCardView(module: module)
+                        //TODO Add Navigation Link
                     }
-                    
                 }
-            }.navigationTitle("Get Started")
+                
+            }
+        }.navigationTitle("Get Started")
         
-        .navigationViewStyle(.stack)
+            .navigationViewStyle(.stack)
     }
 }
 
