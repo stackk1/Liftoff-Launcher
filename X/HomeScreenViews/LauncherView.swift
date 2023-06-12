@@ -42,14 +42,12 @@ struct LauncherView: View {
                                         AppButton(app: BookListView(), image: "book", label: "Books")
                                         AppButton(app: RecipeTabView(), image: "list.bullet.rectangle.portrait.fill", label: "Recipes")
                                         AppButton(app: HomeView(), image: "text.book.closed", label: "Learning")
-                                        AppButton(app: MapView(), image: "map.fill", label: "Map")
-                                        AppButton(app: (WebClipView(url: ss.sonarr)), image: "lifepreserver", label: "Sonarr")
-                                        AppButton(app: (WebClipView(url: ss.radarr)), image: "lifepreserver", label: "Radarr")
-                                        AppButton(app: (WebClipView(url: ss.lidarr)), image: "music.note.list", label: "Lidarr")
-                                        AppButton(app: (WebClipView(url: ss.requestpage)), image: "arrow.down.message", label: "Requests")
-                                        
+                                        AppButton(app: MapView(), image: "map.fill", label: "Map")   
                                     }
                                     Group{
+                                        AppButton(app: (WebClipView(url: ss.tdarr)), image: "flowchart.fill", label: "tdarr")
+                                        AppButton(app: (WebClipView(url: ss.plexDash)), image: "chart.xyaxis.line", label: "Plex Dash")
+                                        AppButton(app: (WebClipView(url: ss.requestpage)), image: "arrow.down.message", label: "Requests")
                                         AppButton(app: (WebClipView(url: ss.pihole)), image: "hand.raised", label: "Pihole")
                                         AppButton(app: (WebClipView(url: ss.homebridge)), image: "house.fill", label: "Homebridge")
                                         AppButton(app: (WebClipView(url: ss.main)), image: "macpro.gen3.server", label: "Server")
@@ -87,6 +85,10 @@ struct LauncherView: View {
                                     .foregroundColor(.white)
                                 }
                                 LazyVGrid(columns: columns){
+                                    AppButton(app: (WebClipView(url: ss.sonarr)), image: "lifepreserver", label: "Sonarr")
+                                    AppButton(app: (WebClipView(url: ss.radarr)), image: "lifepreserver", label: "Radarr")
+                                    AppButton(app: (WebClipView(url: ss.lidarr)), image: "music.note.list", label: "Lidarr")
+                                    AppButton(app: (WebClipView(url: ss.readarr)), image: "airpodsmax", label: "Readarr")
                                     AppButton(app: (WebClipView(url: ss.DTv)), image: "tv", label: "Shows")
                                     AppButton(app: (WebClipView(url: ss.DMov)), image: "popcorn", label: "Movies")
                                     AppButton(app: (WebClipView(url: ss.Dmusic)), image: "music.note", label: "Music")
