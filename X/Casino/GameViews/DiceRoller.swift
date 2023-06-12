@@ -14,9 +14,12 @@ struct DiceRoller: View {
         //Background settings check 
         let bg = gm.background
         ZStack {
-            if (bg == true) { Image(gm.backgroundImage)
+            if (bg == true) {
+                Image(gm.backgroundImage)
                     .resizable()
-                .ignoresSafeArea(.all, edges: .top)}
+                .ignoresSafeArea()
+                
+            }
             VStack {
                 Text("Dice Roller").font(.largeTitle).padding([.leading, .bottom, .trailing])
                 Text("Total").font(.headline).padding(.bottom, 5.0)

@@ -21,13 +21,15 @@ struct WarView: View {
     
     var body: some View {
         
-        //Background settings check 
+        //Background settings check
         let bg = gm.background
         GeometryReader{ geo in
             if bg{
                 Image(gm.backgroundImage)
                     .resizable()
-                .ignoresSafeArea(.all, edges: .top)}
+                    .ignoresSafeArea()
+                
+            }
             
             
             VStack (spacing:0) {

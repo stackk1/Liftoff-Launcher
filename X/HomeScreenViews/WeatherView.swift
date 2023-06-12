@@ -24,7 +24,7 @@ struct WeatherView: View {
                     .foregroundColor(.white)
                     Spacer()
                 }
-                .padding(.bottom, 10)
+                .padding(.bottom, 5)
                 Grid(horizontalSpacing: 15){
                     // Days of the week
                     GridRow{
@@ -48,8 +48,8 @@ struct WeatherView: View {
                         Image(systemName: "cloud.moon")
                         Image(systemName: "snowflake")
                     }
-                    .frame(width:10,height: 10)
-                    .padding(.vertical, 5)
+                    .imageScale(.large)
+                    .padding(.vertical, 2)
                     .padding(.leading, 3)
                    //Hi Temps
                     GridRow{
@@ -78,7 +78,7 @@ struct WeatherView: View {
                 .foregroundColor(.white)
                   
             }
-            .padding()
+            .padding(20)
 
             
         }

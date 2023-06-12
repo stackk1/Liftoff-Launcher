@@ -14,7 +14,7 @@ struct CasinoView: View {
         let bg = gm.background
         
       
-            GeometryReader{ geo in
+        ZStack{
                 if bg {
                     Image(gm.backgroundImage)
                         .resizable()

@@ -18,7 +18,7 @@ struct CardFlipperView: View {
             if (bg == true) {
                 Image(gm.backgroundImage)
                     .resizable()
-                .ignoresSafeArea(.all, edges: .top)}
+                .ignoresSafeArea()}
             TabView{
                 
                 ForEach (1..<51) { i in
@@ -28,7 +28,7 @@ struct CardFlipperView: View {
                         
                         Rectangle()
                         //Use Custom RandomColor model to set card and shaddow colors
-                            .foregroundColor(Color(ColourService.generate()))
+                            .foregroundColor(ColourService.randomRGB(opac:0.8))
                             .frame(width: geo.size.width-40, height: geo.size.height-100, alignment: .center)
                             .cornerRadius(20)
                             .shadow(color: ColourService.randomRGB(), radius: 25)

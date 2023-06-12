@@ -9,5 +9,5 @@ import Foundation
 
 class WPService:ObservableObject {
     @Published var wallpaper = false
-    @Published var wallpaperImage = "wallpaper"
+    @Published var wallpaperImage = "Space"
 }

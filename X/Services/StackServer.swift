@@ -23,5 +23,6 @@ struct StackServer {
     let homebridge = "http://10.0.0.4:8581/"
     let storage = "http://10.0.0.10:999/Main"
     let main = "https://stackk.me"
+    let FFox = "http://10.0.0.10:3000"
     
 }

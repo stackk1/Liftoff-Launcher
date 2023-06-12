@@ -43,6 +43,7 @@ struct GameSettingsView: View {
                     Text("Wood").tag("Wood")
                     Text("Cartoon Wood").tag("Cartoon Wood")
                     Text("Cloth").tag("Cloth")
+                    Text("Space").tag("Space")
                 }
                 .pickerStyle(MenuPickerStyle())
             }
@@ -53,6 +54,7 @@ struct GameSettingsView: View {
                     Text("Wood").tag("Wood")
                     Text("Cartoon Wood").tag("Cartoon Wood")
                     Text("Cloth").tag("Cloth")
+                    Text("Space").tag("Space")
                 }
                 .pickerStyle(SegmentedPickerStyle())
             }
@@ -64,6 +66,7 @@ struct GameSettingsView: View {
                     Text("Wood").tag("Wood")
                     Text("Cartoon Wood").tag("Cartoon Wood")
                     Text("Cloth").tag("Cloth")
+                    Text("Space").tag("Space")
                 }
                 .pickerStyle(WheelPickerStyle())
             }

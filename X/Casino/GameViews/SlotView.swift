@@ -27,7 +27,9 @@ struct SlotView: View {
             if (bg == true) {
                 Image(gm.backgroundImage)
                     .resizable()
-                .ignoresSafeArea(.all, edges: .top)}
+                .ignoresSafeArea()
+                
+            }
             
             VStack {
                 

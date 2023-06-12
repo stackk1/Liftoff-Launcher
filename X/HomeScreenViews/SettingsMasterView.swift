@@ -26,7 +26,7 @@ struct SettingsMasterView: View {
                 Toggle(
                     isOn: $wp.wallpaper,
                     label: {
-                        Text("Wallpaper: \(wp.wallpaper ? "On" : "Off")")
+                        Text("Wallpaper")
                     })
                 HStack{
                     Text("Wallpaper Image")
@@ -36,7 +36,7 @@ struct SettingsMasterView: View {
                         Text("Wood").tag("Wood")
                         Text("Cartoon Wood").tag("Cartoon Wood")
                         Text("Cloth").tag("Cloth")
-                        Text("Space").tag("wallpaper")
+                        Text("Space").tag("Space")
                     }
                     .pickerStyle(MenuPickerStyle())
                 }
@@ -49,21 +49,11 @@ struct SettingsMasterView: View {
                     .font(.title)
                 Divider()
                     .frame(width: 1.0, height: 1.0)
-                HStack{
-                    if gm.background {
-                        Text("Wallpaper: On")
-                    } else {
-                        Text("Wallpaper: Off")
-                    }
-                    Spacer()
-                    Text("Image: \(gm.backgroundImage)")
-                }
-                .multilineTextAlignment(.leading)
                 
                 Toggle(
                     isOn: $gm.background,
                     label: {
-                        Text("Background Image")
+                        Text("Background")
                     })
                 HStack{
                     Text("Background Image")
@@ -73,6 +63,7 @@ struct SettingsMasterView: View {
                         Text("Wood").tag("Wood")
                         Text("Cartoon Wood").tag("Cartoon Wood")
                         Text("Cloth").tag("Cloth")
+                        Text("Space").tag("Space")
                     }
                     .pickerStyle(MenuPickerStyle())
                 }
@@ -82,22 +73,10 @@ struct SettingsMasterView: View {
             VStack{
                 Text("Book Settings")
                     .font(.title)
-                Divider()
-                    .frame(width: 1.0, height: 1.0)
-                HStack{
-                    Text("Current View:")
-                        .fontWeight(.bold)
-                    if model.pageView {
-                        Text("Page View")
-                    }else {
-                        Text ("Scroll View")
-                    }
-                    Spacer()
-                }
                 // Change Page View
                 Toggle(
                     isOn: $model.pageView,
-                    label: {Text("Page View")
+                    label: {Text("\(model.pageView ? "Page" : "Scroll") View")
                     })
             }
             Spacer()
