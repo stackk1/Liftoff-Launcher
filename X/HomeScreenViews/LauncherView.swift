@@ -8,25 +8,33 @@
 import SwiftUI
 
 struct LauncherView: View {
-    @State var colorMode = true
     @EnvironmentObject var wp: WPService
+    @EnvironmentObject var nav: NavigationService
+    
     var body: some View {
         let ss = StackServer()
         let columns = [GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible())]
+        ZStack{
+            Rectangle()
+                .foregroundColor(.black)
+                .ignoresSafeArea()
         
+        VStack{
             NavigationView{
-                VStack{
+                ZStack {
+                    if wp.wallpaper {
+                        Image(wp.wallpaperImage)
+                            .resizable()
+                            .ignoresSafeArea()
+                    }
+                                        else{
+                                            Rectangle()
+                                                .ignoresSafeArea()
+                                                .foregroundColor(.black)
+                                        }
                     
-                    ZStack {
-                        if wp.wallpaper {
-                            Image(wp.wallpaperImage)
-                                .resizable()
-                                .ignoresSafeArea()
-                        }else{
-                            Rectangle()
-                                .ignoresSafeArea()
-                                .foregroundColor(.black)
-                        }
+                    VStack(spacing: 0){
+                        
                         TabView{
                             VStack {
                                 WeatherView()
@@ -42,7 +50,7 @@ struct LauncherView: View {
                                         AppButton(app: BookListView(), image: "book", label: "Books")
                                         AppButton(app: RecipeTabView(), image: "list.bullet.rectangle.portrait.fill", label: "Recipes")
                                         AppButton(app: HomeView(), image: "text.book.closed", label: "Learning")
-                                        AppButton(app: MapView(), image: "map.fill", label: "Map")   
+                                        AppButton(app: MapView(), image: "map.fill", label: "Map")
                                     }
                                     Group{
                                         AppButton(app: (WebClipView(url: ss.tdarr)), image: "flowchart.fill", label: "Tdarr")
@@ -103,26 +111,39 @@ struct LauncherView: View {
                             .padding(.horizontal)
                         }
                         .tabViewStyle(PageTabViewStyle(indexDisplayMode: .always))
-                        //.padding(.bottom)
                     }
                     
                     
                 }
-                
-                .navigationBarHidden(true)
             }
-        
-        
+            .navigationBarHidden(true)
+            
+            Button(
+                action:{
+                    nav.currentApp = nil
+                },
+                label:{
+                    ZStack{
+                        ButtonBackgroundView(color: .black)
+                        Image(systemName: "square.circle.fill")
+                            .font(.system(size:40))
+                            .foregroundColor(.white)
+                    }
+                }
+            )
+        }.ignoresSafeArea()
+    }
     }
 }
 
 struct LauncherView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        LauncherView()
             .environmentObject(GameModel())
             .environmentObject(BookModel())
             .environmentObject(RecipeModel())
             .environmentObject(ContentModel())
             .environmentObject(WPService())
+            .environmentObject(NavigationService())
     }
 }

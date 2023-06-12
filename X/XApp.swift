@@ -17,6 +17,7 @@ struct XApp: App {
                 .environmentObject(RecipeModel())
                 .environmentObject(ContentModel())
                 .environmentObject(WPService())
+                .environmentObject(NavigationService())
         }
     }
 }

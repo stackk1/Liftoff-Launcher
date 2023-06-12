@@ -40,6 +40,7 @@ struct FavouriteView: View {
                     IngredientCheckView(recipe: model.recipes[recipeIndex])
                 }.padding(.horizontal)
             }
+            .navigationBarHidden(true)
             .navigationTitle("Favourites")
             .padding(.horizontal)
             .padding(.bottom, 80)

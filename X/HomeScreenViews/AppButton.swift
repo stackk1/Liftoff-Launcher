@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct AppButton<Content: View>: View {
+    @EnvironmentObject var nav: NavigationService
     @ViewBuilder var appView: Content
     @ViewBuilder var imageName: String
     @ViewBuilder var appLabel: String
@@ -23,6 +24,8 @@ struct AppButton<Content: View>: View {
         NavigationLink(
             destination:
                 appView,
+            tag: appLabel,
+            selection: $nav.currentApp,
             label: {
                 VStack{
                     ZStack{
