@@ -45,7 +45,7 @@ struct LauncherView: View {
                                         AppButton(app: MapView(), image: "map.fill", label: "Map")   
                                     }
                                     Group{
-                                        AppButton(app: (WebClipView(url: ss.tdarr)), image: "flowchart.fill", label: "tdarr")
+                                        AppButton(app: (WebClipView(url: ss.tdarr)), image: "flowchart.fill", label: "Tdarr")
                                         AppButton(app: (WebClipView(url: ss.plexDash)), image: "chart.xyaxis.line", label: "Plex Dash")
                                         AppButton(app: (WebClipView(url: ss.requestpage)), image: "arrow.down.message", label: "Requests")
                                         AppButton(app: (WebClipView(url: ss.pihole)), image: "hand.raised", label: "Pihole")
