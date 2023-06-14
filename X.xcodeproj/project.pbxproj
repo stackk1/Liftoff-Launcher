@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		491BA5B42A37C605002F715B /* HomeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491BA5B32A37C605002F715B /* HomeButton.swift */; };
 		491C6A352A32A87D00611DCE /* CodeTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491C6A342A32A87D00611DCE /* CodeTextView.swift */; };
 		491C6A372A32ACC000611DCE /* WeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491C6A362A32ACC000611DCE /* WeatherView.swift */; };
 		491C6A392A33B97200611DCE /* MediaPlaybackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491C6A382A33B97200611DCE /* MediaPlaybackView.swift */; };
@@ -82,6 +83,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		491BA5B32A37C605002F715B /* HomeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeButton.swift; sourceTree = "<group>"; };
 		491C6A342A32A87D00611DCE /* CodeTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodeTextView.swift; sourceTree = "<group>"; };
 		491C6A362A32ACC000611DCE /* WeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherView.swift; sourceTree = "<group>"; };
 		491C6A382A33B97200611DCE /* MediaPlaybackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaPlaybackView.swift; sourceTree = "<group>"; };
@@ -191,6 +193,7 @@
 				491C6A382A33B97200611DCE /* MediaPlaybackView.swift */,
 				49D4F9CC2A36252100E83559 /* WebClipView.swift */,
 				4970E2FA2A36765000962705 /* SettingsMasterView.swift */,
+				491BA5B32A37C605002F715B /* HomeButton.swift */,
 			);
 			path = HomeScreenViews;
 			sourceTree = "<group>";
@@ -630,6 +633,7 @@
 				4975BF192A2D86F00093C029 /* LearningCardView.swift in Sources */,
 				4975BEDB2A2D85D20093C029 /* BookSettingView.swift in Sources */,
 				4975BF1C2A2D86F00093C029 /* ContentView.swift in Sources */,
+				491BA5B42A37C605002F715B /* HomeButton.swift in Sources */,
 				4975BEAA2A2D7F620093C029 /* DiceType.swift in Sources */,
 				4975BF1D2A2D86F00093C029 /* ContentDetailView.swift in Sources */,
 				491C6A372A32ACC000611DCE /* WeatherView.swift in Sources */,

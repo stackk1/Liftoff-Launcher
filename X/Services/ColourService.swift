@@ -9,7 +9,13 @@ import SwiftUI
 import Foundation
 
 
-struct ColourService {
+class ColourService: ObservableObject {
+    
+    @Published var randomTheme = randomRGB()
+    @Published var Disco = 0
+    
+    let allColors: [Color] = [.pink, .red, .orange, .yellow, .green, .mint, .teal, .cyan, .blue, .indigo, .purple, .brown, .gray]
+    
     static func randomRGB(opac: Double = 0.9) -> Color {
         let red = CGFloat.random(in: 0...1)
         let green = CGFloat.random(in: 0...1)
@@ -20,4 +26,4 @@ struct ColourService {
         }
 
 }
-let allColors: [Color] = [.pink, .red, .orange, .yellow, .green, .mint, .teal, .cyan, .blue, .indigo, .purple, .brown, .gray]
+

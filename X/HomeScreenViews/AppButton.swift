@@ -13,6 +13,7 @@ struct AppButton<Content: View>: View {
     @ViewBuilder var imageName: String
     @ViewBuilder var appLabel: String
     
+    
     init(app: Content, image: String, label: String) {
         self.appView = app
         self.imageName = image
@@ -21,6 +22,7 @@ struct AppButton<Content: View>: View {
     }
     
     var body: some View {
+        
         NavigationLink(
             destination:
                 appView
