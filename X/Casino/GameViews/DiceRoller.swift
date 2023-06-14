@@ -3,14 +3,18 @@ import SwiftUI
 
 struct DiceRoller: View {
     @EnvironmentObject var gm: GameModel
+    @EnvironmentObject var ds: DiceUIService
     
-    @State var numberOfDice = 5
-    @State var numberOfSides = 6
-    @State var diceValues = [1,1,1,1,1]
-    @State var total = 0
-    @State var total2 = 0
+     var numberOfDice = 5
+     var numberOfSides = 6
+//    @State var diceValues = [1,1,1,1,1]
+//    @State var total = 0
+//    @State var total2 = 0
+    var rows = [GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible())]
+    
     
     var body: some View {
+       
         //Background settings check 
         let bg = gm.background
         ZStack {
@@ -23,43 +27,47 @@ struct DiceRoller: View {
             VStack {
                 Text("Dice Roller").font(.largeTitle).padding([.leading, .bottom, .trailing])
                 Text("Total").font(.headline).padding(.bottom, 5.0)
-                Text(String(total)).font(.largeTitle)
+                Text(String(ds.diceValueTotal)).font(.largeTitle)
                 
                 HStack{
                     Text("Number of Dice:")
                     Button(
                         action:{
-                            numberOfDice -= 1
+                            ds.numberOfDice -= 1
                         },
                         label: {
                             Image(systemName: "minus.square.fill")
                         })
-                    Text(String(numberOfDice))
+                    Text(String(ds.numberOfDice))
                     Button(
-                        action:{numberOfDice += 1},
+                        action:{ds.numberOfDice += 1},
                         label: {Image(systemName: "plus.square.fill")
                         })
                 }
-                Picker("Number of Dice: ", selection: $numberOfDice){
-                    ForEach (0..<5) { index in
-                        Text(String(index + 1)).tag(index + 1)
-                    }
-                // TODO: update view when numberOfDice changes. Is a State property already though?
-                    
-                }.pickerStyle(WheelPickerStyle())
+////                Picker(
+////                    "Number of Dice: ",
+////                    selection: $numberOfDice
+////                )
+////                {
+////                    ForEach (0..<9) { index in
+////                        Text(String(index + 1)).tag(index + 1)
+////                    }
+//                // TODO: update view when numberOfDice changes. Is a State property already though?
+//
+//                }.pickerStyle(WheelPickerStyle())
 
-                    LazyHStack{
-                        ForEach(0..<diceValues.count-1, id:\.self) {index in
-                            Image("d6.\(diceValues[index])")
+                LazyVGrid(columns: rows){
+                    ForEach(0..<ds.diceValues.count-1, id:\.self) {index in
+                        Image("d6.\(ds.diceValues[index])")
                                 .resizable()
                                 .frame(width: 50, height: 50)
                                 .aspectRatio(contentMode:.fit)
                         }
-                    }.padding()
+                    }
                     Spacer()
                     HStack{
                         Button("Roll") {
-                            roll()
+                            ds.roll()
                         }.padding().padding([.leading, .trailing], 40)
                             .background(Color.red)
                             .cornerRadius(50)
@@ -77,33 +85,30 @@ struct DiceRoller: View {
                 }
                 .foregroundColor(bg == true ? .white : .black)
                 .padding()
-                .onAppear(perform: {
-                    roll()
-                    reset()
-                })
+
             }
         }
-    
-        func roll() {
-            diceValues = []
-            for _ in (0...numberOfDice){
-                let value = Int.random(in: 1...numberOfSides)
-                diceValues.append(value)
-            }
-            total += diceValues.reduce(0, +)
-            //Math checker
-            for die in (0..<diceValues.count-1) {
-                print(diceValues[die])
-            }
-            for value in diceValues {
-                total2 += value
-            }
-            print("total : \(total)")
-            print("total 2:  \(total2)")
-            
-        }
+//    
+//        func roll() {
+//            diceValues = []
+//            for _ in (0...numberOfDice){
+//                let value = Int.random(in: 1...numberOfSides)
+//                diceValues.append(value)
+//            }
+//            total += diceValues.reduce(0, +)
+//            //Math checker
+//            for die in (0..<diceValues.count-1) {
+//                print(diceValues[die])
+//            }
+//            for value in diceValues {
+//                total2 += value
+//            }
+//            print("total : \(total)")
+//            print("total 2:  \(total2)")
+//            
+//        }
         func reset() {
-            total = 0
+            ds.diceValueTotal = 0
         }
         
     

@@ -72,6 +72,7 @@
 		4975BF1C2A2D86F00093C029 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4975BF102A2D86EE0093C029 /* ContentView.swift */; };
 		4975BF1D2A2D86F00093C029 /* ContentDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4975BF112A2D86EE0093C029 /* ContentDetailView.swift */; };
 		4975BF202A2D86F70093C029 /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4975BF1F2A2D86F50093C029 /* AVKit.framework */; };
+		4984EC572A3978C8008F2AB9 /* DiceUIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4984EC562A3978C8008F2AB9 /* DiceUIService.swift */; };
 		49C208962A30FB1B00CA7257 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C208952A30FB1B00CA7257 /* MapView.swift */; };
 		49D4F9CD2A36252100E83559 /* WebClipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D4F9CC2A36252100E83559 /* WebClipView.swift */; };
 		49D4F9CF2A36255E00E83559 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49D4F9CE2A36255E00E83559 /* WebKit.framework */; };
@@ -148,6 +149,7 @@
 		4975BF102A2D86EE0093C029 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		4975BF112A2D86EE0093C029 /* ContentDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentDetailView.swift; sourceTree = "<group>"; };
 		4975BF1F2A2D86F50093C029 /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
+		4984EC562A3978C8008F2AB9 /* DiceUIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiceUIService.swift; sourceTree = "<group>"; };
 		49C208952A30FB1B00CA7257 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		49D4F9CC2A36252100E83559 /* WebClipView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebClipView.swift; sourceTree = "<group>"; };
 		49D4F9CE2A36255E00E83559 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
@@ -244,6 +246,7 @@
 		4975BEAD2A2D83950093C029 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				4984EC562A3978C8008F2AB9 /* DiceUIService.swift */,
 				4975BEAE2A2D83950093C029 /* GameModel.swift */,
 			);
 			path = ViewModels;
@@ -628,6 +631,7 @@
 				4970E2FD2A3677CD00962705 /* WPService.swift in Sources */,
 				4975BEF42A2D86720093C029 /* RecipeService.swift in Sources */,
 				49C208962A30FB1B00CA7257 /* MapView.swift in Sources */,
+				4984EC572A3978C8008F2AB9 /* DiceUIService.swift in Sources */,
 				4975BEC42A2D846B0093C029 /* CarService.swift in Sources */,
 				4975BE902A2D7F140093C029 /* CasinoView.swift in Sources */,
 				4975BF192A2D86F00093C029 /* LearningCardView.swift in Sources */,

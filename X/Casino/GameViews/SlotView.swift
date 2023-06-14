@@ -33,7 +33,7 @@ struct SlotView: View {
             
             VStack {
                 
-                Text("SwiftUISlots")
+                Text("Swift Slots")
                     .font(.largeTitle)
                     .padding([.leading, .bottom, .trailing])
                 Spacer()

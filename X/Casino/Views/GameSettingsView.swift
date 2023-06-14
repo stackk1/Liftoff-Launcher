@@ -9,6 +9,7 @@ import SwiftUI
 
 struct GameSettingsView: View {
     @EnvironmentObject var gm: GameModel
+    @EnvironmentObject var ds: DiceUIService
     
     var body: some View {
         
@@ -47,7 +48,7 @@ struct GameSettingsView: View {
                 }
                 .pickerStyle(MenuPickerStyle())
             }
-
+            
             HStack{
                 Picker("Wallpaper Image", selection: $gm.backgroundImage){
                     Text("Plain").tag("Plain")
@@ -59,28 +60,35 @@ struct GameSettingsView: View {
                 .pickerStyle(SegmentedPickerStyle())
             }
             
-           
             HStack{
-                Picker("Wallpaper Image", selection: $gm.backgroundImage){
-                    Text("Plain").tag("Plain")
-                    Text("Wood").tag("Wood")
-                    Text("Cartoon Wood").tag("Cartoon Wood")
-                    Text("Cloth").tag("Cloth")
-                    Text("Space").tag("Space")
+                Picker("Default Number of Dice", selection: $ds.numberOfDice){
+                    ForEach (0..<6) {selection in
+                        Text(String(selection)).tag(selection)
+                    }
                 }
-                .pickerStyle(WheelPickerStyle())
             }
-            Spacer()
+                .pickerStyle(WheelPickerStyle())
+                HStack{
+                    Picker("Default Die", selection: $ds.numberOfSides){
+                        ForEach (0..<Dice.diceTypes.count) {sides in
+                            Text(String(sides)).tag(sides)
+                        }
+                    }
+                    .pickerStyle(WheelPickerStyle())
+                }
+                
+                
+                Spacer()
+            }
+            .padding()
         }
-        .padding()
     }
-}
-
-
-//MARK: Preview Code
-struct SettingsView_Previews: PreviewProvider {
-    static var previews: some View {
-        GameSettingsView()
-            .environmentObject(GameModel())
+    
+    
+    //MARK: Preview Code
+    struct SettingsView_Previews: PreviewProvider {
+        static var previews: some View {
+            GameSettingsView()
+                .environmentObject(GameModel())
+        }
     }
-}
