@@ -79,7 +79,7 @@ struct LauncherView: View {
                             VStack{
                                 ZStack{
                                     Rectangle()
-                                        .foregroundColor(ColourService.randomRGB())
+                                        .foregroundColor(ColourService.randomColor(Palette: wp.theme, opac: wp.transparancy))
                                         .frame(width: 360, height: 100)
                                         .cornerRadius(25)
                                         .padding(.bottom)
@@ -154,6 +154,7 @@ struct LauncherView: View {
                 }
             )
                 .padding(.bottom)
+                .shadow(radius: 9)
         }.ignoresSafeArea()
     }
     }

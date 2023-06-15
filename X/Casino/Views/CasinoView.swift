@@ -26,7 +26,7 @@ struct CasinoView: View {
                         // List of games
                         ForEach (0..<gm.gameNames.count, id: \.self) { n in
                             
-                            NavigationLink(destination: gm.gameList[n].environmentObject(DiceUIService()),
+                            NavigationLink(destination: gm.gameList[n],
                                            label: {
                                 GameCardView(gameName: gm.gameNames[n])
                                     

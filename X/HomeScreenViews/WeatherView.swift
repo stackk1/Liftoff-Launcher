@@ -8,11 +8,12 @@
 import SwiftUI
 
 struct WeatherView: View {
+    @EnvironmentObject var wp: WPService
     var body: some View {
 
         ZStack{
             Rectangle()
-                .foregroundColor(ColourService.randomRGB())
+                .foregroundColor(ColourService.randomColor(Palette: wp.theme, opac: wp.transparancy))
             VStack{
                 HStack {
                     VStack(alignment: .leading){

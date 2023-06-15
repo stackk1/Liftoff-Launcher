@@ -9,6 +9,7 @@ import SwiftUI
 
 struct HomeButton: View {
     @EnvironmentObject var nav: NavigationService
+    @EnvironmentObject var wp: WPService
     
     var body: some View {
         Button(
@@ -22,7 +23,6 @@ struct HomeButton: View {
             },
             label:{
                 ZStack{
-                    //ButtonBackgroundView(color: .black)
                     Image(systemName: "square.circle.fill")
                         .font(.system(size:40))
                         .foregroundColor(.white)

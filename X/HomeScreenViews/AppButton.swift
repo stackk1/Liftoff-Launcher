@@ -8,11 +8,12 @@
 import SwiftUI
 
 struct AppButton<Content: View>: View {
+    @EnvironmentObject var wp: WPService
     @EnvironmentObject var nav: NavigationService
     @ViewBuilder var appView: Content
     @ViewBuilder var imageName: String
     @ViewBuilder var appLabel: String
-    
+ //   @EnvironmentObject var cs: ColourService
     
     init(app: Content, image: String, label: String) {
         self.appView = app
@@ -33,7 +34,7 @@ struct AppButton<Content: View>: View {
                 VStack{
                     ZStack{
                         Rectangle()
-                            .foregroundColor(ColourService.randomRGB())
+                            .foregroundColor(ColourService.randomColor(Palette: wp.theme, opac: wp.transparancy))
                             .cornerRadius(20)
                             .frame(width: 75, height: 75)
                         Image(systemName: imageName)
@@ -53,6 +54,7 @@ struct AppButton<Content: View>: View {
 struct AppButton_Previews: PreviewProvider {
     static var previews: some View {
         AppButton(app: MapView(), image: "map", label: "Map")
+            .environmentObject(NavigationService())
     }
 }
 

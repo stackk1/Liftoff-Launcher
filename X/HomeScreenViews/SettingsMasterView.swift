@@ -10,6 +10,8 @@ struct SettingsMasterView: View {
     @EnvironmentObject var gm: GameModel
     @EnvironmentObject var model: BookModel
     @EnvironmentObject var wp: WPService
+    @EnvironmentObject var nav: NavigationService
+    @EnvironmentObject var ds: DiceUIService
     
     var body: some View {
         
@@ -29,7 +31,7 @@ struct SettingsMasterView: View {
                         Text("Wallpaper")
                     })
                 HStack{
-                    Text("Wallpaper Image")
+                    Text("Wallpaper Image:")
                     Spacer()
                     Picker("Wallpaper Image", selection: $wp.wallpaperImage){
                         Text("Plain").tag("Plain")
@@ -40,7 +42,36 @@ struct SettingsMasterView: View {
                     }
                     .pickerStyle(MenuPickerStyle())
                 }
-                
+                HStack{
+                    Text("Theme:")
+                    Spacer()
+                    Picker("Theme", selection: $wp.theme){
+                        Text("Chromatic").tag("Chromatic")
+                        Text("Pastel").tag("Pastel")
+                        Text("Blue Hues").tag("Blue Hues")
+                        Text("Earth Tones").tag("Earth Tones")
+                        Text("Red Hues").tag("Red Hues")
+                        Text("Purple Hues").tag("Purple Hues")
+                        Text("Green Hues").tag("Green Hues")
+                        Text("Grey Scale").tag("Grey Scale")
+                        Text("OLED").tag("OLED")
+                    }
+                    .pickerStyle(MenuPickerStyle())
+                }
+                HStack{
+                    Text("Transparancy:")
+                    Spacer()
+                  
+                        Button(
+                            action:{wp.transparancy -= 0.1},
+                            label: {Image(systemName: "minus.square.fill")})
+                        Text(String(wp.transparancy))
+                        Button(
+                            action:{wp.transparancy += 0.1},
+                            label: {Image(systemName: "plus.square.fill")
+                            })
+                    }
+
             }
             //MARK: - Game Settings
             VStack{
@@ -67,6 +98,29 @@ struct SettingsMasterView: View {
                     }
                     .pickerStyle(MenuPickerStyle())
                 }
+                HStack{
+                    Text("Default Number of Dice :")
+                    Spacer()
+                    Picker("Default Number of Dice", selection: $ds.numberOfDice){
+                        ForEach (0..<6) {selection in
+                            Text(String(selection)).tag(selection)
+                        }
+                    }
+                    .frame(width: 50, height: 90)
+                    .pickerStyle(WheelPickerStyle())
+                }
+                    
+                    HStack{
+                        Text("Default Die:")
+                        Spacer()
+                        Picker("Default Die", selection: $ds.numberOfSides){
+                            ForEach (0..<Dice.diceTypes.count, id:\.self) {sides in
+                                Text(String(sides)).tag(sides)
+                            }
+                        }
+                        .frame(width: 50, height: 90)
+                        .pickerStyle(WheelPickerStyle())
+                    }
                 
             }
             //MARK: - Book Settings
@@ -97,6 +151,7 @@ struct SettingsMasterView_Previews: PreviewProvider {
             .environmentObject(GameModel())
             .environmentObject(WPService())
             .environmentObject(BookModel())
+            .environmentObject(DiceUIService())
         
     }
 }

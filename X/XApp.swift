@@ -18,6 +18,8 @@ struct XApp: App {
                 .environmentObject(ContentModel())
                 .environmentObject(WPService())
                 .environmentObject(NavigationService())
+                .environmentObject(DiceUIService())
+                .environmentObject(ColourService())
         }
     }
 }

@@ -10,4 +10,7 @@ import Foundation
 class WPService:ObservableObject {
     @Published var wallpaper = false
     @Published var wallpaperImage = "Space"
+    @Published var theme = "Pastel"
+    @Published var transparancy = 0.9
+   
 }
