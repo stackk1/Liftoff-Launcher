@@ -46,6 +46,7 @@ struct ContentDetailView: View {
                 Button(
                     action:{
                     model.currentContent = nil
+                        
                 },
                     label: {
                     ZStack {

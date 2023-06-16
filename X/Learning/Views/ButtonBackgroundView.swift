@@ -11,6 +11,7 @@ struct ButtonBackgroundView: View {
     
     var color = Color.green
     var frameHeight = 48.0
+    var shaddow = 5.0
     
     var body: some View {
         Rectangle()

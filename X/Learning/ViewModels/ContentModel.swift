@@ -20,10 +20,15 @@ class ContentModel: ObservableObject {
     var currentLessonIndex = 0
     
     //Current Lesson Explination
-    @Published var lessonDescription =  NSAttributedString()
+    @Published var CodeText =  NSAttributedString()
     
     //current lesson ID
     @Published var currentContent:Int?
+    @Published var currentTest:Int?
+    
+    //current Question
+    @Published var currentQ: Question?
+    var currentQIndex = 0
     
     var styleData: Data?
     
@@ -91,7 +96,7 @@ class ContentModel: ObservableObject {
         // Set current Lesson
         currentLesson = currentModule!.content.lessons[currentLessonIndex]
         //set current explination
-        lessonDescription = addStyling(currentLesson!.explanation)
+        CodeText = addStyling(currentLesson!.explanation)
     }
     
     func nextLesson() {
@@ -101,10 +106,38 @@ class ContentModel: ObservableObject {
         if currentLessonIndex < currentModule!.content.lessons.count{
             //set currentLesson
             currentLesson = currentModule!.content.lessons[currentLessonIndex]
-            lessonDescription = addStyling(currentLesson!.explanation)
+            CodeText = addStyling(currentLesson!.explanation)
         }else{
             currentLesson = nil
             currentLessonIndex = 0
+        }
+    }
+    func beginTest(_ moduleId: Int) {
+        //set current module
+        
+        beginModule(moduleId)
+        // set current question index
+        currentQIndex = 0
+        
+            //if there are quetsions the set the current questions to the first question
+        if currentModule?.test.questions.count ?? 0  > 0 {
+            currentQ = currentModule!.test.questions[currentQIndex]
+            CodeText = addStyling(currentQ!.content)
+        }
+        
+    }
+    func nextQuestion(){
+        //Advance Question Index
+        currentQIndex += 1
+        //check lesson is in range
+        if currentQIndex < currentModule!.test.questions.count{
+            //set current question and desctription
+            currentQ = currentModule!.test.questions[currentQIndex]
+            CodeText = addStyling(currentQ!.content)
+            
+        }else{
+            currentQ = nil
+            currentQIndex = 0
         }
     }
     //MARK: - Code styling

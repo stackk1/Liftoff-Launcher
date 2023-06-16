@@ -12,34 +12,43 @@ struct HomeView: View {
     
     var body: some View {
         
-        VStack(alignment: .leading){
-            
-            Text("What would you like to do today?")
-                .font(.subheadline)
-                .padding(.leading)
-            
-            ScrollView {
-                LazyVStack{
-                    ForEach(model.modules) {module in
-                        NavigationLink(
-                            destination:
-                                ContentView()
+        NavigationView {
+            VStack(alignment: .leading){
+                
+                Text("What would you like to do today?")
+                    .font(.subheadline)
+                    .padding(.leading)
+                
+                ScrollView {
+                    LazyVStack{
+                        ForEach(model.modules) {module in
+                            NavigationLink(
+                                destination:
+                                    ContentView()
                                     .onAppear(perform: {
                                         model.beginModule(module.id)
-                                    }),
-                            tag: module.id,
-                            selection: $model.currentContent,
-                            label: {LearningCardView(module: module)
-                            })
-                        TestCardView(module: module)
-                        //TODO Add Navigation Link
+                                        print(model.currentContent)
+                                    }
+                                             ),
+                                tag: module.id,
+                                selection: $model.currentContent,
+                                label: {LearningCardView(module: module)
+                                }
+                            )
+                            NavigationLink (
+                                destination: TestView(),
+                                tag: module.id,
+                                selection: $model.currentTest,
+                                label: {TestCardView(module: module)
+                                    
+                                }
+                            )
+                        }
                     }
                 }
-                
-            }
-        }.navigationTitle("Get Started")
-            .navigationBarHidden(true)
-            .navigationViewStyle(.stack)
+            }.navigationTitle("Get Started")
+        }
+        .navigationViewStyle(.stack)
     }
 }
 
