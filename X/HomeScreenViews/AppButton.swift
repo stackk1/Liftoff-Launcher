@@ -13,7 +13,7 @@ struct AppButton<Content: View>: View {
     @ViewBuilder var appView: Content
     @ViewBuilder var imageName: String
     @ViewBuilder var appLabel: String
- //   @EnvironmentObject var cs: ColourService
+
     
     init(app: Content, image: String, label: String) {
         self.appView = app
@@ -21,7 +21,7 @@ struct AppButton<Content: View>: View {
         self.appLabel = label
         
     }
-    
+        
     var body: some View {
         
         NavigationLink(
@@ -33,23 +33,59 @@ struct AppButton<Content: View>: View {
             label: {
                 VStack{
                     ZStack{
-                        Rectangle()
-                            .foregroundColor(ColourService.randomColor(Palette: wp.theme, opac: wp.transparancy))
-                            .cornerRadius(20)
-                            .frame(width: 75, height: 75)
+                        if wp.iconColor.caseInsensitiveCompare("None") == .orderedSame{
+                            Rectangle()
+                                .reverseMask{(Image(systemName: imageName).resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .frame(width: 45, height: 45))}
+                                .foregroundColor(ColourService.randomColor(Palette: wp.theme, opac: wp.transparancy))
+                                .cornerRadius(20)
+                                .frame(width: 72, height: 72)
+                                
+                        }
+                        else{
+                            Rectangle()
+                                .foregroundColor(ColourService.randomColor(Palette: wp.theme, opac: wp.transparancy))
+                                .cornerRadius(20)
+                                .frame(width: 72, height: 72)
+                        }
                         Image(systemName: imageName)
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                             .frame(width: 45, height: 45)
-                            
+                            .foregroundColor({
+                                if wp.iconColor.caseInsensitiveCompare("Black") == .orderedSame{
+                                    return Color(.black)
+                                }
+                                else if wp.iconColor.caseInsensitiveCompare("None") == .orderedSame{
+                                    return Color(.clear)
+                                }
+                                else{
+                                    return Color(.white)
+                                }
+                            }()
+                            )
+                        
                     }
-                        Text(appLabel)
-                    
+                    Text(appLabel)
+                        .foregroundColor({
+                            if wp.labelColor.caseInsensitiveCompare("Black") == .orderedSame{
+                                return Color(.black)
+                            }
+                            else if wp.labelColor.caseInsensitiveCompare("None") == .orderedSame{
+                                return Color(.clear)
+                            }
+                            else{
+                                return Color(.white)
+                            }
+                        }()
+                        )
                 }
-                .foregroundColor(.white)
-                })
-            }
+                
+            })
+    }
 }
+
 
 struct AppButton_Previews: PreviewProvider {
     static var previews: some View {

@@ -27,7 +27,6 @@ struct HomeView: View {
                                     ContentView()
                                     .onAppear(perform: {
                                         model.beginModule(module.id)
-                                        print(model.currentContent)
                                     }
                                              ),
                                 tag: module.id,
@@ -36,7 +35,10 @@ struct HomeView: View {
                                 }
                             )
                             NavigationLink (
-                                destination: TestView(),
+                                destination: TestView()
+                                    .onAppear(perform: {
+                                        model.beginTest(module.id)
+                                    }),
                                 tag: module.id,
                                 selection: $model.currentTest,
                                 label: {TestCardView(module: module)

@@ -7,13 +7,15 @@
 
 import SwiftUI
 
-struct WeatherView: View {
+struct WeatherTextView: View {
     @EnvironmentObject var wp: WPService
+    
     var body: some View {
 
-        ZStack{
-            Rectangle()
-                .foregroundColor(ColourService.randomColor(Palette: wp.theme, opac: wp.transparancy))
+//        ZStack{
+//            WeatherBackgroundView(maskContent: <#T##String#>)
+//            Rectangle()
+//                .foregroundColor(ColourService.randomColor(Palette: wp.theme, opac: wp.transparancy))
             VStack{
                 HStack {
                     VStack(alignment: .leading){
@@ -76,18 +78,25 @@ struct WeatherView: View {
                          
                      }
                 }
-                .foregroundColor(.white)
+                .foregroundColor({
+                    if wp.labelColor.caseInsensitiveCompare("Black") == .orderedSame{
+                        return Color(.black)
+                    }
+                    else{
+                        return Color(.white)
+                    }
+                }())
                   
             }
             .padding(20)
 
             
-        }
+        //}
     }
 }
 
-struct WeatherView_Previews: PreviewProvider {
+struct WeatherTextView_Previews: PreviewProvider {
     static var previews: some View {
-        WeatherView()
+        WeatherTextView()
     }
 }

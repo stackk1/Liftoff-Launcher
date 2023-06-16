@@ -13,6 +13,8 @@
 		491C6A392A33B97200611DCE /* MediaPlaybackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491C6A382A33B97200611DCE /* MediaPlaybackView.swift */; };
 		4932F8322A2E8D7700C3C9B0 /* AppButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4932F8312A2E8D7700C3C9B0 /* AppButton.swift */; };
 		495716EC2A3B9DEF00F46A45 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495716EB2A3B9DEF00F46A45 /* TestView.swift */; };
+		4957170A2A3CCE4200F46A45 /* ReverseMask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495717092A3CCE4200F46A45 /* ReverseMask.swift */; };
+		4957170C2A3CD53200F46A45 /* WeatherBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4957170B2A3CD53200F46A45 /* WeatherBackgroundView.swift */; };
 		496F25AD2A3789B4003BBF58 /* ButtonBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496F25AC2A3789B4003BBF58 /* ButtonBackgroundView.swift */; };
 		496F25AF2A378AEB003BBF58 /* NavigationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496F25AE2A378AEB003BBF58 /* NavigationService.swift */; };
 		4970E2FB2A36765000962705 /* SettingsMasterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4970E2FA2A36765000962705 /* SettingsMasterView.swift */; };
@@ -91,6 +93,8 @@
 		491C6A382A33B97200611DCE /* MediaPlaybackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaPlaybackView.swift; sourceTree = "<group>"; };
 		4932F8312A2E8D7700C3C9B0 /* AppButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppButton.swift; sourceTree = "<group>"; };
 		495716EB2A3B9DEF00F46A45 /* TestView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
+		495717092A3CCE4200F46A45 /* ReverseMask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReverseMask.swift; sourceTree = "<group>"; };
+		4957170B2A3CD53200F46A45 /* WeatherBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherBackgroundView.swift; sourceTree = "<group>"; };
 		496F25AC2A3789B4003BBF58 /* ButtonBackgroundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonBackgroundView.swift; sourceTree = "<group>"; };
 		496F25AE2A378AEB003BBF58 /* NavigationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationService.swift; sourceTree = "<group>"; };
 		4970E2FA2A36765000962705 /* SettingsMasterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsMasterView.swift; sourceTree = "<group>"; };
@@ -183,6 +187,7 @@
 				49D4F9D02A362F9E00E83559 /* StackServer.swift */,
 				4970E2FC2A3677CD00962705 /* WPService.swift */,
 				496F25AE2A378AEB003BBF58 /* NavigationService.swift */,
+				495717092A3CCE4200F46A45 /* ReverseMask.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -193,11 +198,12 @@
 				49ED9C1B2A2B362900481BDB /* LauncherView.swift */,
 				4932F8312A2E8D7700C3C9B0 /* AppButton.swift */,
 				49C208952A30FB1B00CA7257 /* MapView.swift */,
-				491C6A362A32ACC000611DCE /* WeatherView.swift */,
 				491C6A382A33B97200611DCE /* MediaPlaybackView.swift */,
 				49D4F9CC2A36252100E83559 /* WebClipView.swift */,
 				4970E2FA2A36765000962705 /* SettingsMasterView.swift */,
 				491BA5B32A37C605002F715B /* HomeButton.swift */,
+				491C6A362A32ACC000611DCE /* WeatherView.swift */,
+				4957170B2A3CD53200F46A45 /* WeatherBackgroundView.swift */,
 			);
 			path = HomeScreenViews;
 			sourceTree = "<group>";
@@ -622,6 +628,7 @@
 				4975BEBE2A2D846B0093C029 /* CarCardView.swift in Sources */,
 				496F25AD2A3789B4003BBF58 /* ButtonBackgroundView.swift in Sources */,
 				4975BEF82A2D86720093C029 /* RecipeDetailView.swift in Sources */,
+				4957170C2A3CD53200F46A45 /* WeatherBackgroundView.swift in Sources */,
 				49D4F9CD2A36252100E83559 /* WebClipView.swift in Sources */,
 				4975BEFD2A2D86720093C029 /* RecipeModel.swift in Sources */,
 				4975BEA12A2D7F5A0093C029 /* WarView.swift in Sources */,
@@ -642,6 +649,7 @@
 				4975BEDB2A2D85D20093C029 /* BookSettingView.swift in Sources */,
 				4975BF1C2A2D86F00093C029 /* ContentView.swift in Sources */,
 				491BA5B42A37C605002F715B /* HomeButton.swift in Sources */,
+				4957170A2A3CCE4200F46A45 /* ReverseMask.swift in Sources */,
 				4975BEAA2A2D7F620093C029 /* DiceType.swift in Sources */,
 				4975BF1D2A2D86F00093C029 /* ContentDetailView.swift in Sources */,
 				491C6A372A32ACC000611DCE /* WeatherView.swift in Sources */,

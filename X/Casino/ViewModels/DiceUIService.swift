@@ -12,6 +12,7 @@ class DiceUIService: ObservableObject {
     @Published var numberOfSides = 6
     @Published var diceValues: [Int]
     @Published var diceValueTotal = 0
+    @Published var diceList = [2,3,4,5,6,8,10,12,20,100]
     
     init (numberOfDice: Int = 6, numberOfSides: Int = 6) {
         var dice: [Int] = []

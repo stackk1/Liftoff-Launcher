@@ -15,7 +15,7 @@ class ColourService: ObservableObject {
     @Published var Disco = 0
     
     
-    static func randomColor(Palette: String = "Chromatic", opac: Double = 1.0) -> Color {
+    static func randomColor(Palette: String = "Chromatic", opac: CGFloat = 1.0) -> Color {
         
         let pallette = Palette
         switch pallette {
@@ -63,7 +63,7 @@ class ColourService: ObservableObject {
             let grayValue = CGFloat.random(in: 0...1)
                    return Color(UIColor(red: grayValue, green: grayValue, blue: grayValue, alpha: opac))
         case "OLED":
-            return Color(.black)
+            return Color(UIColor(red: 0, green: 0, blue: 0, alpha: opac))
             
         default:
             let red = CGFloat.random(in: 0.7...1.0)
@@ -73,7 +73,7 @@ class ColourService: ObservableObject {
         }
     }
         
-        //    let allColors: [Color] = [.pink, .red, .orange, .yellow, .green, .mint, .teal, .cyan, .blue, .indigo, .purple, .brown, .gray]
+    let allColors: [Color] = [.pink, .red, .orange, .yellow, .green, .mint, .teal, .cyan, .blue, .indigo, .purple]
         
         static func randomRGB(opac: Double = 0.9) -> Color {
             let red = CGFloat.random(in: 0...1)
@@ -83,7 +83,10 @@ class ColourService: ObservableObject {
             return Color(UIColor(red: red, green: green, blue: blue, alpha: opac))
             
         }
+    
+    
         
     }
     
+
 

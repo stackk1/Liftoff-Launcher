@@ -25,7 +25,7 @@ struct HomeButton: View {
                 ZStack{
                     Image(systemName: "square.circle.fill")
                         .font(.system(size:40))
-                        .foregroundColor(.white)
+                        .foregroundColor(ColourService.randomColor(Palette: wp.theme))
                         .background(Color(.black))
                         .clipShape(Circle())
                 }

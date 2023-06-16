@@ -26,7 +26,7 @@ struct LauncherView: View {
             //MARK: - Home Screen
             NavigationView{
                 ZStack {
-                    if wp.wallpaper {
+                    if wp.wallpaperImage.caseInsensitiveCompare("Black") != .orderedSame {
                         Image(wp.wallpaperImage)
                             .resizable()
                             .ignoresSafeArea()
@@ -49,22 +49,22 @@ struct LauncherView: View {
                                //MARK: - APPS
                                 LazyVGrid(columns: columns){
                                     Group{
-                                        AppButton(app: CasinoView(), image: "gamecontroller", label: "Games")
-                                        AppButton(app: CarListView(), image: "car", label: "Cars")
-                                        AppButton(app: BookListView(), image: "book", label: "Books")
+                                        AppButton(app: CasinoView(), image: "gamecontroller.fill", label: "Games")
+                                        AppButton(app: CarListView(), image: "car.fill", label: "Cars")
+                                        AppButton(app: BookListView(), image: "book.fill", label: "Books")
                                         AppButton(app: RecipeTabView(), image: "list.bullet.rectangle.portrait.fill", label: "Recipes")
-                                        AppButton(app: HomeView(), image: "text.book.closed", label: "Learning")
+                                        AppButton(app: HomeView(), image: "text.book.closed.fill", label: "Learning")
                                         AppButton(app: MapView(), image: "map.fill", label: "Map")
                                     }
                                     Group{
                                         AppButton(app: (WebClipView(url: ss.tdarr).edgesIgnoringSafeArea(.vertical)), image: "flowchart.fill", label: "Tdarr")
                                         AppButton(app: (WebClipView(url: ss.plexDash).edgesIgnoringSafeArea(.vertical)), image: "chart.xyaxis.line", label: "Plex Dash")
-                                        AppButton(app: (WebClipView(url: ss.requestpage).edgesIgnoringSafeArea(.vertical)), image: "arrow.down.message", label: "Requests")
-                                        AppButton(app: (WebClipView(url: ss.pihole).edgesIgnoringSafeArea(.vertical)), image: "hand.raised", label: "Pihole")
+                                        AppButton(app: (WebClipView(url: ss.requestpage).edgesIgnoringSafeArea(.vertical)), image: "arrow.down.message.fill", label: "Requests")
+                                        AppButton(app: (WebClipView(url: ss.pihole).edgesIgnoringSafeArea(.vertical)), image: "hand.raised.fill", label: "Pihole")
                                         AppButton(app: (WebClipView(url: ss.homebridge).edgesIgnoringSafeArea(.bottom)), image: "house.fill", label: "Homebridge")
-                                        AppButton(app: (WebClipView(url: ss.main).edgesIgnoringSafeArea(.vertical)), image: "macpro.gen3.server", label: "Server")
-                                        AppButton(app: (WebClipView(url: ss.storage).edgesIgnoringSafeArea(.vertical)), image: "macpro.gen1", label: "Storage")
-                                        AppButton(app: (WebClipView(url: ss.FFox)), image: "safari", label: "Browser")
+                                        AppButton(app: (WebClipView(url: ss.main).edgesIgnoringSafeArea(.vertical)), image: "square.stack.3d.up.fill", label: "Stackk.me")
+                                        AppButton(app: (WebClipView(url: ss.storage).edgesIgnoringSafeArea(.vertical)), image: "macpro.gen1.fill", label: "Storage")
+                                        AppButton(app: (WebClipView(url: ss.FFox)), image: "safari.fill", label: "Browser")
                                         AppButton(app: SettingsMasterView(), image: "gear", label: "Settings")
                                     }
                                 }
@@ -105,8 +105,8 @@ struct LauncherView: View {
                                     AppButton(app: (WebClipView(url: ss.radarr).edgesIgnoringSafeArea(.vertical)), image: "lifepreserver", label: "Radarr")
                                     AppButton(app: (WebClipView(url: ss.lidarr).edgesIgnoringSafeArea(.vertical)), image: "music.note.list", label: "Lidarr")
                                     AppButton(app: (WebClipView(url: ss.readarr).edgesIgnoringSafeArea(.vertical)), image: "airpodsmax", label: "Readarr")
-                                    AppButton(app: (WebClipView(url: ss.DTv).edgesIgnoringSafeArea(.vertical)), image: "tv", label: "Shows")
-                                    AppButton(app: (WebClipView(url: ss.DMov).edgesIgnoringSafeArea(.vertical)), image: "popcorn", label: "Movies")
+                                    AppButton(app: (WebClipView(url: ss.DTv).edgesIgnoringSafeArea(.vertical)), image: "tv.fill", label: "Shows")
+                                    AppButton(app: (WebClipView(url: ss.DMov).edgesIgnoringSafeArea(.vertical)), image: "popcorn.fill", label: "Movies")
                                     AppButton(app: (WebClipView(url: ss.Dmusic).edgesIgnoringSafeArea(.vertical)), image: "music.note", label: "Music")
                                     AppButton(app: (WebClipView(url: ss.DGame).edgesIgnoringSafeArea(.vertical)), image: "gamecontroller.fill", label: "Games")
                                     AppButton(app: (WebClipView(url: ss.DaBook).edgesIgnoringSafeArea(.vertical)), image: "character.book.closed.fill", label: "AudioBooks")
