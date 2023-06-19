@@ -10,8 +10,8 @@ import SwiftUI
 
 class WPService:ObservableObject {
     @Published var wallpaper = false
-    @Published var wallpaperImage = "Black"
-    @Published var theme = "OLED"
+    @Published var wallpaperImage = "Space"
+    @Published var theme = "Chromatic"
     @Published var iconColor = "White"
     @Published var labelColor = "White"
     @Published var transparancy: CGFloat = 1.0

@@ -10,6 +10,7 @@ import SwiftUI
 struct LauncherView: View {
     @EnvironmentObject var wp: WPService
     @EnvironmentObject var nav: NavigationService
+    @EnvironmentObject var wm: WeatherModel
     @ObservedObject var cs = ColourService()
     @State var currentTab = 1
     @State var inApp = false
@@ -41,10 +42,15 @@ struct LauncherView: View {
                         
                         TabView(selection: $currentTab){
                             VStack {
-                                WeatherView()
-                                    .frame(width: 360, height: 200)
-                                    .cornerRadius(25)
-                                    .padding(.bottom)
+                                Button(action: {
+                                    wm.updateForcast()
+                                }, label: {
+                                    WeatherWidgetView()
+                                        .frame(width: 360, height: 200)
+                                        .cornerRadius(25)
+                                        .padding(.bottom)
+                                }
+                                       )
                                 
                                //MARK: - APPS
                                 LazyVGrid(columns: columns){

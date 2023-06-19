@@ -20,6 +20,7 @@ struct XApp: App {
                 .environmentObject(NavigationService())
                 .environmentObject(DiceUIService())
                 .environmentObject(ColourService())
+                .environmentObject(WeatherModel())
         }
     }
 }
