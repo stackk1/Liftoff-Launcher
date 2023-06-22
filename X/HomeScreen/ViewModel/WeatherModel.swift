@@ -25,15 +25,18 @@ class WeatherModel:ObservableObject {
     @Published var vis: Int = 10000
     @Published var forcast: [Daily] = []
 
-    
+    //Daily Forcasts
     @Published var dayOne: [Daily] = []
     @Published var dayTwo: [Daily] = []
     @Published var dayThree: [Daily] = []
     @Published var dayFour: [Daily] = []
     @Published var dayFive: [Daily] = []
     
+    //
+    @Published var city: String = "Kelowna"
+    
     init() {
-        fetchWeatherData(city: "Kelowna") { [self] weatherData in
+        fetchWeatherData(city: city) { [self] weatherData in
             DispatchQueue.main.async {
                 if let weatherData = weatherData {
                     self.location = weatherData.name
@@ -52,7 +55,7 @@ class WeatherModel:ObservableObject {
                 }
             }
         }
-        fetchForcastData(city: "Kelowna") { [self] forcastData in
+        fetchForcastData(city: city) { [self] forcastData in
             DispatchQueue.main.async {
                 if let forcastData = forcastData {
                     self.forcast = forcastData.list
@@ -160,5 +163,37 @@ class WeatherModel:ObservableObject {
         self.dayThree = splitDays.dayThree
         self.dayFour = splitDays.dayFour
         self.dayFive = splitDays.dayFive
+    }
+    func reset() {
+        fetchWeatherData(city: city) { [self] weatherData in
+            DispatchQueue.main.async {
+                if let weatherData = weatherData {
+                    self.location = weatherData.name
+                    self.currentTemp = weatherData.main.temp
+                    self.highTemp = weatherData.main.temp_max
+                    self.lowTemp = weatherData.main.temp_min
+                    self.feelTemp = weatherData.main.feels_like
+                    self.long = weatherData.coord.lon
+                    self.lat = weatherData.coord.lat
+                    self.conditions = weatherData.weather[0].main
+                    self.conditonId = weatherData.weather[0].id
+                    self.conditionDetail = weatherData.weather[0].description
+                    
+                } else {
+                    print("Failed to fetch weather data.")
+                }
+            }
+        }
+
+        fetchForcastData(city: city) { [self] forcastData in
+            DispatchQueue.main.async {
+                if let forcastData = forcastData {
+                    self.forcast = forcastData.list
+                }
+                else {
+                    print("Failed to fetch forcast data.")
+                }
+            }
+        }
     }
 }

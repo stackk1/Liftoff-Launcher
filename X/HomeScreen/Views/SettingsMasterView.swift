@@ -12,6 +12,7 @@ struct SettingsMasterView: View {
     @EnvironmentObject var wp: WPService
     @EnvironmentObject var nav: NavigationService
     @EnvironmentObject var ds: DiceUIService
+    @EnvironmentObject var wm: WeatherModel
     
     var body: some View {
         
@@ -27,11 +28,22 @@ struct SettingsMasterView: View {
                 VStack(alignment:.leading){
                     Text("Homescreen Settings")
                         .font(.title)
-                    //                    Toggle(
-                    //                        isOn: $wp.wallpaper,
-                    //                        label: {
-                    //                            Text("Wallpaper")
-                    //                        })
+                    HStack{
+                        Text("City:")
+                        Spacer()
+                        Picker("City", selection: $wm.city){
+                            Text("Kelowna").tag("Kelowna")
+                            Text("Kamloops").tag("Kamloops")
+                            Text("Vancouver").tag("Vancouver")
+                            Text("Calgary").tag("Calgary")
+                            Text("Edmonton").tag("Edmonton")
+                            Text("Victoria").tag("Victoria")
+                            Text("Nakusp").tag("Nakusp")
+                            Text("Miami").tag("Miami")
+                            
+                        }
+                        .pickerStyle(MenuPickerStyle())
+                    }
                     HStack{
                         Text("Wallpaper Image:")
                         Spacer()

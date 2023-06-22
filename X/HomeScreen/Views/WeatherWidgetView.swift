@@ -18,11 +18,11 @@ struct WeatherWidgetView: View {
                 Rectangle()
                     .reverseMask{
                         WeatherView()
-                            
+                            .padding(.leading)                            
                     }
                     .foregroundColor(ColourService.randomColor(Palette: wp.theme, opac: wp.transparancy))
                     .cornerRadius(20)
-                    .padding(.leading)
+                    
                    
                 
             }

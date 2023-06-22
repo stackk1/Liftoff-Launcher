@@ -25,7 +25,10 @@ struct WeatherView: View {
                         .font(.caption)
                 }
                 Spacer()
-                Button(action: {updateView()}, label: {Image(systemName: "arrow.counterclockwise.icloud.fill").imageScale(.large)})
+                Button(action: {
+                    updateView()
+                    wm.reset()
+                }, label: {Image(systemName: "arrow.counterclockwise.icloud.fill").imageScale(.large)})
                     .padding(.trailing)
             }
            .padding(.bottom, 3)
