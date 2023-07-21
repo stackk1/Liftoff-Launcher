@@ -48,11 +48,10 @@ struct LauncherView: View {
 //                                    wm.updateForcast()
 //                                    updateButtonColors += 1
                                 NavigationLink(
-                                    destination: WeatherMainView(),
-//                                        .onAppear(perform:{
-//                                        wm.updateForcast()
-//                                    }),
-//                                },
+                                    destination: WeatherMainView()
+                                        .navigationBarHidden(true),
+                                    tag: "Weather",
+                                    selection: $nav.currentApp,
                                     label: {
                                     WeatherWidgetView(updateColors: updateButtonColors)
                                         .frame(width: 360, height: 200)

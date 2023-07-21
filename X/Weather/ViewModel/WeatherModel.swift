@@ -20,7 +20,7 @@ class WeatherModel:ObservableObject {
     @Published var windspeed: Double = 0
     //Hourly
     @Published var timeStamp: [String] = []
-    
+    @Published var hourlyWeather: [HourlyWeatherData] = []
     //Daily
     @Published var highTemp: Double = 0.0
     @Published var lowTemp: Double = 0.0
@@ -46,6 +46,7 @@ class WeatherModel:ObservableObject {
                     self.windspeed = weatherData.current.wind_speed
                     
                     self.dailyWeather = Array(weatherData.daily.prefix(7))
+                    self.hourlyWeather = Array(weatherData.hourly)
                 }
                 else {
                     print("Failed to fetch weather data.")

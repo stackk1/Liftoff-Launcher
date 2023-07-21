@@ -8,7 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		3D20DB472A69BFD800F066DB /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D20DB462A69BFD800F066DB /* WeatherModel.swift */; };
-		3DADBC8B2A4E89E7001AE1B1 /* WeatherTileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DADBC8A2A4E89E7001AE1B1 /* WeatherTileView.swift */; };
+		3D5300382A6B2ABD00DFDC4B /* PrecipitationTileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D5300372A6B2ABD00DFDC4B /* PrecipitationTileView.swift */; };
+		3D53003A2A6B2C5500DFDC4B /* TemperatureTileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D5300392A6B2C5500DFDC4B /* TemperatureTileView.swift */; };
+		3D53003C2A6B2CC300DFDC4B /* WindTileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D53003B2A6B2CC300DFDC4B /* WindTileView.swift */; };
+		3D53003E2A6B3D5C00DFDC4B /* UviTileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D53003D2A6B3D5C00DFDC4B /* UviTileView.swift */; };
+		3DADBC8B2A4E89E7001AE1B1 /* SunriseTileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DADBC8A2A4E89E7001AE1B1 /* SunriseTileView.swift */; };
 		491BA5B42A37C605002F715B /* HomeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491BA5B32A37C605002F715B /* HomeButton.swift */; };
 		491C6A352A32A87D00611DCE /* CodeTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491C6A342A32A87D00611DCE /* CodeTextView.swift */; };
 		491C6A372A32ACC000611DCE /* WeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491C6A362A32ACC000611DCE /* WeatherView.swift */; };
@@ -93,7 +97,11 @@
 
 /* Begin PBXFileReference section */
 		3D20DB462A69BFD800F066DB /* WeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherModel.swift; sourceTree = "<group>"; };
-		3DADBC8A2A4E89E7001AE1B1 /* WeatherTileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherTileView.swift; sourceTree = "<group>"; };
+		3D5300372A6B2ABD00DFDC4B /* PrecipitationTileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrecipitationTileView.swift; sourceTree = "<group>"; };
+		3D5300392A6B2C5500DFDC4B /* TemperatureTileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemperatureTileView.swift; sourceTree = "<group>"; };
+		3D53003B2A6B2CC300DFDC4B /* WindTileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindTileView.swift; sourceTree = "<group>"; };
+		3D53003D2A6B3D5C00DFDC4B /* UviTileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UviTileView.swift; sourceTree = "<group>"; };
+		3DADBC8A2A4E89E7001AE1B1 /* SunriseTileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SunriseTileView.swift; sourceTree = "<group>"; };
 		491BA5B32A37C605002F715B /* HomeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeButton.swift; sourceTree = "<group>"; };
 		491C6A342A32A87D00611DCE /* CodeTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodeTextView.swift; sourceTree = "<group>"; };
 		491C6A362A32ACC000611DCE /* WeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherView.swift; sourceTree = "<group>"; };
@@ -190,6 +198,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3D5300362A6B2A4A00DFDC4B /* Tiles */ = {
+			isa = PBXGroup;
+			children = (
+				3DADBC8A2A4E89E7001AE1B1 /* SunriseTileView.swift */,
+				3D5300372A6B2ABD00DFDC4B /* PrecipitationTileView.swift */,
+				3D5300392A6B2C5500DFDC4B /* TemperatureTileView.swift */,
+				3D53003B2A6B2CC300DFDC4B /* WindTileView.swift */,
+				3D53003D2A6B3D5C00DFDC4B /* UviTileView.swift */,
+			);
+			path = Tiles;
+			sourceTree = "<group>";
+		};
 		3DADBC882A4E8947001AE1B1 /* Weather */ = {
 			isa = PBXGroup;
 			children = (
@@ -203,8 +223,8 @@
 		3DADBC892A4E8969001AE1B1 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				3D5300362A6B2A4A00DFDC4B /* Tiles */,
 				491C6A362A32ACC000611DCE /* WeatherView.swift */,
-				3DADBC8A2A4E89E7001AE1B1 /* WeatherTileView.swift */,
 				4957170B2A3CD53200F46A45 /* WeatherWidgetView.swift */,
 				49BD6C172A4A88BE00438453 /* WeatherMainView.swift */,
 			);
@@ -664,7 +684,7 @@
 				4975BEFE2A2D86720093C029 /* Recipe.swift in Sources */,
 				4975BF152A2D86EF0093C029 /* Models.swift in Sources */,
 				4932F8322A2E8D7700C3C9B0 /* AppButton.swift in Sources */,
-				3DADBC8B2A4E89E7001AE1B1 /* WeatherTileView.swift in Sources */,
+				3DADBC8B2A4E89E7001AE1B1 /* SunriseTileView.swift in Sources */,
 				4975BEA82A2D7F620093C029 /* ColourService.swift in Sources */,
 				4957173F2A3FFCB500F46A45 /* WeatherIcon.swift in Sources */,
 				4975BEDA2A2D85D20093C029 /* ReaderView.swift in Sources */,
@@ -688,6 +708,7 @@
 				4975BEBE2A2D846B0093C029 /* CarCardView.swift in Sources */,
 				496F25AD2A3789B4003BBF58 /* ButtonBackgroundView.swift in Sources */,
 				4975BEF82A2D86720093C029 /* RecipeDetailView.swift in Sources */,
+				3D53003A2A6B2C5500DFDC4B /* TemperatureTileView.swift in Sources */,
 				4957170C2A3CD53200F46A45 /* WeatherWidgetView.swift in Sources */,
 				49D4F9CD2A36252100E83559 /* WebClipView.swift in Sources */,
 				4975BEFD2A2D86720093C029 /* RecipeModel.swift in Sources */,
@@ -695,6 +716,7 @@
 				4975BF1A2A2D86F00093C029 /* HomeView.swift in Sources */,
 				4975BEA72A2D7F620093C029 /* Game.swift in Sources */,
 				4975BEFB2A2D86720093C029 /* RecipeListView.swift in Sources */,
+				3D53003C2A6B2CC300DFDC4B /* WindTileView.swift in Sources */,
 				4975BEF72A2D86720093C029 /* RecipeCardView.swift in Sources */,
 				4975BEDC2A2D85D20093C029 /* BookPreview.swift in Sources */,
 				4975BEC12A2D846B0093C029 /* CarDetailsListView.swift in Sources */,
@@ -704,6 +726,7 @@
 				49C208962A30FB1B00CA7257 /* MapView.swift in Sources */,
 				4984EC572A3978C8008F2AB9 /* DiceUIService.swift in Sources */,
 				4975BEC42A2D846B0093C029 /* CarService.swift in Sources */,
+				3D5300382A6B2ABD00DFDC4B /* PrecipitationTileView.swift in Sources */,
 				4975BE902A2D7F140093C029 /* CasinoView.swift in Sources */,
 				4975BF192A2D86F00093C029 /* LearningCardView.swift in Sources */,
 				4975BEDB2A2D85D20093C029 /* BookSettingView.swift in Sources */,
@@ -718,6 +741,7 @@
 				496F25AF2A378AEB003BBF58 /* NavigationService.swift in Sources */,
 				4975BF1B2A2D86F00093C029 /* TestCardView.swift in Sources */,
 				4975BF172A2D86EF0093C029 /* LessonCardView.swift in Sources */,
+				3D53003E2A6B3D5C00DFDC4B /* UviTileView.swift in Sources */,
 				491C6A392A33B97200611DCE /* MediaPlaybackView.swift in Sources */,
 				4975BF182A2D86F00093C029 /* ContentViewRow.swift in Sources */,
 				4975BE9F2A2D7F5A0093C029 /* CardFlipperView.swift in Sources */,

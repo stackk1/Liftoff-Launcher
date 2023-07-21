@@ -41,12 +41,12 @@ struct WeatherMainView: View {
                 Spacer()
                 VStack(spacing: 15){
                     HStack(spacing: 15){
-                        WeatherTileView(title:"Sunrise")
-                        WeatherTileView(title:"Sunset")
+                        SunriseTileView()
+                        PrecipitationTileView()
                     }
                     HStack(spacing: 15){
-                        WeatherTileView(title:"Precipitation")
-                        WeatherTileView(title:"Temperature")
+                        UviTileView()
+                        WindTileView()
                     }
                 }
                 Spacer()

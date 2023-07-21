@@ -7,11 +7,11 @@
 
 import SwiftUI
 
-struct WeatherTileView: View {
+struct SunriseTileView: View {
     @EnvironmentObject var wm: WeatherModel
     @EnvironmentObject var wp: WPService
     
-    var title: String
+   // var title: String
 
     var body: some View {
         let cornerRadius:CGFloat = 20
@@ -26,21 +26,21 @@ struct WeatherTileView: View {
                     Image(systemName: "sunrise.fill")
                         .padding(.trailing)
                     VStack{
-                        Text(title)
+                        Text("Sunrise")
                             .fontWeight(.bold)
                         Text(wm.formatDaylightHours(date: wm.sunrise))
                     }
                 }
                 
-//                HStack{
-//                    Image(systemName: "sunset.fill")
-//                        .padding(.trailing)
-//                    VStack{
-//                        Text("Sunset")
-//                            .fontWeight(.bold)
-//                        Text(wm.formatDaylightHours(date: wm.sunset))
-//                    }
-//                }
+                HStack{
+                    Image(systemName: "sunset.fill")
+                        .padding(.trailing)
+                    VStack{
+                        Text("Sunset")
+                            .fontWeight(.bold)
+                        Text(wm.formatDaylightHours(date: wm.sunset))
+                    }
+                }
             }
             .foregroundColor(wp.setIconColor())
             .imageScale(.large)
@@ -50,7 +50,7 @@ struct WeatherTileView: View {
 
 struct WeatherTileView_Previews: PreviewProvider {
     static var previews: some View {
-        WeatherTileView(title: "Sunrise")
+        SunriseTileView()
             .environmentObject(WeatherModel())
             .environmentObject(WPService())
     }
