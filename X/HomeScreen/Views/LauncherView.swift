@@ -14,6 +14,7 @@ struct LauncherView: View {
     @ObservedObject var cs = ColourService()
     @State var currentTab = 1
     @State var inApp = false
+    @State var updateButtonColors: Int = 1
     
     var body: some View {
        
@@ -41,11 +42,19 @@ struct LauncherView: View {
                     VStack(spacing: 0){
                         
                         TabView(selection: $currentTab){
+                            //MARK: - Weather Widget
                             VStack {
-                                Button(action: {
-                                    wm.updateForcast()
-                                }, label: {
-                                    WeatherWidgetView()
+//                                Button(action: {
+//                                    wm.updateForcast()
+//                                    updateButtonColors += 1
+                                NavigationLink(
+                                    destination: WeatherMainView(),
+//                                        .onAppear(perform:{
+//                                        wm.updateForcast()
+//                                    }),
+//                                },
+                                    label: {
+                                    WeatherWidgetView(updateColors: updateButtonColors)
                                         .frame(width: 360, height: 200)
                                         .cornerRadius(25)
                                         .padding(.bottom)
@@ -55,23 +64,23 @@ struct LauncherView: View {
                                //MARK: - APPS
                                 LazyVGrid(columns: columns){
                                     Group{
-                                        AppButton(app: CasinoView(), image: "gamecontroller.fill", label: "Games")
+                                        AppButton(app: CasinoView(), image: "gamecontroller.fill", label: "Games", updateColors: updateButtonColors)
                                         AppButton(app: CarListView(), image: "car.fill", label: "Cars")
-                                        AppButton(app: BookListView(), image: "book.fill", label: "Books")
-                                        AppButton(app: RecipeTabView(), image: "list.bullet.rectangle.portrait.fill", label: "Recipes")
-                                        AppButton(app: HomeView(), image: "text.book.closed.fill", label: "Learning")
-                                        AppButton(app: MapView(), image: "map.fill", label: "Map")
+                                        AppButton(app: BookListView(), image: "book.fill", label: "Books", updateColors: updateButtonColors)
+                                        AppButton(app: RecipeTabView(), image: "list.bullet.rectangle.portrait.fill", label: "Recipes", updateColors: updateButtonColors)
+                                        AppButton(app: HomeView(), image: "text.book.closed.fill", label: "Learning", updateColors: updateButtonColors)
+                                        AppButton(app: MapView(), image: "map.fill", label: "Map", updateColors: updateButtonColors)
                                     }
                                     Group{
-                                        AppButton(app: (WebClipView(url: ss.tdarr).edgesIgnoringSafeArea(.vertical)), image: "flowchart.fill", label: "Tdarr")
-                                        AppButton(app: (WebClipView(url: ss.plexDash).edgesIgnoringSafeArea(.vertical)), image: "chart.xyaxis.line", label: "Plex Dash")
-                                        AppButton(app: (WebClipView(url: ss.requestpage).edgesIgnoringSafeArea(.vertical)), image: "arrow.down.message.fill", label: "Requests")
-                                        AppButton(app: (WebClipView(url: ss.pihole).edgesIgnoringSafeArea(.vertical)), image: "hand.raised.fill", label: "Pihole")
-                                        AppButton(app: (WebClipView(url: ss.homebridge).edgesIgnoringSafeArea(.bottom)), image: "house.fill", label: "Homebridge")
-                                        AppButton(app: (WebClipView(url: ss.main).edgesIgnoringSafeArea(.vertical)), image: "square.stack.3d.up.fill", label: "Stackk.me")
-                                        AppButton(app: (WebClipView(url: ss.storage).edgesIgnoringSafeArea(.vertical)), image: "macpro.gen1.fill", label: "Storage")
-                                        AppButton(app: (WebClipView(url: ss.FFox)), image: "safari.fill", label: "Browser")
-                                        AppButton(app: SettingsMasterView(), image: "gear", label: "Settings")
+                                        AppButton(app: (WebClipView(url: ss.tdarr).edgesIgnoringSafeArea(.vertical)), image: "flowchart.fill", label: "Tdarr", updateColors: updateButtonColors)
+                                        AppButton(app: (WebClipView(url: ss.plexDash).edgesIgnoringSafeArea(.vertical)), image: "chart.xyaxis.line", label: "Plex Dash", updateColors: updateButtonColors)
+                                        AppButton(app: (WebClipView(url: ss.requestpage).edgesIgnoringSafeArea(.vertical)), image: "arrow.down.message.fill", label: "Requests", updateColors: updateButtonColors)
+                                        AppButton(app: (WebClipView(url: ss.pihole).edgesIgnoringSafeArea(.vertical)), image: "hand.raised.fill", label: "Pihole", updateColors: updateButtonColors)
+                                        AppButton(app: (WebClipView(url: ss.homebridge).edgesIgnoringSafeArea(.bottom)), image: "house.fill", label: "Homebridge", updateColors: updateButtonColors)
+                                        AppButton(app: (WebClipView(url: ss.main).edgesIgnoringSafeArea(.vertical)), image: "square.stack.3d.up.fill", label: "Stackk.me", updateColors: updateButtonColors)
+                                        AppButton(app: (WebClipView(url: ss.storage).edgesIgnoringSafeArea(.vertical)), image: "macpro.gen1.fill", label: "Storage", updateColors: updateButtonColors)
+                                        AppButton(app: (WebClipView(url: ss.FFox)), image: "safari.fill", label: "Browser", updateColors: updateButtonColors)
+                                        AppButton(app: SettingsMasterView(), image: "gear", label: "Settings", updateColors: updateButtonColors)
                                     }
                                 }
                                 .onTapGesture {
@@ -83,29 +92,29 @@ struct LauncherView: View {
                             .padding(.horizontal)
                             .tag(1)
                             VStack{
-                                ZStack{
-                                    Rectangle()
-                                        .foregroundColor(ColourService.randomColor(Palette: wp.theme, opac: wp.transparancy))
-                                        .frame(width: 360, height: 100)
-                                        .cornerRadius(25)
-                                        .padding(.bottom)
-                                    HStack(spacing: 15){
-                                        Image(systemName: "arrow.down.circle.fill")
-                                            .resizable()
-                                            .aspectRatio(contentMode: .fit)
-                                            .frame(height: 45)
-                                        //.padding(.bottom)
-                                        VStack(alignment: .leading){
-                                            Text("Download")
-                                            Text("Clients")
-                                        }
-                                        .font(.title)
-                                        .fontWeight(.bold)
-                                        
-                                    }
-                                    .padding(.bottom)
-                                    .foregroundColor(.white)
-                                }
+//                                ZStack{
+//                                    Rectangle()
+//                                        .foregroundColor(ColourService.randomColor(Palette: wp.theme, opac: wp.transparancy))
+//                                        .frame(width: 360, height: 100)
+//                                        .cornerRadius(25)
+//                                        .padding(.bottom)
+//                                    HStack(spacing: 15){
+//                                        Image(systemName: "arrow.down.circle.fill")
+//                                            .resizable()
+//                                            .aspectRatio(contentMode: .fit)
+//                                            .frame(height: 45)
+//                                        //.padding(.bottom)
+//                                        VStack(alignment: .leading){
+//                                            Text("Download")
+//                                            Text("Clients")
+//                                        }
+//                                        .font(.title)
+//                                        .fontWeight(.bold)
+//
+//                                    }
+//                                    .padding(.bottom)
+//                                    .foregroundColor(.white)
+//                                }
                                 LazyVGrid(columns: columns){
                                     AppButton(app: (WebClipView(url: ss.sonarr).edgesIgnoringSafeArea(.vertical)), image: "lifepreserver", label: "Sonarr")
                                     AppButton(app: (WebClipView(url: ss.radarr).edgesIgnoringSafeArea(.vertical)), image: "lifepreserver", label: "Radarr")
@@ -145,7 +154,7 @@ struct LauncherView: View {
                     currentTab = 1
                 }
                     else{
-                        cs.Disco += 1
+                        updateButtonColors += 1
                     }
                 },
                 label:{
@@ -175,5 +184,8 @@ struct LauncherView_Previews: PreviewProvider {
             .environmentObject(ContentModel())
             .environmentObject(WPService())
             .environmentObject(NavigationService())
+            .environmentObject(WeatherModel())
+            .environmentObject(ColourService())
+
     }
 }

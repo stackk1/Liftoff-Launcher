@@ -17,17 +17,17 @@ struct WeatherView: View {
         VStack(alignment: .leading){
             HStack {
                 VStack(alignment: .leading){
-                    Text("\(wm.location) Weather")
+                    Text("\(wm.city) Weather")
                         .fontWeight(.semibold)
-                    Text("Current Temp: \(wm.formattedTemp(temp: wm.currentTemp))°C")
+                    Text("Current Temp: \(wm.formatPrecision(temp: wm.currentTemp))°C")
                         .font(.caption)
-                    Text("Feels Like: \(wm.formattedTemp(temp:wm.feelTemp, places:0))°C")
+                    Text("Feels Like: \(wm.formatPrecision(temp:wm.feelTemp, places:0))°C")
                         .font(.caption)
                 }
                 Spacer()
                 Button(action: {
-                    updateView()
-                    wm.reset()
+// REFRESH BUTTON
+//                    wm.fetchWeather()
                 }, label: {Image(systemName: "arrow.counterclockwise.icloud.fill").imageScale(.large)})
                     .padding(.trailing)
             }
@@ -49,12 +49,12 @@ struct WeatherView: View {
                                 //Conditions
                 GridRow{
                     WeatherIcon(condition: wm.conditonId, description: wm.conditionDetail)
-                    if wm.dayOne.count > 0 {
-                        WeatherIcon(condition: wm.dayOne[0].weather[0].id, description: wm.dayOne[0].weather[0].description)
-                        WeatherIcon(condition: wm.dayTwo[0].weather[0].id, description: wm.dayTwo[0].weather[0].description)
-                        WeatherIcon(condition: wm.dayThree[0].weather[0].id, description: wm.dayThree[0].weather[0].description)
-                        WeatherIcon(condition: wm.dayFour[0].weather[0].id, description: wm.dayFour[0].weather[0].description)
-                        WeatherIcon(condition: wm.dayFive[0].weather[0].id, description: wm.dayFive[0].weather[0].description)
+                    if wm.dailyWeather.count > 0 {
+                        WeatherIcon(condition: wm.dailyWeather[1].weather[0].id, description: wm.dailyWeather[1].weather[0].description)
+                        WeatherIcon(condition: wm.dailyWeather[2].weather[0].id, description: wm.dailyWeather[2].weather[0].description)
+                        WeatherIcon(condition: wm.dailyWeather[3].weather[0].id, description: wm.dailyWeather[3].weather[0].description)
+                        WeatherIcon(condition: wm.dailyWeather[4].weather[0].id, description: wm.dailyWeather[4].weather[0].description)
+                        WeatherIcon(condition: wm.dailyWeather[5].weather[0].id, description: wm.dailyWeather[5].weather[0].description)
                     }
                         
                 }
@@ -62,13 +62,14 @@ struct WeatherView: View {
 //                .padding(.leading, 3)
                     //Hi Temps
                 GridRow{
-                    Text(wm.formattedTemp(temp: wm.highTemp))
-                    if wm.dayOne.count > 0{
-                        Text(wm.formattedTemp(temp: wm.dayOne[0].main.temp_max))
-                        Text(wm.formattedTemp(temp: wm.dayTwo[0].main.temp_max))
-                        Text(wm.formattedTemp(temp: wm.dayThree[0].main.temp_max))
-                        Text(wm.formattedTemp(temp: wm.dayFour[0].main.temp_max))
-                        Text(wm.formattedTemp(temp: wm.dayFive[0].main.temp_max))
+                    
+                    if wm.dailyWeather.count > 0{
+                        Text(wm.formatPrecision(temp: wm.dailyWeather[0].temp.max))
+                        Text(wm.formatPrecision(temp: wm.dailyWeather[1].temp.max))
+                        Text(wm.formatPrecision(temp: wm.dailyWeather[2].temp.max))
+                        Text(wm.formatPrecision(temp: wm.dailyWeather[3].temp.max))
+                        Text(wm.formatPrecision(temp: wm.dailyWeather[4].temp.max))
+                        Text(wm.formatPrecision(temp: wm.dailyWeather[5].temp.max))
                     }
 //                    else{
 //                        Text("Error Loading Highs")
@@ -78,19 +79,16 @@ struct WeatherView: View {
                 .fontWeight(.bold)
                 //Lo Temps
                 GridRow{
-                    Text(wm.formattedTemp(temp: wm.lowTemp))
-                    if wm.dayOne.count > 0 {
-                        
-                        Text(wm.formattedTemp(temp: wm.dayOne[0].main.temp_min))
-                        Text(wm.formattedTemp(temp: wm.dayTwo[0].main.temp_min))
-                        Text(wm.formattedTemp(temp: wm.dayThree[0].main.temp_min))
-                        Text(wm.formattedTemp(temp: wm.dayFour[0].main.temp_min))
-                        Text(wm.formattedTemp(temp: wm.dayFive[0].main.temp_min))
+                    
+                    if wm.dailyWeather.count > 0 {
+                        Text(wm.formatPrecision(temp: wm.dailyWeather[0].temp.min))
+                        Text(wm.formatPrecision(temp: wm.dailyWeather[1].temp.min))
+                        Text(wm.formatPrecision(temp: wm.dailyWeather[2].temp.min))
+                        Text(wm.formatPrecision(temp: wm.dailyWeather[3].temp.min))
+                        Text(wm.formatPrecision(temp: wm.dailyWeather[4].temp.min))
+                        Text(wm.formatPrecision(temp: wm.dailyWeather[5].temp.min))
                     }
-                    else{
-                        Text("Tap to Reload Weather")
-                            .gridCellColumns(5)
-                    }
+                    
                     
                 }
                 .font(.system(size:11))
@@ -99,7 +97,7 @@ struct WeatherView: View {
             }
         }
         .frame(width: 350, height: 195, alignment: .center)
-        .padding()
+        .padding(.leading)
         .foregroundColor({
             if wp.labelColor.caseInsensitiveCompare("Black") == .orderedSame{
                 return Color(.black)
@@ -112,19 +110,10 @@ struct WeatherView: View {
             }
         }()
         )
-        .onAppear(perform: {
-            updateView()
-        })
+//        .onAppear(perform: {
+//            updateView()
+//        })
     }
-    func updateView(){
-        let splitDays = wm.splitArrayIntoDays(wm.forcast)
-        wm.dayOne = splitDays.dayOne
-        wm.dayTwo = splitDays.dayTwo
-        wm.dayThree = splitDays.dayThree
-        wm.dayFour = splitDays.dayFour
-        wm.dayFive = splitDays.dayFive
-    }
-
 }
 
 struct WeatherView_Previews: PreviewProvider {

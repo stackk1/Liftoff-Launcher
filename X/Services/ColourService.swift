@@ -11,11 +11,11 @@ import Foundation
 
 class ColourService: ObservableObject {
     
-    @Published var randomTheme = randomRGB()
-    @Published var Disco = 0
+    //@Published var randomTheme = randomRGB()
+    //  @Published var disco = 1
     
     
-    static func randomColor(Palette: String = "Chromatic", opac: CGFloat = 1.0) -> Color {
+    static func randomColor(Palette: String = "Chromatic", opac: CGFloat = 1.0, cycle: Int = 1) -> Color {
         
         let pallette = Palette
         switch pallette {
@@ -61,7 +61,7 @@ class ColourService: ObservableObject {
             return Color(UIColor(red: red, green: green, blue: blue, alpha: opac))
         case "Grey Scale":
             let grayValue = CGFloat.random(in: 0...1)
-                   return Color(UIColor(red: grayValue, green: grayValue, blue: grayValue, alpha: opac))
+            return Color(UIColor(red: grayValue, green: grayValue, blue: grayValue, alpha: opac))
         case "OLED":
             return Color(UIColor(red: 0, green: 0, blue: 0, alpha: opac))
             
@@ -72,21 +72,13 @@ class ColourService: ObservableObject {
             return Color(UIColor(red: red, green: green, blue: blue, alpha: opac))
         }
     }
-        
+    
     let allColors: [Color] = [.pink, .red, .orange, .yellow, .green, .mint, .teal, .cyan, .blue, .indigo, .purple]
-        
-        static func randomRGB(opac: Double = 0.9) -> Color {
-            let red = CGFloat.random(in: 0...1)
-            let green = CGFloat.random(in: 0...1)
-            let blue = CGFloat.random(in: 0...1)
-            
-            return Color(UIColor(red: red, green: green, blue: blue, alpha: opac))
-            
-        }
     
     
-        
-    }
+    
+    
+}
     
 
 

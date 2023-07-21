@@ -28,10 +28,10 @@ struct CardFlipperView: View {
                         
                         Rectangle()
                         //Use Custom RandomColor model to set card and shaddow colors
-                            .foregroundColor(ColourService.randomRGB(opac:0.8))
+                            .foregroundColor(ColourService.randomColor())
                             .frame(width: geo.size.width-40, height: geo.size.height-100, alignment: .center)
                             .cornerRadius(20)
-                            .shadow(color: ColourService.randomRGB(), radius: 25)
+                            .shadow(color: ColourService.randomColor(), radius: 25)
                         
                         
                         Image(systemName: "\(cardNum).circle").resizable().aspectRatio(contentMode: .fit)

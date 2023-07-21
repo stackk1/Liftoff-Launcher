@@ -15,6 +15,30 @@ class WPService:ObservableObject {
     @Published var iconColor = "White"
     @Published var labelColor = "White"
     @Published var transparancy: CGFloat = 1.0
+    
+    func setLabelColor() -> Color{
+        if self.labelColor.caseInsensitiveCompare("Black") == .orderedSame{
+            return Color(.black)
+        }
+        else if self.labelColor.caseInsensitiveCompare("None") == .orderedSame{
+            return Color(.clear)
+        }
+        else{
+            return Color(.white)
+        }
+    }
+    func setIconColor() -> Color{
+        if self.iconColor.caseInsensitiveCompare("Black") == .orderedSame{
+            return Color(.black)
+        }
+        else if self.iconColor.caseInsensitiveCompare("None") == .orderedSame{
+            return Color(.clear)
+        }
+        else{
+            return Color(.white)
+        }
+    }
+    
    
 //    func BWC(){
 //            if iconColor.caseInsensitiveCompare("Black") == .orderedSame{
