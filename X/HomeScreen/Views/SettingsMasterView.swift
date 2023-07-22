@@ -40,9 +40,21 @@ struct SettingsMasterView: View {
                             Text("Victoria").tag("Victoria")
                             Text("Nakusp").tag("Nakusp")
                             Text("Miami").tag("Miami")
-                            
+                            Text("London").tag("London")
                         }
                         .pickerStyle(MenuPickerStyle())
+                        
+                    }
+                    
+                    HStack{
+                        Text("Units: ")
+                        Spacer()
+                        Picker("Weather Units", selection: $wm.weatherUnits){
+                            Text("Imperial").tag("imperial")
+                            Text("Metric").tag("metric")
+                            Text("Kelvin").tag("kelvin")
+                        }
+                        .pickerStyle(SegmentedPickerStyle())
                     }
                     HStack{
                         Text("Wallpaper Image:")
@@ -70,6 +82,7 @@ struct SettingsMasterView: View {
                             Text("Green Hues").tag("Green Hues")
                             Text("Grey Scale").tag("Grey Scale")
                             Text("OLED").tag("OLED")
+                            Text("Gold").tag("Gold")
                         }
                         .pickerStyle(MenuPickerStyle())
                     }
@@ -79,6 +92,7 @@ struct SettingsMasterView: View {
                         Picker("Label Color", selection: $wp.iconColor){
                             Text("White").tag("White")
                             Text("Black").tag("Black")
+                            Text("Theme").tag("Theme")
                             Text("Clear").tag("None")
                         }
                         .pickerStyle(SegmentedPickerStyle())

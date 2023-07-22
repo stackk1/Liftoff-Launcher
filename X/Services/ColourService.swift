@@ -64,7 +64,11 @@ class ColourService: ObservableObject {
             return Color(UIColor(red: grayValue, green: grayValue, blue: grayValue, alpha: opac))
         case "OLED":
             return Color(UIColor(red: 0, green: 0, blue: 0, alpha: opac))
-            
+        case "Gold":
+            let red = CGFloat.random(in: 0.8...1.0)
+            let green = CGFloat.random(in: 0.6...0.8)
+            let blue = CGFloat.random(in: 0.0...0.2)
+            return Color(UIColor(red: red, green: green, blue: blue, alpha: opac))
         default:
             let red = CGFloat.random(in: 0.7...1.0)
             let green = CGFloat.random(in: 0.0...0.2)
@@ -73,7 +77,17 @@ class ColourService: ObservableObject {
         }
     }
     
-    let allColors: [Color] = [.pink, .red, .orange, .yellow, .green, .mint, .teal, .cyan, .blue, .indigo, .purple]
+    static func randomGradient(Palette: String = "Chromatic", opac: CGFloat = 1.0, cycle: Int = 1) -> LinearGradient { if Palette.caseInsensitiveCompare("Gold") == .orderedSame {
+        let randomGold = self.randomColor(Palette: Palette, opac: opac, cycle: cycle)
+        let darkGoldOrBlack = Bool.random() ? Color(UIColor(red: 0.6, green: 0.4, blue: 0.0, alpha: 1.0)) : Color.black
+               return LinearGradient(gradient: Gradient(colors: [randomGold, darkGoldOrBlack]), startPoint: .leading, endPoint: .trailing)
+    }
+        else{
+            let startColor = randomColor(Palette: Palette, opac: opac, cycle: cycle)
+            let endColor = randomColor(Palette: Palette, opac: opac, cycle: cycle)
+            return LinearGradient(gradient: Gradient(colors: [startColor, endColor]), startPoint: .leading, endPoint: .trailing)
+        }
+    }
     
     
     

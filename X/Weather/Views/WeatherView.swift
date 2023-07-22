@@ -11,23 +11,27 @@ struct WeatherView: View {
     
     @EnvironmentObject var wm: WeatherModel
     @EnvironmentObject var wp: WPService
-    
+   
+
     var body: some View {
-        
+        let themeColour = wp.setIconColor()
         VStack(alignment: .leading){
             HStack {
                 VStack(alignment: .leading){
                     Text("\(wm.city) Weather")
                         .fontWeight(.semibold)
-                    Text("Current Temp: \(wm.formatPrecision(temp: wm.currentTemp))°C")
+                    Text("Current Temp: \(wm.formatPrecision(temp: wm.currentTemp))°\(wm.tempUnit)")
                         .font(.caption)
-                    Text("Feels Like: \(wm.formatPrecision(temp:wm.feelTemp, places:0))°C")
+                    Text("Feels Like: \(wm.formatPrecision(temp:wm.feelTemp, places:0))°\(wm.tempUnit)")
                         .font(.caption)
                 }
                 Spacer()
                 Button(action: {
 // REFRESH BUTTON
-//                    wm.fetchWeather()
+                    wm.updateLocation(city: wm.city)
+                    wm.updateTempUnits(units: wm.weatherUnits)
+                    wm.fetchWeather()
+                    wm.refreshWeather()
                 }, label: {Image(systemName: "arrow.counterclockwise.icloud.fill").imageScale(.large)})
                     .padding(.trailing)
             }
@@ -96,23 +100,11 @@ struct WeatherView: View {
                 
             }
         }
+        
         .frame(width: 350, height: 195, alignment: .center)
         .padding(.leading)
-        .foregroundColor({
-            if wp.labelColor.caseInsensitiveCompare("Black") == .orderedSame{
-                return Color(.black)
-            }
-            else if wp.labelColor.caseInsensitiveCompare("None") == .orderedSame{
-                return Color(.clear)
-            }
-            else{
-                return Color(.white)
-            }
-        }()
-        )
-//        .onAppear(perform: {
-//            updateView()
-//        })
+        .foregroundColor(themeColour)
+
     }
 }
 

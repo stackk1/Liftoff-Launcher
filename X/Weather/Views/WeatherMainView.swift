@@ -34,21 +34,24 @@ struct WeatherMainView: View {
                 HStack(alignment: .top)
                 {
                     Text(wm.formatPrecision(temp: wm.feelTemp)).font(.system(size: 50))
-                    Text("°C")
+                    Text("°\(wm.tempUnit)")
                         .padding(.top, 5)
                 }
-                Text(wm.conditionDetail)
+                WeatherIcon(condition: wm.conditonId, description: wm.conditionDetail, frameWidth: 180, frameHeight: 100, fontSize: 28)
+                
+               // Text(wm.conditionDetail)
                 Spacer()
-                VStack(spacing: 15){
-                    HStack(spacing: 15){
+                VStack(spacing: 8){
+                    HStack(spacing: 8){
                         SunriseTileView()
                         PrecipitationTileView()
                     }
-                    HStack(spacing: 15){
+                    HStack(spacing: 8){
                         UviTileView()
                         WindTileView()
                     }
                 }
+                .padding()
                 Spacer()
                 
             }

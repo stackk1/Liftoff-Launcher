@@ -34,6 +34,9 @@ class WPService:ObservableObject {
         else if self.iconColor.caseInsensitiveCompare("None") == .orderedSame{
             return Color(.clear)
         }
+        else if self.iconColor.caseInsensitiveCompare("Theme") == .orderedSame{
+            return ColourService.randomColor(Palette: self.theme)
+        }
         else{
             return Color(.white)
         }

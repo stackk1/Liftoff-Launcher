@@ -21,7 +21,7 @@ struct WeatherWidgetView: View {
                         WeatherView()
                             .padding()
                     }
-                    .foregroundColor(ColourService.randomColor(Palette: wp.theme, opac: wp.transparancy, cycle: updateColors))
+                    .foregroundStyle(ColourService.randomGradient(Palette: wp.theme, opac: wp.transparancy, cycle: updateColors))
                     .cornerRadius(20)
                     
                    
@@ -33,7 +33,7 @@ struct WeatherWidgetView: View {
                         WeatherView()
                             .padding()
                     }
-                    .foregroundColor(ColourService.randomColor(Palette: wp.theme, opac: wp.transparancy, cycle: updateColors))
+                    .foregroundStyle(ColourService.randomGradient(Palette: wp.theme, opac: wp.transparancy, cycle: updateColors))
                     .cornerRadius(20)
                     
                    
@@ -41,7 +41,7 @@ struct WeatherWidgetView: View {
             }
             else{
                 Rectangle()
-                    .foregroundColor(ColourService.randomColor(Palette: wp.theme, opac: wp.transparancy, cycle: updateColors))
+                    .foregroundStyle(ColourService.randomGradient(Palette: wp.theme, opac: wp.transparancy, cycle: updateColors))
                     .cornerRadius(20)
                 WeatherView()
                     

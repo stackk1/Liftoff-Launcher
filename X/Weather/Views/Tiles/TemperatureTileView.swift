@@ -18,7 +18,14 @@ struct TemperatureTileView: View {
         ZStack{
             Rectangle()
                 .cornerRadius(cornerRadius)
-                .foregroundColor(Color(UIColor(red: 0.5, green: 0.5, blue: 0.5, alpha: 0.5)))
+                .foregroundStyle(ColourService.randomGradient(Palette: wp.theme, opac: {
+                    if wp.transparancy >= 0.5 {
+                        return 0.5
+                    }
+                    else {
+                        return wp.transparancy
+                    }
+                }()))
                 .frame(width:180, height: 180)
             VStack(spacing: 10){
                 
@@ -28,7 +35,7 @@ struct TemperatureTileView: View {
                     VStack{
                         Text("Feels Like")
                             .fontWeight(.bold)
-                        Text(String(wm.hourlyWeather[1].feels_like))
+                        Text(String("\(wm.hourlyWeather[1].feels_like)°\(wm.tempUnit)"))
                         
                     }
                 }
@@ -38,7 +45,7 @@ struct TemperatureTileView: View {
                     VStack{
                         Text("Temperature")
                             .fontWeight(.bold)
-                        Text(String(wm.hourlyWeather[1].temp))
+                        Text(String("\(wm.hourlyWeather[1].temp)°\(wm.tempUnit)"))
                     }
                 }
             }

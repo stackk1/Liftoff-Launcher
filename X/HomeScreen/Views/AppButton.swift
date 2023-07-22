@@ -14,7 +14,7 @@ struct AppButton<Content: View>: View {
     @ViewBuilder var imageName: String
     @ViewBuilder var appLabel: String
     var updateColors: Int = 0
-
+    
     
     init(app: Content, image: String, label: String, updateColors: Int = 0) {
         self.appView = app
@@ -50,21 +50,13 @@ struct AppButton<Content: View>: View {
                                 .cornerRadius(20)
                                 .frame(width: 72, height: 72)
                         }
+                        let themeColour = wp.setIconColor()
                         Image(systemName: imageName)
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                             .frame(width: 45, height: 45)
-                            .foregroundColor({
-                                if wp.iconColor.caseInsensitiveCompare("Black") == .orderedSame{
-                                    return Color(.black)
-                                }
-                                else if wp.iconColor.caseInsensitiveCompare("None") == .orderedSame{
-                                    return Color(.clear)
-                                }
-                                else{
-                                    return Color(.white)
-                                }
-                            }()
+                            .foregroundColor(
+                                themeColour
                             )
                         
                     }

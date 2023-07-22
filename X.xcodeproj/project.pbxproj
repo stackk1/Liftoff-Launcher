@@ -227,6 +227,7 @@
 				491C6A362A32ACC000611DCE /* WeatherView.swift */,
 				4957170B2A3CD53200F46A45 /* WeatherWidgetView.swift */,
 				49BD6C172A4A88BE00438453 /* WeatherMainView.swift */,
+				4957173E2A3FFCB400F46A45 /* WeatherIcon.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -246,7 +247,6 @@
 		4932F8302A2E8D5A00C3C9B0 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				4957173E2A3FFCB400F46A45 /* WeatherIcon.swift */,
 				49ED9C1B2A2B362900481BDB /* LauncherView.swift */,
 				4932F8312A2E8D7700C3C9B0 /* AppButton.swift */,
 				49C208952A30FB1B00CA7257 /* MapView.swift */,

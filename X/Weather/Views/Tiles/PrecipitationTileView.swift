@@ -18,7 +18,14 @@ struct PrecipitationTileView: View {
         ZStack{
             Rectangle()
                 .cornerRadius(cornerRadius)
-                .foregroundColor(Color(UIColor(red: 0.5, green: 0.5, blue: 0.5, alpha: 0.5)))
+                .foregroundStyle(ColourService.randomGradient(Palette: wp.theme, opac: {
+                    if wp.transparancy >= 0.5 {
+                        return 0.5
+                    }
+                    else {
+                        return wp.transparancy
+                    }
+                }()))
                 .frame(width:180, height: 180)
             VStack(spacing: 10){
                 
