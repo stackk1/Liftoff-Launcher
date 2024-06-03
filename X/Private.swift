@@ -1,13 +1,13 @@
 //
-//  StackServer.swift
+//  Private.swift
 //  X
 //
-//  Created by Andrew on 2023-06-11.
+//  Created by Andrew on 2024-06-03.
 //
 
 import Foundation
 
-struct StackServer {
+struct StackServerPorts {
     let sonarr = "http://10.0.0.10:8989/"
     let radarr = "http://10.0.0.10:7878/"
     let lidarr = "http://10.0.0.10:8688"
@@ -28,3 +28,4 @@ struct StackServer {
     let FFox = "http://10.0.0.10:3000"
     
 }
+let WeatherAPIkey = "f80dcf0bd93deb17028472270d91d0b6"

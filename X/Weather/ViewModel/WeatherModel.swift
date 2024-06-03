@@ -60,7 +60,7 @@ class WeatherModel:ObservableObject {
     
     
     func fetchWeather() -> WeatherData? {
-        let apiKey = "f80dcf0bd93deb17028472270d91d0b6"
+        let apiKey = WeatherAPIkey
         let apiURL = "https://api.openweathermap.org/data/3.0/onecall?"
         let apiUnit = self.weatherUnits
         

@@ -18,7 +18,7 @@ struct LauncherView: View {
     
     var body: some View {
        
-        let ss = StackServer()
+        let ss = StackServerPorts()
         let columns = [GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible())]
         
         ZStack{

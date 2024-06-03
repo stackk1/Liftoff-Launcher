@@ -18,6 +18,7 @@
 		491C6A372A32ACC000611DCE /* WeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491C6A362A32ACC000611DCE /* WeatherView.swift */; };
 		491C6A392A33B97200611DCE /* MediaPlaybackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491C6A382A33B97200611DCE /* MediaPlaybackView.swift */; };
 		4932F8322A2E8D7700C3C9B0 /* AppButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4932F8312A2E8D7700C3C9B0 /* AppButton.swift */; };
+		4933AA942C0E71AD0036B71E /* Private.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4933AA932C0E71AD0036B71E /* Private.swift */; };
 		495716EC2A3B9DEF00F46A45 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495716EB2A3B9DEF00F46A45 /* TestView.swift */; };
 		4957170A2A3CCE4200F46A45 /* ReverseMask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495717092A3CCE4200F46A45 /* ReverseMask.swift */; };
 		4957170C2A3CD53200F46A45 /* WeatherWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4957170B2A3CD53200F46A45 /* WeatherWidgetView.swift */; };
@@ -88,7 +89,6 @@
 		49C208962A30FB1B00CA7257 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C208952A30FB1B00CA7257 /* MapView.swift */; };
 		49D4F9CD2A36252100E83559 /* WebClipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D4F9CC2A36252100E83559 /* WebClipView.swift */; };
 		49D4F9CF2A36255E00E83559 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49D4F9CE2A36255E00E83559 /* WebKit.framework */; };
-		49D4F9D12A362F9E00E83559 /* StackServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D4F9D02A362F9E00E83559 /* StackServer.swift */; };
 		49ED9C1A2A2B362900481BDB /* XApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49ED9C192A2B362900481BDB /* XApp.swift */; };
 		49ED9C1C2A2B362900481BDB /* LauncherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49ED9C1B2A2B362900481BDB /* LauncherView.swift */; };
 		49ED9C1E2A2B362B00481BDB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49ED9C1D2A2B362B00481BDB /* Assets.xcassets */; };
@@ -107,6 +107,7 @@
 		491C6A362A32ACC000611DCE /* WeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherView.swift; sourceTree = "<group>"; };
 		491C6A382A33B97200611DCE /* MediaPlaybackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaPlaybackView.swift; sourceTree = "<group>"; };
 		4932F8312A2E8D7700C3C9B0 /* AppButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppButton.swift; sourceTree = "<group>"; };
+		4933AA932C0E71AD0036B71E /* Private.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Private.swift; sourceTree = "<group>"; };
 		495716EB2A3B9DEF00F46A45 /* TestView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 		495717092A3CCE4200F46A45 /* ReverseMask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReverseMask.swift; sourceTree = "<group>"; };
 		4957170B2A3CD53200F46A45 /* WeatherWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherWidgetView.swift; sourceTree = "<group>"; };
@@ -177,7 +178,6 @@
 		49C208952A30FB1B00CA7257 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		49D4F9CC2A36252100E83559 /* WebClipView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebClipView.swift; sourceTree = "<group>"; };
 		49D4F9CE2A36255E00E83559 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
-		49D4F9D02A362F9E00E83559 /* StackServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackServer.swift; sourceTree = "<group>"; };
 		49ED9C162A2B362900481BDB /* X.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = X.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49ED9C192A2B362900481BDB /* XApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XApp.swift; sourceTree = "<group>"; };
 		49ED9C1B2A2B362900481BDB /* LauncherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LauncherView.swift; sourceTree = "<group>"; };
@@ -236,7 +236,6 @@
 			isa = PBXGroup;
 			children = (
 				4975BEA42A2D7F610093C029 /* ColourService.swift */,
-				49D4F9D02A362F9E00E83559 /* StackServer.swift */,
 				4970E2FC2A3677CD00962705 /* WPService.swift */,
 				496F25AE2A378AEB003BBF58 /* NavigationService.swift */,
 				495717092A3CCE4200F46A45 /* ReverseMask.swift */,
@@ -583,6 +582,7 @@
 				4975BEB02A2D845B0093C029 /* Cars */,
 				49ED9C1D2A2B362B00481BDB /* Assets.xcassets */,
 				49ED9C1F2A2B362B00481BDB /* Preview Content */,
+				4933AA932C0E71AD0036B71E /* Private.swift */,
 			);
 			path = X;
 			sourceTree = "<group>";
@@ -697,7 +697,6 @@
 				4975BEF92A2D86720093C029 /* RandomView.swift in Sources */,
 				491C6A352A32A87D00611DCE /* CodeTextView.swift in Sources */,
 				4975BEE12A2D85D20093C029 /* BookBackButton.swift in Sources */,
-				49D4F9D12A362F9E00E83559 /* StackServer.swift in Sources */,
 				495716EC2A3B9DEF00F46A45 /* TestView.swift in Sources */,
 				4975BEFA2A2D86720093C029 /* imageView.swift in Sources */,
 				4975BED72A2D85D20093C029 /* Book.swift in Sources */,
@@ -723,6 +722,7 @@
 				49ED9C1C2A2B362900481BDB /* LauncherView.swift in Sources */,
 				4970E2FD2A3677CD00962705 /* WPService.swift in Sources */,
 				4975BEF42A2D86720093C029 /* RecipeService.swift in Sources */,
+				4933AA942C0E71AD0036B71E /* Private.swift in Sources */,
 				49C208962A30FB1B00CA7257 /* MapView.swift in Sources */,
 				4984EC572A3978C8008F2AB9 /* DiceUIService.swift in Sources */,
 				4975BEC42A2D846B0093C029 /* CarService.swift in Sources */,
