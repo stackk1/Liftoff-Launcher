@@ -59,6 +59,7 @@ struct WeatherMainView: View {
         .foregroundColor(
             wp.setLabelColor()
         )
+        .accessibilityIdentifier("SCREEN_WEATHER")
     }
 }
 
