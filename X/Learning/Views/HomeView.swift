@@ -51,6 +51,7 @@ struct HomeView: View {
             }.navigationTitle("Get Started")
         }
         .navigationViewStyle(.stack)
+        .accessibilityIdentifier("SCREEN_LEARN")
     }
 }
 

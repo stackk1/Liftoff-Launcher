@@ -41,6 +41,7 @@ struct BookListView: View {
                 }
             }
             .navigationBarHidden(true)
+            .accessibilityIdentifier("SCREEN_BOOKS")
         
     }
 }

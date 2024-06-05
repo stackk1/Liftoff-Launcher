@@ -24,6 +24,7 @@ struct CarListView: View {
             }
           //  .navigationTitle("Cars")
             .navigationBarHidden(true)
+            .accessibilityIdentifier("SCREEN_CARS")
             
         
     }

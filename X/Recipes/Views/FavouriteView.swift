@@ -44,6 +44,7 @@ struct FavouriteView: View {
             .navigationTitle("Favourites")
             .padding(.horizontal)
             .padding(.bottom, 80)
+            .accessibilityIdentifier("SCREEN_RECIPES_FAVOURITES")
         
     }
 }

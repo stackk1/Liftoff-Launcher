@@ -142,6 +142,7 @@ struct LauncherView: View {
                 }
             }
             .navigationBarHidden(true)
+            .accessibilityIdentifier("SCREEN_LAUNCH")
             //MARK: - Home Button
         VStack{
             Spacer()
@@ -172,7 +173,7 @@ struct LauncherView: View {
                 .padding(.bottom)
                 .shadow(radius: 9)
         }.ignoresSafeArea()
-                .accessibilityIdentifier("SCREEN_LAUNCH")
+                
     }
     }
 }

@@ -75,7 +75,8 @@ struct AppButton<Content: View>: View {
                         )
                 }
                 
-            })
+            }
+        ).accessibilityIdentifier("APPBUTTON_\(appLabel.uppercased())")
     }
 }
 

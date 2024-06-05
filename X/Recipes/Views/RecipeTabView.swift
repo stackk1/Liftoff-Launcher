@@ -30,7 +30,7 @@ struct RecipeTabView: View {
                         Text("Random")
                     }
                 }
-        }
+        }.accessibilityIdentifier("SCREEN_RECIPES")
     }
 }
 
