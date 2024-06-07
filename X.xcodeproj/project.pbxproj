@@ -34,7 +34,7 @@
 		4975BE9D2A2D7F5A0093C029 /* SlotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4975BE982A2D7F590093C029 /* SlotView.swift */; };
 		4975BE9E2A2D7F5A0093C029 /* DiceRoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4975BE992A2D7F590093C029 /* DiceRoller.swift */; };
 		4975BE9F2A2D7F5A0093C029 /* CardFlipperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4975BE9A2A2D7F590093C029 /* CardFlipperView.swift */; };
-		4975BEA02A2D7F5A0093C029 /* DiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4975BE9B2A2D7F590093C029 /* DiceView.swift */; };
+		4975BEA02A2D7F5A0093C029 /* DiceWarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4975BE9B2A2D7F590093C029 /* DiceWarView.swift */; };
 		4975BEA12A2D7F5A0093C029 /* WarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4975BE9C2A2D7F590093C029 /* WarView.swift */; };
 		4975BEA72A2D7F620093C029 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4975BEA32A2D7F610093C029 /* Game.swift */; };
 		4975BEA82A2D7F620093C029 /* ColourService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4975BEA42A2D7F610093C029 /* ColourService.swift */; };
@@ -123,7 +123,7 @@
 		4975BE982A2D7F590093C029 /* SlotView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlotView.swift; sourceTree = "<group>"; };
 		4975BE992A2D7F590093C029 /* DiceRoller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiceRoller.swift; sourceTree = "<group>"; };
 		4975BE9A2A2D7F590093C029 /* CardFlipperView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardFlipperView.swift; sourceTree = "<group>"; };
-		4975BE9B2A2D7F590093C029 /* DiceView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiceView.swift; sourceTree = "<group>"; };
+		4975BE9B2A2D7F590093C029 /* DiceWarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiceWarView.swift; sourceTree = "<group>"; };
 		4975BE9C2A2D7F590093C029 /* WarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WarView.swift; sourceTree = "<group>"; };
 		4975BEA32A2D7F610093C029 /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		4975BEA42A2D7F610093C029 /* ColourService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColourService.swift; sourceTree = "<group>"; };
@@ -308,7 +308,7 @@
 				4975BE982A2D7F590093C029 /* SlotView.swift */,
 				4975BE992A2D7F590093C029 /* DiceRoller.swift */,
 				4975BE9A2A2D7F590093C029 /* CardFlipperView.swift */,
-				4975BE9B2A2D7F590093C029 /* DiceView.swift */,
+				4975BE9B2A2D7F590093C029 /* DiceWarView.swift */,
 				4975BE9C2A2D7F590093C029 /* WarView.swift */,
 			);
 			path = GameViews;
@@ -673,7 +673,7 @@
 				4975BEE02A2D85D20093C029 /* BookModel.swift in Sources */,
 				4975BE9D2A2D7F5A0093C029 /* SlotView.swift in Sources */,
 				4975BEF62A2D86720093C029 /* FavouriteView.swift in Sources */,
-				4975BEA02A2D7F5A0093C029 /* DiceView.swift in Sources */,
+				4975BEA02A2D7F5A0093C029 /* DiceWarView.swift in Sources */,
 				3D20DB472A69BFD800F066DB /* WeatherModel.swift in Sources */,
 				4975BEC22A2D846B0093C029 /* Car.swift in Sources */,
 				4975BE9E2A2D7F5A0093C029 /* DiceRoller.swift in Sources */,

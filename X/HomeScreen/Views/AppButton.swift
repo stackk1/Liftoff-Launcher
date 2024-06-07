@@ -59,7 +59,7 @@ struct AppButton<Content: View>: View {
                                 themeColour
                             )
                         
-                    }
+                    }.accessibilityIdentifier("APPBUTTON_\(appLabel.uppercased())")
                     Text(appLabel)
                         .foregroundColor({
                             if wp.labelColor.caseInsensitiveCompare("Black") == .orderedSame{
@@ -76,7 +76,7 @@ struct AppButton<Content: View>: View {
                 }
                 
             }
-        ).accessibilityIdentifier("APPBUTTON_\(appLabel.uppercased())")
+        )
     }
 }
 

@@ -42,7 +42,6 @@ struct WeatherView: View {
                 GridRow{
                     Text("Today")
                         .font(.system(size:14))
-                        .accessibilityIdentifier("SCREEN_WEATHER")
                     Text("Mon")
                     Text("Tue")
                     Text("Wed")
@@ -104,7 +103,6 @@ struct WeatherView: View {
         .frame(width: 350, height: 195, alignment: .center)
         .padding(.leading)
         .foregroundColor(themeColour)
-
     }
 }
 

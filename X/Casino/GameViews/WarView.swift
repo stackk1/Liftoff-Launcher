@@ -28,9 +28,7 @@ struct WarView: View {
                 Image(gm.backgroundImage)
                     .resizable()
                     .ignoresSafeArea()
-                
             }
-            
             
             VStack (spacing:0) {
                 //New Game button, Deck Counter, Sim Game button
@@ -186,6 +184,7 @@ struct WarView: View {
         }
         .foregroundColor(bg == true ? .white : .black)
         .onAppear{resetGame()}
+        .accessibilityIdentifier("SCREEN_GAMES_WAR")
         
     }
     //MARK: Functions

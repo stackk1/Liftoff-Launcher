@@ -23,6 +23,7 @@ struct WeatherWidgetView: View {
                     }
                     .foregroundStyle(ColourService.randomGradient(Palette: wp.theme, opac: wp.transparancy, cycle: updateColors))
                     .cornerRadius(20)
+                    .accessibilityIdentifier("APPBUTTON_WIDGET_WEATHER")
                     
                    
                 
@@ -35,6 +36,7 @@ struct WeatherWidgetView: View {
                     }
                     .foregroundStyle(ColourService.randomGradient(Palette: wp.theme, opac: wp.transparancy, cycle: updateColors))
                     .cornerRadius(20)
+                    .accessibilityIdentifier("APPBUTTON_WIDGET_WEATHER")
                     
                    
                 
@@ -43,6 +45,7 @@ struct WeatherWidgetView: View {
                 Rectangle()
                     .foregroundStyle(ColourService.randomGradient(Palette: wp.theme, opac: wp.transparancy, cycle: updateColors))
                     .cornerRadius(20)
+                    .accessibilityIdentifier("APPBUTTON_WIDGET_WEATHER")
                 WeatherView()
                     
                     

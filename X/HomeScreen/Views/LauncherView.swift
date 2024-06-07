@@ -57,7 +57,6 @@ struct LauncherView: View {
                                         .frame(width: 360, height: 200)
                                         .cornerRadius(25)
                                         .padding(.bottom)
-                                        .accessibilityIdentifier("WIDGET_WEATHER")
                                     }
                                        )
                                 

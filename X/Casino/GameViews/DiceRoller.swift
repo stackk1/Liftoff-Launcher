@@ -87,6 +87,7 @@ struct DiceRoller: View {
                 .padding()
 
             }
+        .accessibilityIdentifier("SCREEN_GAMES_DICE_ROLLER")
         }
 //    
 //        func roll() {
