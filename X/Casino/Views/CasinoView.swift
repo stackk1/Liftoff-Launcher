@@ -29,7 +29,6 @@ struct CasinoView: View {
                             NavigationLink(destination: gm.gameList[n],
                                            label: {
                                 GameCardView(gameName: gm.gameNames[n])
-                                    .accessibilityIdentifier("APPBUTTON_\(gm.gameNames[n])")
                             })
                             .padding()
                             

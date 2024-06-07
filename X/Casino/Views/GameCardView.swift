@@ -37,7 +37,7 @@ struct GameCardView: View {
             }
             
             
-        }
+        }.accessibilityIdentifier("APPBUTTON_\(gameName.uppercased())")
     }
 }
 
