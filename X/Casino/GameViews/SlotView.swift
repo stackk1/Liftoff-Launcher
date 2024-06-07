@@ -123,6 +123,7 @@ struct SlotView: View {
             .padding()
             .foregroundColor(bg == true ? .white : .black)
         }
+        .accessibilityIdentifier("SCREEN_GAMES_SLOTS")
     }
     
     //MARK: Functions
