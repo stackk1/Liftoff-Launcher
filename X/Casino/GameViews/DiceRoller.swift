@@ -88,26 +88,8 @@ struct DiceRoller: View {
 
             }
         .accessibilityIdentifier("SCREEN_GAMES_DICE_ROLLER")
+        .accessibilityElement(children: .contain)
         }
-//    
-//        func roll() {
-//            diceValues = []
-//            for _ in (0...numberOfDice){
-//                let value = Int.random(in: 1...numberOfSides)
-//                diceValues.append(value)
-//            }
-//            total += diceValues.reduce(0, +)
-//            //Math checker
-//            for die in (0..<diceValues.count-1) {
-//                print(diceValues[die])
-//            }
-//            for value in diceValues {
-//                total2 += value
-//            }
-//            print("total : \(total)")
-//            print("total 2:  \(total2)")
-//            
-//        }
         func reset() {
             ds.diceValueTotal = 0
         }

@@ -56,6 +56,7 @@ struct CasinoView: View {
             }
         .navigationBarHidden(true)
         .accessibilityIdentifier("SCREEN_GAMES")
+        
     }
     
 }

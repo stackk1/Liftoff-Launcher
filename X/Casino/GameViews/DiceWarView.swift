@@ -107,6 +107,7 @@ struct DiceWarView: View {
             .foregroundColor(bg == true ? .white : .black)
         }
         .accessibilityIdentifier("SCREEN_GAMES_DICE_WAR")
+        .accessibilityElement(children: .contain)
     }
     
     // MARK: Functions

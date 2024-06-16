@@ -52,6 +52,7 @@ struct HomeView: View {
         }
         .navigationViewStyle(.stack)
         .accessibilityIdentifier("SCREEN_LEARN")
+        .accessibilityElement(children: .contain)
     }
 }
 

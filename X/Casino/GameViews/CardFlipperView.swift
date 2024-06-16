@@ -44,6 +44,7 @@ struct CardFlipperView: View {
             .indexViewStyle(PageIndexViewStyle(backgroundDisplayMode:.never))
         }
         .accessibilityIdentifier("SCREEN_GAMES_CARD_FLIPPER")
+        .accessibilityElement(children: .contain)
     }
 }
 

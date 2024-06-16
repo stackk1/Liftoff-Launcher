@@ -31,6 +31,7 @@ struct RecipeTabView: View {
                     }
                 }
         }.accessibilityIdentifier("SCREEN_RECIPES")
+            .accessibilityElement(children: .contain)
     }
 }
 

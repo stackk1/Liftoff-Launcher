@@ -56,7 +56,7 @@ struct WeatherMainView: View {
             }
         }
         .accessibilityIdentifier("SCREEN_WEATHER")
-        .accessibilityElement(children: .ignore)
+        .accessibilityElement(children: .contain)
         .foregroundColor(wp.setLabelColor())
     }
 }

@@ -64,6 +64,7 @@ struct GameSettingsView: View {
             }
             .padding(.horizontal)
             .accessibilityIdentifier("SCREEN_GAMES_SETTINGS")
+            .accessibilityElement(children: .contain)
         }
     }
     
