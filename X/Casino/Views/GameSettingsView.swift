@@ -26,7 +26,6 @@ struct GameSettingsView: View {
                     label: {
                         Text("Background")
                     })
-                
                     Picker("Wallpaper Image", selection: $gm.backgroundImage){
                         Text("Wood").tag("Wood")
                         Text("Cartoon Wood").tag("Cartoon Wood")
@@ -36,28 +35,23 @@ struct GameSettingsView: View {
                     }
                     .pickerStyle(WheelPickerStyle())
                     .padding(.top, 0)
-                
                 VStack(alignment: .leading, spacing: 5){
                     Text("Default Number of Dice:")
                     HStack{
                         Button(
                             action:{
                                 ds.numberOfDice -= 1
-                                
                             },
                             label: {Image(systemName: "minus.square.fill")})
                         Text(String(ds.numberOfDice))
                         Button(
                             action:{
                                 ds.numberOfDice += 1
-                                
                             },
                             label: {Image(systemName: "plus.square.fill")
                             })
                     }
                 }
-                
-                
                 Text("Default Die:")
                     .padding(.vertical)
                 Picker("Default Die", selection: $ds.numberOfSides){
@@ -68,10 +62,9 @@ struct GameSettingsView: View {
                 .pickerStyle(SegmentedPickerStyle())
                 Spacer()
             }
-                
-            
             .padding(.horizontal)
-        
+            .accessibilityIdentifier("SCREEN_GAMES_SETTINGS")
+            .accessibilityElement(children: .contain)
         }
     }
     

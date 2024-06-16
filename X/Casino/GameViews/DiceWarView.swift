@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct DiceView: View {
+struct DiceWarView: View {
     @EnvironmentObject var gm: GameModel
     @State var d1 = 1
     @State var d2 = 1
@@ -106,6 +106,8 @@ struct DiceView: View {
             .padding()
             .foregroundColor(bg == true ? .white : .black)
         }
+        .accessibilityIdentifier("SCREEN_GAMES_DICE_WAR")
+        .accessibilityElement(children: .contain)
     }
     
     // MARK: Functions
@@ -141,7 +143,7 @@ struct DiceView: View {
 //MARK: Preview Code
 struct DiceView_Previews: PreviewProvider {
     static var previews: some View {
-        DiceView()
+        DiceWarView()
             .environmentObject(GameModel())
     }
 }

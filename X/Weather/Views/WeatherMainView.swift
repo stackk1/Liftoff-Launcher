@@ -53,13 +53,11 @@ struct WeatherMainView: View {
                 }
                 .padding()
                 Spacer()
-                
             }
         }
-        .foregroundColor(
-            wp.setLabelColor()
-        )
         .accessibilityIdentifier("SCREEN_WEATHER")
+        .accessibilityElement(children: .contain)
+        .foregroundColor(wp.setLabelColor())
     }
 }
 

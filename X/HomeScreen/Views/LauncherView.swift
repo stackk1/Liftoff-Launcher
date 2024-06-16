@@ -57,7 +57,6 @@ struct LauncherView: View {
                                         .frame(width: 360, height: 200)
                                         .cornerRadius(25)
                                         .padding(.bottom)
-                                        .accessibilityIdentifier("WIDGET_WEATHER")
                                     }
                                        )
                                 
@@ -172,8 +171,10 @@ struct LauncherView: View {
                 .padding(.bottom)
                 .shadow(radius: 9)
         }.ignoresSafeArea()
-                .accessibilityIdentifier("SCREEN_LAUNCH")
+                
     }
+        .accessibilityIdentifier("SCREEN_LAUNCH")
+        .accessibilityElement(children: .contain)
     }
 }
 

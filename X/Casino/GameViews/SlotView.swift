@@ -49,8 +49,9 @@ struct SlotView: View {
                             Image(systemName: "gobackward")
                             
                         })
+                    .accessibilityIdentifier("BUTTON_SPIN")
                     Text("Score :")
-                    Text(String(score))
+                    Text(String(score)).accessibilityIdentifier("VIEW_SCORE_VALUE")
                 }
                 
                 Spacer()
@@ -123,6 +124,8 @@ struct SlotView: View {
             .padding()
             .foregroundColor(bg == true ? .white : .black)
         }
+        .accessibilityIdentifier("SCREEN_GAMES_SLOTS")
+        .accessibilityElement(children: .contain)
     }
     
     //MARK: Functions
