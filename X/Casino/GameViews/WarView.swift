@@ -49,6 +49,7 @@ struct WarView: View {
                         Image(systemName: "minus.square.fill")
                     }
                         Text("Decks: " + String(deckNum))
+                            .accessibilityIdentifier("WAR_DECK_COUNT_VALUE")
                         Button {
                             deckNum += 1
                             resetGame()
@@ -158,6 +159,7 @@ struct WarView: View {
                                     .padding(.bottom, 5.0)
                                 Text(String(deck.count))
                                     .font(.largeTitle)
+                                    .accessibilityIdentifier("WAR_CARDS_REMAINING_VALUE")
                             }
                             
                             Spacer()
