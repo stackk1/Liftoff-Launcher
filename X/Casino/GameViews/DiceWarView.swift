@@ -47,6 +47,7 @@ struct DiceWarView: View {
                 Button("Roll") {
                     roll()
                 }
+                .accessibilityIdentifier("BUTTON_ROLL")
                 .padding()
                 .padding([.leading, .trailing], 40)
                 .background(Color.red)
@@ -107,7 +108,6 @@ struct DiceWarView: View {
             .foregroundColor(bg == true ? .white : .black)
         }
         .accessibilityIdentifier("SCREEN_GAMES_DICE_WAR")
-        .accessibilityElement(children: .contain)
     }
     
     // MARK: Functions

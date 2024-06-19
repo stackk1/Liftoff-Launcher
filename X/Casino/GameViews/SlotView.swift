@@ -49,7 +49,7 @@ struct SlotView: View {
                             Image(systemName: "gobackward")
                             
                         })
-                    .accessibilityIdentifier("BUTTON_SPIN")
+                    .accessibilityIdentifier("BUTTON_RESET")
                     Text("Score :")
                     Text(String(score)).accessibilityIdentifier("VIEW_SCORE_VALUE")
                 }
@@ -108,6 +108,7 @@ struct SlotView: View {
                 label: {
                     Text("New Game")
                 }
+                .accessibilityIdentifier("BUTTON_NEW_GAME")
                 }else{
                     Button("Spin") {
                         spin()
@@ -118,14 +119,16 @@ struct SlotView: View {
                     .cornerRadius(50)
                     .foregroundColor(Color.white)
                     .font(.system(size: 18, weight: .bold, design: .default))
+                    .accessibilityIdentifier("BUTTON_SPIN")
                 }
                 Spacer()
             }
             .padding()
             .foregroundColor(bg == true ? .white : .black)
+            .accessibilityElement(children: .contain)
+            .accessibilityIdentifier("SCREEN_GAMES_SLOTS")
+            
         }
-        .accessibilityIdentifier("SCREEN_GAMES_SLOTS")
-        .accessibilityElement(children: .contain)
     }
     
     //MARK: Functions
