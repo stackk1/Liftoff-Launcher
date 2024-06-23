@@ -65,7 +65,7 @@ struct DiceWarView: View {
                             .padding(.bottom, 5.0)
                         Text(String (pScore))
                             .font(.largeTitle)
-                            .accessibilityIdentifier("VIEW_PLAYER_SCORE_VALUE")
+                            .accessibilityIdentifier("PLAYER_SCORE_VALUE")
                     }
                     Spacer()
                     VStack{
@@ -74,7 +74,7 @@ struct DiceWarView: View {
                             .padding(.bottom, 5.0)
                         Text(String(cScore))
                             .font(.largeTitle)
-                            .accessibilityIdentifier("VIEW_CPU_SCORE_VALUE")
+                            .accessibilityIdentifier("CPU_SCORE_VALUE")
                     }
                     Spacer()
                     VStack{
@@ -83,7 +83,7 @@ struct DiceWarView: View {
                             .padding(.bottom, 5.0)
                         Text(String(tie))
                             .font(.largeTitle)
-                            .accessibilityIdentifier("VIEW_TIE_SCORE_VALUE")
+                            .accessibilityIdentifier("TIE_SCORE_VALUE")
                     }
                     Spacer()
                 }

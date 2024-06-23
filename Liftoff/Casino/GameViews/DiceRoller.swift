@@ -21,14 +21,13 @@ struct DiceRoller: View {
             if (bg == true) {
                 Image(gm.backgroundImage)
                     .resizable()
-                .ignoresSafeArea() 
-                
+                    .ignoresSafeArea()
             }
             VStack {
                 Text("Dice Roller").font(.largeTitle).padding([.leading, .bottom, .trailing])
                 Text("Total").font(.headline).padding(.bottom, 5.0)
                 Text(String(ds.diceValueTotal)).font(.largeTitle)
-                
+                    .accessibilityIdentifier("DICE_TOTAL_VALUE")
                 HStack{
                     Text("Number of Dice:")
                     Button(
@@ -44,57 +43,41 @@ struct DiceRoller: View {
                         label: {Image(systemName: "plus.square.fill")
                         })
                 }
-////                Picker(
-////                    "Number of Dice: ",
-////                    selection: $numberOfDice
-////                )
-////                {
-////                    ForEach (0..<9) { index in
-////                        Text(String(index + 1)).tag(index + 1)
-////                    }
-//                // TODO: update view when numberOfDice changes. Is a State property already though?
-//
-//                }.pickerStyle(WheelPickerStyle())
-
                 LazyVGrid(columns: rows){
                     ForEach(0..<ds.diceValues.count-1, id:\.self) {index in
                         Image("d6.\(ds.diceValues[index])")
-                                .resizable()
-                                .frame(width: 50, height: 50)
-                                .aspectRatio(contentMode:.fit)
-                        }
+                            .resizable()
+                            .frame(width: 50, height: 50)
+                            .aspectRatio(contentMode:.fit)
                     }
-                    Spacer()
-                    HStack{
-                        Button("Roll") {
-                            ds.roll()
-                        }.padding().padding([.leading, .trailing], 40)
-                            .background(Color.red)
-                            .cornerRadius(50)
-                            .foregroundColor(Color.white)
-                            .font(.system(size: 18, weight: .bold, design: .default))
-                        Button(
-                            action: {
-                                reset()
-                            },
-                            label: {
-                                Image(systemName: "gobackward")
-                            })
-                    }
-                    
                 }
-                .foregroundColor(bg == true ? .white : .black)
-                .padding()
-
+                Spacer()
+                HStack{
+                    Button("Roll") {
+                        ds.roll()
+                    }.padding().padding([.leading, .trailing], 40)
+                        .background(Color.red)
+                        .cornerRadius(50)
+                        .foregroundColor(Color.white)
+                        .font(.system(size: 18, weight: .bold, design: .default))
+                    Button(
+                        action: {
+                            reset()
+                        },
+                        label: {
+                            Image(systemName: "gobackward")
+                        })
+                }
             }
-        .accessibilityIdentifier("SCREEN_GAMES_DICE_ROLLER")
-        .accessibilityElement(children: .contain)
+            .foregroundColor(bg == true ? .white : .black)
+            .padding()
+            .accessibilityIdentifier("SCREEN_GAMES_DICE_ROLLER")
+            .accessibilityElement(children: .contain)
+        }
         }
         func reset() {
             ds.diceValueTotal = 0
         }
-        
-    
 }
 
 //MARK: Preview Code
@@ -102,5 +85,6 @@ struct DiceRoller_Previews: PreviewProvider {
     static var previews: some View {
         DiceRoller()
             .environmentObject(GameModel())
+            .environmentObject(DiceUIService())
     }
 }
