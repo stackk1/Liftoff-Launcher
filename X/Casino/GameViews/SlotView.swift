@@ -34,6 +34,7 @@ struct SlotView: View {
             VStack {
                 
                 Text("Swift Slots")
+                    .accessibilityIdentifier("SCREEN_GAMES_SLOTS")
                     .font(.largeTitle)
                     .padding([.leading, .bottom, .trailing])
                 Spacer()
@@ -49,7 +50,6 @@ struct SlotView: View {
                             Image(systemName: "gobackward")
                             
                         })
-                    .accessibilityIdentifier("BUTTON_SPIN")
                     Text("Score :")
                     Text(String(score)).accessibilityIdentifier("VIEW_SLOT_SCORE_VALUE")
                 }
@@ -112,6 +112,7 @@ struct SlotView: View {
                     Button("Spin") {
                         spin()
                     }
+                    .accessibilityIdentifier("BUTTON_SPIN")
                     .padding()
                     .padding([.leading, .trailing], 40)
                     .background(Color.red)
@@ -124,8 +125,6 @@ struct SlotView: View {
             .padding()
             .foregroundColor(bg == true ? .white : .black)
         }
-        .accessibilityIdentifier("SCREEN_GAMES_SLOTS")
-        .accessibilityElement(children: .contain)
     }
     
     //MARK: Functions

@@ -47,8 +47,7 @@ struct CasinoView: View {
                                            label: {
                                 GameCardView(gameName: gm.gameNames[n])
                             })
-                            .padding()
-                            
+                            .padding(25)
                         }
                     }
                 }
