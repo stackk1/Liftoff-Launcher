@@ -20,7 +20,6 @@ struct GameCardView: View {
             //use custom color model to set card color
                 .foregroundColor(ColourService.randomColor())
                 .shadow(radius: 15)
-                .accessibilityIdentifier("APPBUTTON_\(gameName.uppercased().replacingOccurrences(of: " ", with: "_"))")
             VStack{
                 Image(gameName)
                     .resizable()
@@ -31,6 +30,7 @@ struct GameCardView: View {
                 
                 Text(gameName)
                     .font(.title).foregroundColor(Color.white)
+                    .accessibilityIdentifier("APPBUTTON_\(gameName.uppercased().replacingOccurrences(of: " ", with: "_"))")
                     .padding(.horizontal, 20.0).padding(.vertical, 10)
                     .background(Color.black.opacity(0.6))
                     .cornerRadius(10)

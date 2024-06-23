@@ -30,7 +30,7 @@ struct WeatherView: View {
 // REFRESH BUTTON
                     wm.updateLocation(city: wm.city)
                     wm.updateTempUnits(units: wm.weatherUnits)
-                    wm.fetchWeather()
+//                    wm.fetchWeather()
                     wm.refreshWeather()
                 }, label: {Image(systemName: "arrow.counterclockwise.icloud.fill").imageScale(.large)})
                     .padding(.trailing)

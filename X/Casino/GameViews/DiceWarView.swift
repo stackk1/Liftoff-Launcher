@@ -30,6 +30,7 @@ struct DiceWarView: View {
                 Text("Dice Game")
                     .font(.largeTitle)
                     .padding([.leading, .bottom, .trailing])
+                    .accessibilityIdentifier("SCREEN_GAMES_DICE_WAR")
                 Spacer()
                 //MARK: Dice Images
                 HStack {
@@ -54,6 +55,7 @@ struct DiceWarView: View {
                 .cornerRadius(50)
                 .foregroundColor(Color.white)
                 .font(.system(size: 18, weight: .bold, design: .default))
+                .accessibilityIdentifier("BUTTON_ROLL")
                 Spacer()
                 //MARK: scoreboard
                 HStack{
@@ -107,7 +109,6 @@ struct DiceWarView: View {
             .padding()
             .foregroundColor(bg == true ? .white : .black)
         }
-        .accessibilityIdentifier("SCREEN_GAMES_DICE_WAR")
     }
     
     // MARK: Functions

@@ -80,7 +80,7 @@ struct WarView: View {
                         .aspectRatio(contentMode: .fit)
                         .frame(width: geo.size.width/1.3, height: geo.size.height/1.3)
                         .position(x:geo.frame(in: .global).midX, y:geo.frame(in: .local).midY)
-                    
+                        .accessibilityIdentifier("SCREEN_GAMES_WAR")
                 }
                 .padding(.bottom)
                 //Cards
@@ -180,14 +180,10 @@ struct WarView: View {
                     .position(x:geo.frame(in: .local).midX, y:geo.frame(in: .local).midY)
                 }
             }
-            
-            
-            
         }
         .foregroundColor(bg == true ? .white : .black)
         .onAppear{resetGame()}
-        .accessibilityElement(children: .contain)
-        .accessibilityIdentifier("SCREEN_GAMES_WAR")
+        
     }
     //MARK: Functions
     // DEAL

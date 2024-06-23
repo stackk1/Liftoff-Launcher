@@ -21,7 +21,7 @@ struct DiceRoller: View {
             if (bg == true) {
                 Image(gm.backgroundImage)
                     .resizable()
-                .ignoresSafeArea()
+                .ignoresSafeArea() 
                 
             }
             VStack {
