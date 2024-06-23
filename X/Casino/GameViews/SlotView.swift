@@ -51,7 +51,7 @@ struct SlotView: View {
                         })
                     .accessibilityIdentifier("BUTTON_SPIN")
                     Text("Score :")
-                    Text(String(score)).accessibilityIdentifier("VIEW_SCORE_VALUE")
+                    Text(String(score)).accessibilityIdentifier("VIEW_SLOT_SCORE_VALUE")
                 }
                 
                 Spacer()
