@@ -553,6 +553,7 @@
 		491A8BC62C288FBE001F6BDE /* Liftoff */ = {
 			isa = PBXGroup;
 			children = (
+				491A8BC42C288FBE001F6BDE /* Liftoff.swift */,
 				491A8B5C2C288FBE001F6BDE /* Books */,
 				491A8B692C288FBE001F6BDE /* Cars */,
 				491A8B7B2C288FBE001F6BDE /* Casino */,
@@ -563,7 +564,6 @@
 				491A8BB12C288FBE001F6BDE /* Services */,
 				491A8BC22C288FBE001F6BDE /* Weather */,
 				491A8BC32C288FBE001F6BDE /* Assets.xcassets */,
-				491A8BC42C288FBE001F6BDE /* Liftoff.swift */,
 				491A8BC52C288FBE001F6BDE /* Private.swift */,
 			);
 			path = Liftoff;
