@@ -8,7 +8,7 @@
 import SwiftUI
 
 @main
-struct XApp: App {
+struct Liftoff: App {
     var body: some Scene {
         WindowGroup {
             LauncherView()
