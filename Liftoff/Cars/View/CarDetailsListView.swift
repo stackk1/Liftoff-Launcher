@@ -16,16 +16,19 @@ struct CarDetailsListView: View {
                 Text("Make:")
                     .fontWeight(.bold)
                 Text(car.Make)
+                    .accessibilityIdentifier("CAR_CURRENT_MAKE_VALUE")
             }
             HStack{
                 Text("Model:")
                     .fontWeight(.bold)
                 Text(car.Model)
+                    .accessibilityIdentifier("CAR_CURRENT_MODEL_VALUE")
             }
             HStack{
                 Text("Year:")
                     .fontWeight(.bold)
                 Text(String(car.Year))
+                    .accessibilityIdentifier("CAR_CURRENT_YEAR_VALUE")
             }
             HStack{
                 Text("Colour:")

@@ -84,9 +84,9 @@ struct CarDetailView: View {
                     }
                     //Details list, updated from header buttons
                     TabView(selection: $currentTab){
-                        CarDetailsListView(car: car).tag(1)
+                        CarDetailsListView(car:car).tag(1)
                         OilListView(car:car).tag(2)
-                        TiresListView(car: car).tag(3)
+                        TiresListView(car:car).tag(3)
                     }
                     .cornerRadius(cornerRad)
                 }
