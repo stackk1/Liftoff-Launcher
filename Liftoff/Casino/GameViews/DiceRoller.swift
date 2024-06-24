@@ -24,9 +24,13 @@ struct DiceRoller: View {
                     .ignoresSafeArea()
             }
             VStack {
-                Text("Dice Roller").font(.largeTitle).padding([.leading, .bottom, .trailing])
-                Text("Total").font(.headline).padding(.bottom, 5.0)
-                Text(String(ds.diceValueTotal)).font(.largeTitle)
+                Text("Dice Roller")
+                    .font(.largeTitle).padding([.leading, .bottom, .trailing])
+                    .accessibilityIdentifier("SCREEN_GAMES_DICE_ROLLER")
+                Text("Total")
+                    .font(.headline).padding(.bottom, 5.0)
+                Text(String(ds.diceValueTotal))
+                    .font(.largeTitle)
                     .accessibilityIdentifier("DICE_TOTAL_VALUE")
                 HStack{
                     Text("Number of Dice:")
@@ -55,11 +59,13 @@ struct DiceRoller: View {
                 HStack{
                     Button("Roll") {
                         ds.roll()
-                    }.padding().padding([.leading, .trailing], 40)
-                        .background(Color.red)
-                        .cornerRadius(50)
-                        .foregroundColor(Color.white)
-                        .font(.system(size: 18, weight: .bold, design: .default))
+                    }
+                    .padding().padding([.leading, .trailing], 40)
+                    .background(Color.red)
+                    .cornerRadius(50)
+                    .foregroundColor(Color.white)
+                    .font(.system(size: 18, weight: .bold, design: .default))
+                    .accessibilityIdentifier("BUTTON_ROLL")
                     Button(
                         action: {
                             reset()
@@ -71,8 +77,6 @@ struct DiceRoller: View {
             }
             .foregroundColor(bg == true ? .white : .black)
             .padding()
-            .accessibilityIdentifier("SCREEN_GAMES_DICE_ROLLER")
-            .accessibilityElement(children: .contain)
         }
         }
         func reset() {
