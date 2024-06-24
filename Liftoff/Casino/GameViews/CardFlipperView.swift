@@ -23,9 +23,11 @@ struct CardFlipperView: View {
                 
                 ForEach (1..<51) { i in
                     let cardNum = Int.random(in: 1...50)
+                    
                     //Cards
                     ZStack{
-                        
+                        Text(String(cardNum))
+                            .accessibilityIdentifier("CARD_VALUE")
                         Rectangle()
                         //Use Custom RandomColor model to set card and shaddow colors
                             .foregroundColor(ColourService.randomColor())
@@ -37,14 +39,14 @@ struct CardFlipperView: View {
                         Image(systemName: "\(cardNum).circle").resizable().aspectRatio(contentMode: .fit)
                             .frame(width: geo.size.width-80, height: geo.size.height-100, alignment: .center)
                             .foregroundColor(bg == true ? .white : .black)
+                            
                     }
                 }
             }
             .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
             .indexViewStyle(PageIndexViewStyle(backgroundDisplayMode:.never))
+            .accessibilityIdentifier("SCREEN_GAMES_CARD_FLIPPER")
         }
-        .accessibilityIdentifier("SCREEN_GAMES_CARD_FLIPPER")
-        .accessibilityElement(children: .contain)
     }
 }
 

@@ -23,7 +23,6 @@ struct DiceWarView: View {
                 Image(gm.backgroundImage)
                     .resizable()
                     .ignoresSafeArea()
-                
             }
             VStack {
                 Spacer()
@@ -59,41 +58,35 @@ struct DiceWarView: View {
                 Spacer()
                 //MARK: scoreboard
                 HStack{
-                    
                     Spacer()
-                    
                     VStack{
                         Text("Player")
                             .font(.headline)
                             .padding(.bottom, 5.0)
                         Text(String (pScore))
                             .font(.largeTitle)
+                            .accessibilityIdentifier("PLAYER_SCORE_VALUE")
                     }
-                    
                     Spacer()
-                    
                     VStack{
                         Text("CPU")
                             .font(.headline)
                             .padding(.bottom, 5.0)
                         Text(String(cScore))
                             .font(.largeTitle)
+                            .accessibilityIdentifier("CPU_SCORE_VALUE")
                     }
-                    
                     Spacer()
-                    
                     VStack{
                         Text("Tie")
                             .font(.headline)
                             .padding(.bottom, 5.0)
                         Text(String(tie))
                             .font(.largeTitle)
+                            .accessibilityIdentifier("TIE_SCORE_VALUE")
                     }
-                    
                     Spacer()
-                    
                 }
-                
                 Spacer()
                 Button("Reset") {
                     reset()
@@ -103,14 +96,11 @@ struct DiceWarView: View {
                     .cornerRadius(50)
                     .foregroundColor(Color.white)
                     .font(.system(size: 15, weight: .bold, design: .default))
-                
-                
-            }
+               }
             .padding()
             .foregroundColor(bg == true ? .white : .black)
         }
     }
-    
     // MARK: Functions
     // Roll
     func roll() {
@@ -136,10 +126,7 @@ struct DiceWarView: View {
         cScore = 0
         tie = 0
     }
-    
-    
 }
-
 
 //MARK: Preview Code
 struct DiceView_Previews: PreviewProvider {
