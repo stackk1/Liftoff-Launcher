@@ -50,9 +50,10 @@ struct SlotView: View {
                             Image(systemName: "gobackward")
                             
                         })
-                    .accessibilityIdentifier("BUTTON_RESET")
+                        .accessibilityIdentifier("BUTTON_RESET")
                     Text("Score :")
-                    Text(String(score)).accessibilityIdentifier("SLOT_SCORE_VALUE")
+                    Text(String(score))
+                        .accessibilityIdentifier("SLOT_SCORE_VALUE")
                 }
                 
                 Spacer()
