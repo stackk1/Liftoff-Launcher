@@ -17,7 +17,7 @@ struct CarListView: View {
                         NavigationLink(
                             destination: CarDetailView(car: c),
                             label: {
-                            CarCardView(c:c)
+                            CarCardView(car:c)
                         })
                     }
                 }
