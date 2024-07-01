@@ -18,6 +18,8 @@ struct WarView: View {
     @State var tie = 0
     @State var deckNum = 2
     @State var deck:[CardType] = []
+    @State var flipped = false
+    @State var rotationAngle: Double = 0
     
     var body: some View {
         
@@ -91,7 +93,11 @@ struct WarView: View {
                             .aspectRatio(contentMode: .fit)
                             .frame(width: geo.size.width/1.2, height: geo.size.height/1.1)
                             .position(x:geo.frame(in: .local).midX, y:geo.frame(in: .local).midY)
+                            .rotation3DEffect(.degrees(rotationAngle),axis: (x: 0, y: 1, z: 0))
+                            .scaleEffect(x: cos(rotationAngle * .pi / 180), y: 1, anchor: .center)
+                            .animation(.easeInOut(duration: 0.3), value: rotationAngle)
                     }
+                    
                     
                     Spacer()
                     GeometryReader {geo in
@@ -100,8 +106,13 @@ struct WarView: View {
                             .aspectRatio(contentMode: .fit)
                             .frame(width: geo.size.width/1.2, height: geo.size.height/1.1)
                             .position(x:geo.frame(in: .local).midX, y:geo.frame(in: .local).midY)
+                            .rotation3DEffect(.degrees(rotationAngle),axis: (x: 0, y: 1, z: 0))
+                            .scaleEffect(x: cos(rotationAngle * .pi / 180), y: 1, anchor: .center)
+                            .animation(.easeInOut(duration: 0.3), value: rotationAngle)
                     }
+                    
                 }
+                
                 .padding(.bottom)
                 
                 GeometryReader {geo in
@@ -122,6 +133,7 @@ struct WarView: View {
                         } else {
                             Button {
                                 deal()
+                                rotationAngle += 180
                             } label: {
                                 Image("button")
                             }.accessibilityIdentifier("BUTTON_DEAL")
@@ -203,6 +215,16 @@ struct WarView: View {
         }
         index = deck.firstIndex(where: {$0 == randomC2})
         deck.remove(at: index!)
+        
+        withAnimation {
+                    flipped.toggle()
+                }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+            withAnimation {
+                pCard = randomC1
+                cCard = randomC2
+            }
+        }
         // compare cards and update score
         pCard = randomC1
         cCard = randomC2

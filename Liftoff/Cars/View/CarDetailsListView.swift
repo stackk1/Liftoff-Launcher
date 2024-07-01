@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct CarDetailsListView: View {
+    @AppStorage("Milage") private var milageField: String = ""
+    
     var car: Car
     var body: some View {
         List{
@@ -44,7 +46,7 @@ struct CarDetailsListView: View {
             HStack{
                 Text("Total Milage:")
                     .fontWeight(.bold)
-                Text("XXX,XXX KMS")
+                TextField("Enter Milage", text: $milageField)
             }
         }.listStyle(PlainListStyle())
         
@@ -52,18 +54,21 @@ struct CarDetailsListView: View {
 }
 
 struct OilListView: View {
+    @AppStorage("Last Change") private var lastOilChangeField: String = ""
+    @AppStorage("Next Change") private var nextOilChangeField: String = ""
+
     var car: Car
     var body: some View {
         List{
             HStack{
-                Text("last change:")
+                Text("Last Change:")
                     .fontWeight(.bold)
-                Text("XXX,XXX KMS")
+                TextField("Enter Milage", text: $lastOilChangeField)
             }
             HStack{
-                Text("next change in:")
+                Text("Next Change:")
                     .fontWeight(.bold)
-                Text("XXXX KMS")
+                TextField("Enter Milage", text: $nextOilChangeField)
             }
             HStack{
                 Text("Oil Type:")
@@ -86,13 +91,14 @@ struct OilListView: View {
 }
 
 struct TiresListView: View {
+    @AppStorage("Tire Milage") private var tireLastChangeField: String = ""
     var car: Car
     var body: some View {
         List{
             HStack{
                 Text("Last Change:")
                     .fontWeight(.bold)
-                Text("XXX,XXX KMS")
+                TextField("Enter Milage", text: $tireLastChangeField)
             }
             HStack{
                 Text("Warranty Expiry:")
