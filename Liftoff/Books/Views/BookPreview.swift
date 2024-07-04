@@ -22,10 +22,12 @@ struct BookPreview: View {
                     Text(book.title)
                         .font(.title)
                         .fontWeight(.bold)
+                        .accessibilityIdentifier("BOOK_\(book.title)")
                     Spacer()
                     if book.isFavourite {
-                        Image(systemName: "star.fill")
+                        Image(systemName: "star.fill").accessibilityIdentifier("STAR")
                         .foregroundColor(.yellow)}
+                        
                 }
                 .padding(.top)
                 Text(book.author)
