@@ -34,8 +34,8 @@ struct BookListView: View {
                                 destination: BookDetailView(faveStatus: book.isFavourite, book: book),
                                 label: {
                                     BookPreview(book: book)
-                                })
-                            
+                                }
+                            ).accessibilityIdentifier("BOOK_\(book.title.replacingOccurrences(of: " ", with: "_"))")
                         }
                     }
                 }

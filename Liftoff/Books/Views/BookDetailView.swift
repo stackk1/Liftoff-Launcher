@@ -17,6 +17,7 @@ struct BookDetailView: View {
             Text(book.title)
                 .fontWeight(.bold)
                 .font(.custom("Avenir Heavy", size: 24))
+                .accessibilityIdentifier("BOOK_DETAILS_\(book.title.replacingOccurrences(of: " ", with: "_"))")
             
             NavigationLink(
                 destination: {
@@ -68,6 +69,7 @@ struct BookDetailView: View {
                     Image(systemName: book.isFavourite ? "star.fill" : "star")
                         .resizable()
                         .frame(width: 28, height: 28)
+                        .accessibilityIdentifier(book.isFavourite ? "BUTTON_REMOVE_BOOK_FAVOURITE" : "BUTTON_SET_BOOK_FAVOURITE")
                 })
             .aspectRatio(contentMode: .fit)
             .foregroundColor(.yellow)

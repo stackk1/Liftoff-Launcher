@@ -22,10 +22,9 @@ struct BookPreview: View {
                     Text(book.title)
                         .font(.title)
                         .fontWeight(.bold)
-                        .accessibilityIdentifier("BOOK_\(book.title)")
                     Spacer()
                     if book.isFavourite {
-                        Image(systemName: "star.fill").accessibilityIdentifier("STAR")
+                        Image(systemName: "star.fill")
                         .foregroundColor(.yellow)}
                         
                 }
@@ -36,12 +35,13 @@ struct BookPreview: View {
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(alignment:.center)
-                    .padding(.bottom)
-                
-            }.padding(.horizontal)
-                .foregroundColor(.black)
+                    .padding(.bottom)                
+            }
+            .padding(.horizontal)
+            .foregroundColor(.black)
             
-        }.padding()
+        }
+        .padding()
     }
 }
 
