@@ -20,7 +20,7 @@ struct BookSettingView: View {
             Toggle(
                 isOn: $model.pageView,
                 label: {Text("Page View")
-                })
+                }).accessibilityIdentifier("TOGGLE_READER_MODE")
             
             Spacer()
         }

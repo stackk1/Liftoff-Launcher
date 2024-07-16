@@ -18,9 +18,9 @@ struct ReaderView: View {
             ){
                 ForEach (Array(book.content.enumerated()), id:\.element) { index, content in
                     VStack{
-                        Text(content)
+                        Text(content).accessibilityIdentifier("SCREEN_BOOK_READER")
                         Spacer()
-                        Text(String(index+1))
+                        Text(String(index+1)).accessibilityIdentifier("BOOK_PAGE_NUMBER")
                     }
                     .tag(index)
                     .padding()
@@ -43,11 +43,9 @@ struct ReaderView: View {
                 //                print ("__________")
             }
             .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
-            
-            
-            
-            
-        }else{
+               
+        }
+        else{
             //Continuous Scroll
             ScrollView{
                 Text(model.allContent).padding()
@@ -59,6 +57,7 @@ struct ReaderView: View {
             
         }
     }
+    
     var backButton: some View {
         Button(action: {
             presentationMode.wrappedValue.dismiss()
@@ -74,8 +73,8 @@ struct ReaderView: View {
             }
         }
     }
-    
 }
+
 struct ReaderView_Previews: PreviewProvider {
     static var previews: some View {
         let model = BookModel()

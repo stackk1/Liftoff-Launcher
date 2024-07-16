@@ -35,7 +35,7 @@ struct BookListView: View {
                                 label: {
                                     BookPreview(book: book)
                                 }
-                            ).accessibilityIdentifier("BOOK_\(book.title.replacingOccurrences(of: " ", with: "_"))")
+                            ).accessibilityIdentifier("BOOK_\(book.title.replacingOccurrences(of: " ", with: "_").replacingOccurrences(of: ",", with: ""))")
                         }
                     }
                 }

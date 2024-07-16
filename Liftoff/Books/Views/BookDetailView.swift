@@ -17,8 +17,8 @@ struct BookDetailView: View {
             Text(book.title)
                 .fontWeight(.bold)
                 .font(.custom("Avenir Heavy", size: 24))
-                .accessibilityIdentifier("BOOK_DETAILS_\(book.title.replacingOccurrences(of: " ", with: "_"))")
-            
+                .accessibilityIdentifier("BOOK_DETAILS_\(book.title.replacingOccurrences(of: " ", with: "_").replacingOccurrences(of: ",", with: ""))")
+
             NavigationLink(
                 destination: {
                     ReaderView(book: book)
@@ -42,6 +42,7 @@ struct BookDetailView: View {
                         .foregroundColor(.white)
                         .background(Color.green)
                         .cornerRadius(35)
+                        .accessibilityIdentifier("BUTTON_READ_BOOK")
                     
                     
                 })
