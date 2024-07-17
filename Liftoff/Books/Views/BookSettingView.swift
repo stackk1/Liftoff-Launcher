@@ -16,18 +16,18 @@ struct BookSettingView: View {
                     Text ("Scroll View")
                 }
             }
+            .accessibilityIdentifier("SCREEN_SETTINGS_BOOKS")
             // Change Page View
             Toggle(
                 isOn: $model.pageView,
                 label: {Text("Page View")
-                }).accessibilityIdentifier("TOGGLE_READER_MODE")
-            
+                })
+            .accessibilityIdentifier("TOGGLE_READER_MODE")
             Spacer()
         }
         .padding()
         .navigationBarTitle("Settings")
     }
-    
 }
 
 struct SettingView_Previews: PreviewProvider {

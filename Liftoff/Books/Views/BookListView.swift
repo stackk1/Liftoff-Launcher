@@ -24,6 +24,7 @@ struct BookListView: View {
                                 destination: BookSettingView(),
                                 label: {
                                     Image(systemName: "gear")
+                                        .accessibilityIdentifier("SETTINGSBUTTON_BOOKS")
                                 })
                             
                         }
