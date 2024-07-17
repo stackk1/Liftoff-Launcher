@@ -12,7 +12,14 @@ struct FavouriteView: View {
     var body: some View {
         //create array of only favourite recipes
         let favourites = model.recipes.filter {$0.favourite == true}
-
+        let bg = model.background
+        
+        ZStack{
+            if bg {
+                Image(model.backgroundImage)
+                    .resizable()
+                    .ignoresSafeArea(edges: .top)
+            }
             VStack{
                 //Recipe cards
                 TabView(selection: $recipeIndex) {
@@ -38,15 +45,17 @@ struct FavouriteView: View {
                     Spacer()
                     // top 3 ingredient check
                     IngredientCheckView(recipe: model.recipes[recipeIndex])
-                }.padding(.horizontal)
+                }
+                .padding(.horizontal)
             }
             .navigationBarHidden(true)
             .navigationTitle("Favourites")
             .padding(.horizontal)
-            .padding(.bottom, 80)
+            .padding(.bottom, 180)
             .accessibilityIdentifier("SCREEN_RECIPES_FAVOURITES")
             .accessibilityElement(children: .contain)
-        
+        }
+        .foregroundColor(bg == true ? .white : .black)
     }
 }
 

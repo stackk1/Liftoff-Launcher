@@ -30,8 +30,16 @@ struct RecipeTabView: View {
                         Text("Random")
                     }
                 }
-        }.accessibilityIdentifier("SCREEN_RECIPES")
-            .accessibilityElement(children: .contain)
+            AddRecipeView()
+                .tabItem{
+                    VStack{
+                        Image(systemName: "plus")
+                        Text("Add New")
+                    }
+                }
+        }
+        .accessibilityIdentifier("SCREEN_RECIPES")
+        .accessibilityElement(children: .contain)
     }
 }
 

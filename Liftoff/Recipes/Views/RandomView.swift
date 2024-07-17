@@ -11,9 +11,15 @@ struct RandomView: View {
     @State var meal = "Dinner"
     
     var body: some View {
+        let bg = model.background
         
-        //MARK: Meal selector and nav interface
-  
+        ZStack{
+            if bg {
+                Image(model.backgroundImage)
+                    .resizable()
+                    .ignoresSafeArea(edges: .top)
+            }
+            
             VStack(alignment: .center, spacing: 0) {
                 Text("What would you like for:")
                     .fontWeight(.bold)
@@ -63,12 +69,11 @@ struct RandomView: View {
             }
             .navigationTitle("Meal Picker")
             .padding(.horizontal)
-            
-        
-        .onAppear(perform: {randomRecipe = model.randomRecipe(meal: "Dinner")})
-        .padding(.bottom, 80)
+            .onAppear(perform: {randomRecipe = model.randomRecipe(meal: "Dinner")})
+            .padding(.bottom, 80)
+        }
+        .foregroundColor(bg == true ? .white : .black)
     }
-    
 }
 
 

@@ -19,7 +19,7 @@ struct RecipeCardView: View {
             VStack(spacing: 0){
                 Image(recipe.image)
                     .resizable()
-                    .aspectRatio(CGSize(width: 4, height: 3.3), contentMode: .fill)
+                    .aspectRatio(CGSize(width: 4, height: 3.3), contentMode: .fit)
                     .clipped()
                 Spacer()
                 Text(recipe.name)
