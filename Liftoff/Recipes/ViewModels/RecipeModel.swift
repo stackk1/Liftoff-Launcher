@@ -6,6 +6,8 @@ import Foundation
 class RecipeModel:ObservableObject {
     
     @Published var recipes = [Recipe]()
+    @Published var background = true
+    @Published var backgroundImage = "Cartoon Wood"
     
     
     init(){

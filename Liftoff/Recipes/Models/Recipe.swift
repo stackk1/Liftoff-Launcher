@@ -14,4 +14,13 @@ class Recipe: Identifiable, Decodable {
    // var servings:Int
     var ingredients:[String]
     var directions:[String]
+    
+    init(image: String, name: String, category: String, favourite: Bool, ingredients: [String], directions: [String]) {
+            self.image = image
+            self.name = name
+            self.category = category
+            self.favourite = favourite
+            self.ingredients = ingredients
+            self.directions = directions
+        }
 }

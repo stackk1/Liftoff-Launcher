@@ -91,6 +91,8 @@
 		491A8C192C288FBE001F6BDE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 491A8BC32C288FBE001F6BDE /* Assets.xcassets */; };
 		491A8C1A2C288FBE001F6BDE /* Liftoff.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491A8BC42C288FBE001F6BDE /* Liftoff.swift */; };
 		491A8C1B2C288FBE001F6BDE /* Private.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491A8BC52C288FBE001F6BDE /* Private.swift */; };
+		493EF8332C484C750041AD01 /* AddRecipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493EF8312C484C750041AD01 /* AddRecipeView.swift */; };
+		493EF8342C484C750041AD01 /* RecipeSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493EF8322C484C750041AD01 /* RecipeSettingsView.swift */; };
 		4975BF202A2D86F70093C029 /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4975BF1F2A2D86F50093C029 /* AVKit.framework */; };
 		49D4F9CF2A36255E00E83559 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49D4F9CE2A36255E00E83559 /* WebKit.framework */; };
 /* End PBXBuildFile section */
@@ -180,6 +182,8 @@
 		491A8BC32C288FBE001F6BDE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		491A8BC42C288FBE001F6BDE /* Liftoff.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Liftoff.swift; sourceTree = "<group>"; };
 		491A8BC52C288FBE001F6BDE /* Private.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Private.swift; sourceTree = "<group>"; };
+		493EF8312C484C750041AD01 /* AddRecipeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRecipeView.swift; sourceTree = "<group>"; };
+		493EF8322C484C750041AD01 /* RecipeSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeSettingsView.swift; sourceTree = "<group>"; };
 		4975BF1F2A2D86F50093C029 /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
 		49D4F9CE2A36255E00E83559 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		49ED9C162A2B362900481BDB /* Liftoff.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Liftoff.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -465,6 +469,8 @@
 		491A8BAB2C288FBE001F6BDE /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				493EF8312C484C750041AD01 /* AddRecipeView.swift */,
+				493EF8322C484C750041AD01 /* RecipeSettingsView.swift */,
 				491A8BA32C288FBE001F6BDE /* FavouriteView.swift */,
 				491A8BA42C288FBE001F6BDE /* imageView.swift */,
 				491A8BA52C288FBE001F6BDE /* IngredientCheckView.swift */,
@@ -681,6 +687,8 @@
 				491A8BEA2C288FBE001F6BDE /* MediaPlaybackView.swift in Sources */,
 				491A8C122C288FBE001F6BDE /* TemperatureTileView.swift in Sources */,
 				491A8C1A2C288FBE001F6BDE /* Liftoff.swift in Sources */,
+				493EF8332C484C750041AD01 /* AddRecipeView.swift in Sources */,
+				493EF8342C484C750041AD01 /* RecipeSettingsView.swift in Sources */,
 				491A8BF32C288FBE001F6BDE /* CodeTextView.swift in Sources */,
 				491A8BED2C288FBE001F6BDE /* Models.swift in Sources */,
 				491A8C162C288FBE001F6BDE /* WeatherMainView.swift in Sources */,
