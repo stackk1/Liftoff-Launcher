@@ -21,17 +21,7 @@ struct RandomView: View {
             }
             
             VStack(alignment: .center, spacing: 0) {
-                Text("What would you like for:")
-                    .fontWeight(.bold)
-                    .padding(.leading)
-                    .padding(.top, 40)
-                //Select meal category
-                Picker("What's for ", selection: $meal){
-                    Text("Dinner").tag("Dinner")
-                    Text("Breakfast").tag("Breakfast")
-                }
-                .pickerStyle(SegmentedPickerStyle())
-                .padding(.horizontal)
+               
                 //Image
                 NavigationLink(
                     destination: RecipeDetailView(recipe: randomRecipe),
@@ -66,6 +56,17 @@ struct RandomView: View {
                     Spacer()
                     IngredientCheckView(recipe: randomRecipe)
                 }.padding()
+                Text("What would you like for:")
+                    .fontWeight(.bold)
+                    .padding(.leading)
+                    .padding(.top, 40)
+                //Select meal category
+                Picker("What's for ", selection: $meal){
+                    Text("Dinner").tag("Dinner")
+                    Text("Breakfast").tag("Breakfast")
+                }
+                .pickerStyle(SegmentedPickerStyle())
+                .padding(.horizontal)
             }
             .navigationTitle("Meal Picker")
             .padding(.horizontal)

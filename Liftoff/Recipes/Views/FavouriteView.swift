@@ -20,7 +20,7 @@ struct FavouriteView: View {
                     .resizable()
                     .ignoresSafeArea(edges: .top)
             }
-            VStack{
+            VStack(){
                 //Recipe cards
                 TabView(selection: $recipeIndex) {
                     ForEach(0..<favourites.count, id:\.self) { index in
@@ -32,10 +32,11 @@ struct FavouriteView: View {
                         .tag(index)
                     }
                 }
+                .padding(.vertical)
                 .cornerRadius(25)
                 .shadow(radius: 10)
                 .tabViewStyle(PageTabViewStyle(indexDisplayMode: .always))
-                .indexViewStyle(PageIndexViewStyle(backgroundDisplayMode:.always))
+                .indexViewStyle(PageIndexViewStyle(backgroundDisplayMode:.never))
                 //MARK: Favourite button (todo: add favourite button logic)
                 HStack{
                     Image(systemName: "star.fill")

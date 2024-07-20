@@ -15,20 +15,19 @@ struct RecipeTabView: View {
                         
                     }
                 }
-            RecipeListView()
-                .tabItem {
-                    VStack{
-                        Image(systemName: "list.bullet")
-                        Text("List")}
-                    
-                }
-            //pass default random category to initialize view
             RandomView(randomRecipe: model.randomRecipe(meal: "Dinner"))
                 .tabItem{
                     VStack{
                         Image(systemName: "dice")
                         Text("Random")
                     }
+                }
+            RecipeListView()
+                .tabItem {
+                    VStack{
+                        Image(systemName: "list.bullet")
+                        Text("List")}
+                    
                 }
             AddRecipeView()
                 .tabItem{

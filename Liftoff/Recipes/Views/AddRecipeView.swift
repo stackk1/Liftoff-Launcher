@@ -9,10 +9,12 @@ import SwiftUI
 
 struct AddRecipeView: View{
     @EnvironmentObject var model:RecipeModel
+    @FocusState private var focusedField: String?
     @State private var recipeName = ""
     @State private var category = ""
     @State private var ingredients = [String]()
     @State private var directions = [String]()
+    
     
     var body: some View{
         let bg = model.background
@@ -23,44 +25,63 @@ struct AddRecipeView: View{
                     .resizable()
                     .ignoresSafeArea(edges: .top)
             }
-            Form {
-                        Section(header: Text("Recipe Details")) {
-                            TextField("Recipe Name", text: $recipeName)
-                            TextField("Category", text: $category)
+            ScrollView{
+                VStack(spacing: 45) {
+                    Section(header: Text("Recipe Details").font(.title)) {
+                        CustomTextField(title: "Recipe Name", text: $recipeName)
+                            .focused($focusedField, equals: "recipeName")
+                        CustomTextField(title: "Category", text: $category)
+                            .focused($focusedField, equals: "category")
+                    }
+                    
+                    Section(header: Text("Ingredients").font(.title)) {
+                        ForEach(0..<ingredients.count, id: \.self) { index in
+                            CustomTextField(title: "Ingredient \(index + 1)", text: self.$ingredients[index])
+                                .focused($focusedField, equals: "ingredient\(index)")
                         }
-                        
-                        Section(header: Text("Ingredients")) {
-                            ForEach(0..<ingredients.count, id: \.self) { index in
-                                TextField("Ingredient \(index + 1)", text: self.$ingredients[index])
-                            }
-                            Button(action: {
-                                self.ingredients.append("")
-                            }) {
+                        Button(action: {
+                            self.ingredients.append("")
+                        }) {
+                            HStack{
+                                Image(systemName: "plus.circle.fill")
+                                    .foregroundColor(.green)
                                 Text("Add Ingredient")
                             }
                         }
-                        
-                        Section(header: Text("Directions")) {
-                            ForEach(0..<directions.count, id: \.self) { index in
-                                TextField("Step \(index + 1)", text: self.$directions[index])
-                            }
-                            Button(action: {
-                                self.directions.append("")
-                            }) {
-                                Text("Add Direction Step")
-                            }
+                    }
+                    
+                    Section(header: Text("Directions").font(.title)) {
+                        ForEach(0..<directions.count, id: \.self) { index in
+                            CustomTextField(title: "Step \(index + 1)", text: self.$directions[index])
+                                .focused($focusedField, equals: "direction\(index)")
                         }
-                        
-                        Section {
-                            Button(action: {
-                                self.addRecipe()
-                            }) {
-                                Text("Save Recipe")
+                        Button(action: {
+                            self.directions.append("")
+                        }) {
+                            HStack{
+                                Image(systemName: "plus.circle.fill")
+                                    .foregroundColor(.green)
+                                Text("Add Step")
                             }
+                            
                         }
                     }
-                }.foregroundColor(.black)
-            }
+                    
+                    Section {
+                        Button("Save") {
+                            self.addRecipe()
+                        }
+                        .padding().padding([.leading, .trailing], 40)
+                        .background(.gray.opacity(0.5), in: .rect(cornerRadius: 16))
+                        .cornerRadius(50)
+                        .foregroundColor(Color.white)
+                        .font(.system(size: 18, weight: .bold, design: .default))
+                    }
+                }
+                .padding()
+            }.foregroundColor(bg == true ? .white : .black)
+        }
+    }
         
     func addRecipe() {
         // Create a new Recipe object
