@@ -71,11 +71,7 @@ struct AddRecipeView: View{
                         Button("Save") {
                             self.addRecipe()
                         }
-                        .padding().padding([.leading, .trailing], 40)
-                        .background(.gray.opacity(0.5), in: .rect(cornerRadius: 16))
-                        .cornerRadius(50)
-                        .foregroundColor(Color.white)
-                        .font(.system(size: 18, weight: .bold, design: .default))
+                        .buttonStyle(GradientButtonStyle())
                     }
                 }
                 .padding()

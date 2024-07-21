@@ -35,7 +35,7 @@ struct RandomView: View {
                     // Random button
                     ZStack {
                         Rectangle()
-                            .foregroundColor(.blue)
+                            .foregroundColor(.gray.opacity(0.5))
                             .frame(width: 90, height: 90)
                             .cornerRadius(10)
                         VStack(alignment: .center, spacing: 10){
