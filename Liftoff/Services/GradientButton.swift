@@ -21,7 +21,7 @@ struct GradientButtonStyle:ButtonStyle{
                     .overlay{
                         ZStack{
                             RoundedRectangle(cornerRadius: 20)
-                                .stroke(AngularGradient.init(gradient: gradientColours, center: .center, angle: .degrees(isAndimated ? 360 : 0)), lineWidth: 3)
+                                .stroke(AngularGradient.init(gradient: gradientColours, center: .center, angle: .degrees(isAnimated ? 360 : 0)), lineWidth: 3)
                         }
                     }
             }.onAppear(){
