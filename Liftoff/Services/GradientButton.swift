@@ -10,7 +10,7 @@ import SwiftUI
 struct GradientButtonStyle:ButtonStyle{
     
     let gradientColours = Gradient(colors: [.red, .orange, .yellow, .green, .blue, .purple, .pink])
-    @State var isAndimated = false
+    @State var isAnimated = false
         
         func makeBody(configuration: Configuration) -> some View {
             ZStack{
@@ -26,7 +26,7 @@ struct GradientButtonStyle:ButtonStyle{
                     }
             }.onAppear(){
                 withAnimation(.linear(duration: 5).repeatForever(autoreverses: false)) {
-                    isAndimated = true
+                    isAnimated = true
                 }
             }
     }
