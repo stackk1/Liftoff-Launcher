@@ -41,7 +41,7 @@ struct FavouriteView: View {
                 HStack{
                     Image(systemName: "star.fill")
                         .resizable()
-                        .foregroundColor(.yellow)
+                        .foregroundColor(.white)
                         .frame(width: 50, height: 50)
                     Spacer()
                     // top 3 ingredient check
@@ -52,7 +52,7 @@ struct FavouriteView: View {
             .navigationBarHidden(true)
             .navigationTitle("Favourites")
             .padding(.horizontal)
-            .padding(.bottom, 180)
+            .padding(.bottom, 50)
             .accessibilityIdentifier("SCREEN_RECIPES_FAVOURITES")
             .accessibilityElement(children: .contain)
         }
