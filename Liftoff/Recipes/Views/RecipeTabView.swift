@@ -15,14 +15,6 @@ struct RecipeTabView: View {
                         
                     }
                 }
-            RecipeListView()
-                .tabItem {
-                    VStack{
-                        Image(systemName: "list.bullet")
-                        Text("List")}
-                    
-                }
-            //pass default random category to initialize view
             RandomView(randomRecipe: model.randomRecipe(meal: "Dinner"))
                 .tabItem{
                     VStack{
@@ -30,8 +22,23 @@ struct RecipeTabView: View {
                         Text("Random")
                     }
                 }
-        }.accessibilityIdentifier("SCREEN_RECIPES")
-            .accessibilityElement(children: .contain)
+            RecipeListView()
+                .tabItem {
+                    VStack{
+                        Image(systemName: "list.bullet")
+                        Text("List")}
+                    
+                }
+            AddRecipeView()
+                .tabItem{
+                    VStack{
+                        Image(systemName: "plus")
+                        Text("Add New")
+                    }
+                }
+        }
+        .accessibilityIdentifier("SCREEN_RECIPES")
+        .accessibilityElement(children: .contain)
     }
 }
 

@@ -12,8 +12,15 @@ struct FavouriteView: View {
     var body: some View {
         //create array of only favourite recipes
         let favourites = model.recipes.filter {$0.favourite == true}
-
-            VStack{
+        let bg = model.background
+        
+        ZStack{
+            if bg {
+                Image(model.backgroundImage)
+                    .resizable()
+                    .ignoresSafeArea(edges: .top)
+            }
+            VStack(){
                 //Recipe cards
                 TabView(selection: $recipeIndex) {
                     ForEach(0..<favourites.count, id:\.self) { index in
@@ -25,10 +32,11 @@ struct FavouriteView: View {
                         .tag(index)
                     }
                 }
+                .padding(.vertical)
                 .cornerRadius(25)
                 .shadow(radius: 10)
                 .tabViewStyle(PageTabViewStyle(indexDisplayMode: .always))
-                .indexViewStyle(PageIndexViewStyle(backgroundDisplayMode:.always))
+                .indexViewStyle(PageIndexViewStyle(backgroundDisplayMode:.never))
                 //MARK: Favourite button (todo: add favourite button logic)
                 HStack{
                     Image(systemName: "star.fill")
@@ -38,15 +46,17 @@ struct FavouriteView: View {
                     Spacer()
                     // top 3 ingredient check
                     IngredientCheckView(recipe: model.recipes[recipeIndex])
-                }.padding(.horizontal)
+                }
+                .padding(.horizontal)
             }
             .navigationBarHidden(true)
             .navigationTitle("Favourites")
             .padding(.horizontal)
-            .padding(.bottom, 80)
+            .padding(.bottom, 180)
             .accessibilityIdentifier("SCREEN_RECIPES_FAVOURITES")
             .accessibilityElement(children: .contain)
-        
+        }
+        .foregroundColor(bg == true ? .white : .black)
     }
 }
 

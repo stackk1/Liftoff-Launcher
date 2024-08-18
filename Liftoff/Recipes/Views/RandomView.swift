@@ -11,21 +11,17 @@ struct RandomView: View {
     @State var meal = "Dinner"
     
     var body: some View {
+        let bg = model.background
         
-        //MARK: Meal selector and nav interface
-  
+        ZStack{
+            if bg {
+                Image(model.backgroundImage)
+                    .resizable()
+                    .ignoresSafeArea(edges: .top)
+            }
+            
             VStack(alignment: .center, spacing: 0) {
-                Text("What would you like for:")
-                    .fontWeight(.bold)
-                    .padding(.leading)
-                    .padding(.top, 40)
-                //Select meal category
-                Picker("What's for ", selection: $meal){
-                    Text("Dinner").tag("Dinner")
-                    Text("Breakfast").tag("Breakfast")
-                }
-                .pickerStyle(SegmentedPickerStyle())
-                .padding(.horizontal)
+               
                 //Image
                 NavigationLink(
                     destination: RecipeDetailView(recipe: randomRecipe),
@@ -39,7 +35,7 @@ struct RandomView: View {
                     // Random button
                     ZStack {
                         Rectangle()
-                            .foregroundColor(.blue)
+                            .foregroundColor(.gray.opacity(0.5))
                             .frame(width: 90, height: 90)
                             .cornerRadius(10)
                         VStack(alignment: .center, spacing: 10){
@@ -60,15 +56,25 @@ struct RandomView: View {
                     Spacer()
                     IngredientCheckView(recipe: randomRecipe)
                 }.padding()
+                Text("What would you like for:")
+                    .fontWeight(.bold)
+                    .padding(.leading)
+                    .padding(.top, 40)
+                //Select meal category
+                Picker("What's for ", selection: $meal){
+                    Text("Dinner").tag("Dinner")
+                    Text("Breakfast").tag("Breakfast")
+                }
+                .pickerStyle(SegmentedPickerStyle())
+                .padding(.horizontal)
             }
             .navigationTitle("Meal Picker")
             .padding(.horizontal)
-            
-        
-        .onAppear(perform: {randomRecipe = model.randomRecipe(meal: "Dinner")})
-        .padding(.bottom, 80)
+            .onAppear(perform: {randomRecipe = model.randomRecipe(meal: "Dinner")})
+            .padding(.bottom, 80)
+        }
+        .foregroundColor(bg == true ? .white : .black)
     }
-    
 }
 
 
