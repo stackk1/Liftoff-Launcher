@@ -30,7 +30,6 @@ struct WeatherView: View {
 // REFRESH BUTTON
                     wm.updateLocation(city: wm.city)
                     wm.updateTempUnits(units: wm.weatherUnits)
-//                    wm.fetchWeather()
                     wm.refreshWeather()
                 }, label: {Image(systemName: "arrow.counterclockwise.icloud.fill").imageScale(.large)})
                     .padding(.trailing)
@@ -50,7 +49,7 @@ struct WeatherView: View {
                 }
                 .font(.system(size:16))
                 .fontWeight(.bold)
-                                //Conditions
+                //Conditions
                 GridRow{
                     WeatherIcon(condition: wm.conditonId, description: wm.conditionDetail)
                     if wm.dailyWeather.count > 0 {
@@ -63,7 +62,6 @@ struct WeatherView: View {
                         
                 }
                .padding(.top, 2)
-//                .padding(.leading, 3)
                     //Hi Temps
                 GridRow{
                     
@@ -75,15 +73,11 @@ struct WeatherView: View {
                         Text(wm.formatPrecision(temp: wm.dailyWeather[4].temp.max))
                         Text(wm.formatPrecision(temp: wm.dailyWeather[5].temp.max))
                     }
-//                    else{
-//                        Text("Error Loading Highs")
-//                    }
                 }
                 .font(.subheadline)
                 .fontWeight(.bold)
                 //Lo Temps
                 GridRow{
-                    
                     if wm.dailyWeather.count > 0 {
                         Text(wm.formatPrecision(temp: wm.dailyWeather[0].temp.min))
                         Text(wm.formatPrecision(temp: wm.dailyWeather[1].temp.min))
@@ -92,12 +86,8 @@ struct WeatherView: View {
                         Text(wm.formatPrecision(temp: wm.dailyWeather[4].temp.min))
                         Text(wm.formatPrecision(temp: wm.dailyWeather[5].temp.min))
                     }
-                    
-                    
                 }
                 .font(.system(size:11))
-                
-                
             }
         }
         .frame(width: 350, height: 195, alignment: .center)

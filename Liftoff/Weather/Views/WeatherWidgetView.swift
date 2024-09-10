@@ -10,12 +10,8 @@ import SwiftUI
 struct WeatherWidgetView: View {
     @EnvironmentObject var wp: WPService
     var updateColors: Int = 0
-    //var maskContent: String
-    
-    var body: some View {
-        
-        ZStack{
-            if wp.iconColor.caseInsensitiveCompare("None") == .orderedSame{
+    var body: some View {        ZStack{
+            if wp.iconColor == "None" || wp.labelColor == "None"{
                 Rectangle()
                     .reverseMask{
                         WeatherView()
@@ -24,22 +20,6 @@ struct WeatherWidgetView: View {
                     .foregroundStyle(ColourService.randomGradient(Palette: wp.theme, opac: wp.transparancy, cycle: updateColors))
                     .cornerRadius(20)
                     .accessibilityIdentifier("APPBUTTON_WIDGET_WEATHER")
-                    
-                   
-                
-            }
-           else if wp.labelColor.caseInsensitiveCompare("None") == .orderedSame{
-                Rectangle()
-                    .reverseMask{
-                        WeatherView()
-                            .padding()
-                    }
-                    .foregroundStyle(ColourService.randomGradient(Palette: wp.theme, opac: wp.transparancy, cycle: updateColors))
-                    .cornerRadius(20)
-                    .accessibilityIdentifier("APPBUTTON_WIDGET_WEATHER")
-                    
-                   
-                
             }
             else{
                 Rectangle()
@@ -47,10 +27,8 @@ struct WeatherWidgetView: View {
                     .cornerRadius(20)
                     .accessibilityIdentifier("APPBUTTON_WIDGET_WEATHER")
                 WeatherView()
-                    
-                    
             }
-            
+
         }
     }
 }

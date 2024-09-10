@@ -11,10 +11,6 @@ import Foundation
 
 class ColourService: ObservableObject {
     
-    //@Published var randomTheme = randomRGB()
-    //  @Published var disco = 1
-    
-    
     static func randomColor(Palette: String = "Chromatic", opac: CGFloat = 1.0, cycle: Int = 1) -> Color {
         
         let pallette = Palette

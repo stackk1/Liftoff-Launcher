@@ -41,19 +41,5 @@ class WPService:ObservableObject {
             return Color(.white)
         }
     }
-    
-   
-//    func BWC(){
-//            if iconColor.caseInsensitiveCompare("Black") == .orderedSame{
-//                return Color(.black)
-//            }
-//            else if iconColor.caseInsensitiveCompare("None") == .orderedSame{
-//                return Color(.clear)
-//            }
-//            else{
-//                return Color(.white)
-//            }
-//
-//    }
 }
 
