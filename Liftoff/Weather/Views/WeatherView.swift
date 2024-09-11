@@ -14,7 +14,12 @@ struct WeatherView: View {
    
 
     var body: some View {
-        let themeColor = wp.setIconColor()
+        let themeColor = if wp.iconColor == "None"{
+            Color(.white)
+        }
+        else {
+            wp.setIconColor()
+        }
         VStack(alignment: .leading){
             
             HStack {
@@ -93,7 +98,8 @@ struct WeatherView: View {
         }
         .frame(width: 350, height: 195, alignment: .center)
         .padding(.leading)
-    }
+        .foregroundColor(themeColor)
+        }
 }
 
 struct WeatherView_Previews: PreviewProvider {
