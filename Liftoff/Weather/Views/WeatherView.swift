@@ -10,7 +10,7 @@ import SwiftUI
 struct WeatherView: View {
     
     @EnvironmentObject var wm: WeatherModel
-    @EnvironmentObject var wp: WPService
+    @EnvironmentObject var wp: ThemeService
    
 
     var body: some View {
@@ -93,7 +93,6 @@ struct WeatherView: View {
         }
         .frame(width: 350, height: 195, alignment: .center)
         .padding(.leading)
-        .foregroundColor(themeColor)
     }
 }
 
@@ -101,6 +100,6 @@ struct WeatherView_Previews: PreviewProvider {
     static var previews: some View {
         WeatherView()
             .environmentObject(WeatherModel())
-            .environmentObject(WPService())
+            .environmentObject(ThemeService())
     }
 }

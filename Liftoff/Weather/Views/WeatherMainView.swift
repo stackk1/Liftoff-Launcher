@@ -8,10 +8,10 @@
 import SwiftUI
 
 struct WeatherMainView: View {
-    @EnvironmentObject var wp: WPService
+    @EnvironmentObject var wp: ThemeService
     @EnvironmentObject var nav: NavigationService
     @EnvironmentObject var wm: WeatherModel
-    @ObservedObject var cs = ColourService()
+    @ObservedObject var cs = ColorService()
     
     var body: some View {
         let rows = [GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible())]
@@ -64,9 +64,9 @@ struct WeatherMainView: View {
 struct WeatherMainView_Previews: PreviewProvider {
     static var previews: some View {
         WeatherMainView()
-            .environmentObject(WPService())
+            .environmentObject(ThemeService())
             .environmentObject(NavigationService())
             .environmentObject(WeatherModel())
-            .environmentObject(ColourService())
+            .environmentObject(ColorService())
     }
 }

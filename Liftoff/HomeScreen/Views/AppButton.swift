@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct AppButton<Content: View>: View {
-    @EnvironmentObject var wp: WPService
+    @EnvironmentObject var wp: ThemeService
     @EnvironmentObject var nav: NavigationService
     @ViewBuilder var appView: Content
     @ViewBuilder var imageName: String
@@ -39,14 +39,14 @@ struct AppButton<Content: View>: View {
                                 .reverseMask{(Image(systemName: imageName).resizable()
                                     .aspectRatio(contentMode: .fit)
                                     .frame(width: 45, height: 45))}
-                                .foregroundColor(ColourService.randomColor(Palette: wp.theme, opac: wp.transparancy, cycle: updateColors))
+                                .foregroundColor(ColorService.randomColor(Palette: wp.theme, opac: wp.transparancy, cycle: updateColors))
                                 .cornerRadius(20)
                                 .frame(width: 72, height: 72)
                                 
                         }
                         else{
                             Rectangle()
-                                .foregroundColor(ColourService.randomColor(Palette: wp.theme, opac: wp.transparancy))
+                                .foregroundColor(ColorService.randomColor(Palette: wp.theme, opac: wp.transparancy))
                                 .cornerRadius(20)
                                 .frame(width: 72, height: 72)
                         }

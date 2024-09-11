@@ -16,10 +16,10 @@ struct Liftoff: App {
                 .environmentObject(BookModel())
                 .environmentObject(RecipeModel())
                 .environmentObject(ContentModel())
-                .environmentObject(WPService())
+                .environmentObject(ThemeService())
                 .environmentObject(NavigationService())
                 .environmentObject(DiceUIService())
-                .environmentObject(ColourService())
+                .environmentObject(ColorService())
                 .environmentObject(WeatherModel())
         }
     }

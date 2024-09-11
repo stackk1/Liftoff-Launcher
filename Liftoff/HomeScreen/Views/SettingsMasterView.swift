@@ -9,7 +9,7 @@ import SwiftUI
 struct SettingsMasterView: View {
     @EnvironmentObject var gm: GameModel
     @EnvironmentObject var model: BookModel
-    @EnvironmentObject var wp: WPService
+    @EnvironmentObject var wp: ThemeService
     @EnvironmentObject var nav: NavigationService
     @EnvironmentObject var ds: DiceUIService
     @EnvironmentObject var wm: WeatherModel
@@ -28,34 +28,7 @@ struct SettingsMasterView: View {
                 VStack(alignment:.leading){
                     Text("Homescreen Settings")
                         .font(.title)
-                    HStack{
-                        Text("City:")
-                        Spacer()
-                        Picker("City", selection: $wm.city){
-                            Text("Kelowna").tag("Kelowna")
-                            Text("Kamloops").tag("Kamloops")
-                            Text("Vancouver").tag("Vancouver")
-                            Text("Calgary").tag("Calgary")
-                            Text("Edmonton").tag("Edmonton")
-                            Text("Victoria").tag("Victoria")
-                            Text("Nakusp").tag("Nakusp")
-                            Text("Miami").tag("Miami")
-                            Text("London").tag("London")
-                        }
-                        .pickerStyle(MenuPickerStyle())
-                        
-                    }
-                    
-                    HStack{
-                        Text("Units: ")
-                        Spacer()
-                        Picker("Weather Units", selection: $wm.weatherUnits){
-                            Text("Imperial").tag("imperial")
-                            Text("Metric").tag("metric")
-                            Text("Kelvin").tag("kelvin")
-                        }
-                        .pickerStyle(SegmentedPickerStyle())
-                    }
+
                     HStack{
                         Text("Wallpaper Image:")
                         Spacer()
@@ -121,6 +94,42 @@ struct SettingsMasterView: View {
                 }
             }
             .padding(.horizontal)
+            //MARK: - Weather Settings
+                VStack(alignment: .leading){
+                    Text("Weather Settings")
+                        .font(.title)
+                    Divider()
+                        .frame(width: 1.0, height: 1.0)
+                    HStack{
+                        Text("City:")
+                        Spacer()
+                        Picker("City", selection: $wm.city){
+                            Text("Kelowna").tag("Kelowna")
+                            Text("Kamloops").tag("Kamloops")
+                            Text("Vancouver").tag("Vancouver")
+                            Text("Calgary").tag("Calgary")
+                            Text("Edmonton").tag("Edmonton")
+                            Text("Victoria").tag("Victoria")
+                            Text("Nakusp").tag("Nakusp")
+                            Text("Miami").tag("Miami")
+                            Text("London").tag("London")
+                        }
+                        .pickerStyle(MenuPickerStyle())
+                        
+                    }
+                    
+                    HStack{
+                        Text("Units: ")
+                        Spacer()
+                        Picker("Weather Units", selection: $wm.weatherUnits){
+                            Text("Imperial").tag("imperial")
+                            Text("Metric").tag("metric")
+                            Text("Kelvin").tag("kelvin")
+                        }
+                        .pickerStyle(SegmentedPickerStyle())
+                    }
+                }
+                .padding(.horizontal)
             //MARK: - Game Settings
             VStack(alignment: .leading){
                 
@@ -204,7 +213,7 @@ struct SettingsMasterView_Previews: PreviewProvider {
     static var previews: some View {
         SettingsMasterView()
             .environmentObject(GameModel())
-            .environmentObject(WPService())
+            .environmentObject(ThemeService())
             .environmentObject(BookModel())
             .environmentObject(DiceUIService())
         

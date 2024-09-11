@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SunriseTileView: View {
     @EnvironmentObject var wm: WeatherModel
-    @EnvironmentObject var wp: WPService
+    @EnvironmentObject var wp: ThemeService
     
    // var title: String
 
@@ -18,7 +18,7 @@ struct SunriseTileView: View {
         ZStack{
             Rectangle()
                 .cornerRadius(cornerRadius)
-                .foregroundStyle(ColourService.randomGradient(Palette: wp.theme, opac: {
+                .foregroundStyle(ColorService.randomGradient(Palette: wp.theme, opac: {
                     if wp.transparancy >= 0.5 {
                         return 0.5
                     }
@@ -59,6 +59,6 @@ struct WeatherTileView_Previews: PreviewProvider {
     static var previews: some View {
         SunriseTileView()
             .environmentObject(WeatherModel())
-            .environmentObject(WPService())
+            .environmentObject(ThemeService())
     }
 }

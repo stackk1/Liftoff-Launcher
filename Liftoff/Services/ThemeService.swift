@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-class WPService:ObservableObject {
+class ThemeService:ObservableObject {
     @Published var wallpaper = false
     @Published var wallpaperImage = "Space"
     @Published var theme = "Chromatic"
@@ -35,7 +35,7 @@ class WPService:ObservableObject {
             return Color(.clear)
         }
         else if self.iconColor.caseInsensitiveCompare("Theme") == .orderedSame{
-            return ColourService.randomColor(Palette: self.theme)
+            return ColorService.randomColor(Palette: self.theme)
         }
         else{
             return Color(.white)

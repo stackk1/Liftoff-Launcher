@@ -18,7 +18,7 @@ struct GameCardView: View {
             Rectangle()
                 .cornerRadius(50)
             //use custom color model to set card color
-                .foregroundColor(ColourService.randomColor())
+                .foregroundColor(ColorService.randomColor())
                 .shadow(radius: 15)
             VStack{
                 Image(gameName)

@@ -11,7 +11,7 @@ struct MediaPlaybackView: View {
     var body: some View {
         ZStack{
             Rectangle()
-                .foregroundColor(ColourService.randomColor())
+                .foregroundColor(ColorService.randomColor())
             VStack{
                 Text("Song Title - Artist")
                 HStack{

@@ -8,20 +8,14 @@ struct AnimatedGradientView: View {
     var body: some View {
         Rectangle()
             .fill(
-                ColourService.randomGradient(Palette: palette, opac: opac, cycle: 1)
-            )
-            .mask(
-                Rectangle()
-                    .fill(
-                        LinearGradient(
-                            gradient: Gradient(colors: [
-                                ColourService.randomColor(Palette: palette, opac: opac),
-                                ColourService.randomColor(Palette: palette, opac: opac)
-                            ]),
-                            startPoint: .top,
-                            endPoint: UnitPoint(x: 0.5, y: gradientOffset)
-                        )
-                    )
+                LinearGradient(
+                    gradient: Gradient(colors: [
+                        ColorService.randomColor(Palette: palette, opac: opac),
+                        ColorService.randomColor(Palette: palette, opac: opac)
+                    ]),
+                    startPoint: .top,
+                    endPoint: UnitPoint(x: 0.5, y: gradientOffset)
+                )
             )
             .onAppear {
                 withAnimation(.linear(duration: 5).repeatForever(autoreverses: false)) {
@@ -30,3 +24,11 @@ struct AnimatedGradientView: View {
             }
     }
 }
+
+struct AnimatedGradientView_Previews: PreviewProvider {
+    static var previews: some View {
+        AnimatedGradientView()
+            .environmentObject(ColorService())
+    }
+}
+

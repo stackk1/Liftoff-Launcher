@@ -8,10 +8,10 @@
 import SwiftUI
 
 struct LauncherView: View {
-    @EnvironmentObject var wp: WPService
+    @EnvironmentObject var wp: ThemeService
     @EnvironmentObject var nav: NavigationService
     @EnvironmentObject var wm: WeatherModel
-    @ObservedObject var cs = ColourService()
+    @ObservedObject var cs = ColorService()
     @State var currentTab = 1
     @State var inApp = false
     @State var updateButtonColors: Int = 1
@@ -160,10 +160,10 @@ struct LauncherView_Previews: PreviewProvider {
             .environmentObject(BookModel())
             .environmentObject(RecipeModel())
             .environmentObject(ContentModel())
-            .environmentObject(WPService())
+            .environmentObject(ThemeService())
             .environmentObject(NavigationService())
             .environmentObject(WeatherModel())
-            .environmentObject(ColourService())
+            .environmentObject(ColorService())
 
     }
 }
