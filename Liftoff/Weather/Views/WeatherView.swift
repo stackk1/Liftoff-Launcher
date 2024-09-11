@@ -14,8 +14,9 @@ struct WeatherView: View {
    
 
     var body: some View {
-        let themeColour = wp.setIconColor()
+        let themeColor = wp.setIconColor()
         VStack(alignment: .leading){
+            
             HStack {
                 VStack(alignment: .leading){
                     Text("\(wm.city) Weather")
@@ -92,7 +93,7 @@ struct WeatherView: View {
         }
         .frame(width: 350, height: 195, alignment: .center)
         .padding(.leading)
-        .foregroundColor(themeColour)
+        .foregroundColor(themeColor)
     }
 }
 

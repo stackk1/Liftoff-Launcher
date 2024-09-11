@@ -33,11 +33,12 @@ struct LauncherView: View {
                             .resizable()
                             .ignoresSafeArea()
                     }
-                                        else{
-                                            Rectangle()
-                                                .ignoresSafeArea()
-                                                .foregroundColor(.black)
-                                        }
+                    else{
+                        Rectangle()
+                            .ignoresSafeArea()
+                            .foregroundColor(.black)
+                    }
+                      
                     
                     VStack(spacing: 0){
                         

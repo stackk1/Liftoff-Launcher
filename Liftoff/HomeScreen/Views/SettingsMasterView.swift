@@ -89,7 +89,7 @@ struct SettingsMasterView: View {
                     HStack{
                         Text("Icons: ")
                         Spacer()
-                        Picker("Label Color", selection: $wp.iconColor){
+                        Picker("Icon Color", selection: $wp.iconColor){
                             Text("White").tag("White")
                             Text("Black").tag("Black")
                             Text("Theme").tag("Theme")
@@ -101,39 +101,24 @@ struct SettingsMasterView: View {
                     HStack{
                         Text("Labels: ")
                         Spacer()
-                    Picker("Label Color", selection: $wp.labelColor){
-                        Text("White").tag("White")
-                        Text("Black").tag("Black")
-                        Text("None").tag("None")
+                        Picker("Label Color", selection: $wp.labelColor){
+                            Text("White").tag("White")
+                            Text("Black").tag("Black")
+                            Text("None").tag("None")
+                        }
+                        .pickerStyle(SegmentedPickerStyle())
                     }
-                    .pickerStyle(SegmentedPickerStyle())
+                    HStack{
+                        Text("Transparancy:")
+                        Spacer()
+                        Picker("Transparancy:", selection: $wp.transparancy){
+                            Text("None").tag(CGFloat(1.0))
+                            Text("Light").tag(CGFloat(0.8))
+                            Text("Mid").tag(CGFloat(0.5))
+                            Text("Full").tag(CGFloat(0.0))
+                        }
+                        .pickerStyle(SegmentedPickerStyle())
                 }
-                HStack{
-                    Text("Transparancy:")
-                    Spacer()
-                    Picker("Transparancy:", selection: $wp.transparancy){
-                        Text("None").tag(CGFloat(1.0))
-                        Text("Light").tag(CGFloat(0.8))
-                        Text("Mid").tag(CGFloat(0.5))
-                        Text("Full").tag(CGFloat(0.0))
-                    }
-                    .pickerStyle(SegmentedPickerStyle())
-                    //                        Button(
-                    //                            action:{
-                    //                                wp.transparancy -= 0.10000
-                    //
-                    //                            },
-                    //                            label: {Image(systemName: "minus.square.fill")})
-                    //                        Text(String(transparancy))
-                    //                        Button(
-                    //                            action:{
-                    //                                wp.transparancy += 0.10000
-                    //
-                    //                            },
-                    //                            label: {Image(systemName: "plus.square.fill")
-                    //                            })
-                }
-                
             }
             .padding(.horizontal)
             //MARK: - Game Settings
@@ -178,14 +163,6 @@ struct SettingsMasterView: View {
                         },
                         label: {Image(systemName: "plus.square.fill")
                         })
-                    //
-                    //                    Picker("Default Number of Dice", selection: $ds.numberOfDice){
-                    //                        ForEach (0..<6) {selection in
-                    //                            Text(String(selection)).tag(selection)
-                    //                        }
-                    //                    }
-                    //                    .frame(width: 50, height: 90)
-                    //                    .pickerStyle(WheelPickerStyle())
                 }
                 
                 
@@ -217,10 +194,6 @@ struct SettingsMasterView: View {
         }
         
     }
-    
-    
-    
-    
 }
 }
 
