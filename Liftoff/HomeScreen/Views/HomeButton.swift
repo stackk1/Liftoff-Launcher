@@ -9,7 +9,7 @@ import SwiftUI
 
 struct HomeButton: View {
     @EnvironmentObject var nav: NavigationService
-    @EnvironmentObject var wp: WPService
+    @EnvironmentObject var wp: ThemeService
     
     var body: some View {
         Button(
@@ -25,7 +25,7 @@ struct HomeButton: View {
                 ZStack{
                     Image(systemName: "square.circle.fill")
                         .font(.system(size:40))
-                        .foregroundColor(ColourService.randomColor(Palette: wp.theme))
+                        .foregroundColor(ColorService.randomColor(Palette: wp.theme))
                         .background(Color(.black))
                         .clipShape(Circle())
                 }

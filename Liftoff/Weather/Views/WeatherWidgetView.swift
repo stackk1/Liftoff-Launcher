@@ -8,59 +8,62 @@
 import SwiftUI
 
 struct WeatherWidgetView: View {
-    @EnvironmentObject var wp: WPService
+    @EnvironmentObject var wp: ThemeService
     var updateColors: Int = 0
-    //var maskContent: String
-    
     var body: some View {
+        if wp.iconColor == "Animated" {
+            ZStack {
+                AnimatedGradientView()
+                Rectangle()
+                    .foregroundStyle(ColorService.randomGradient(Palette: wp.theme, opac: wp.transparancy, cycle: updateColors))
+                    .mask(
+                        ZStack {
+                            Rectangle()
+                                .cornerRadius(20)
+                            WeatherView()
+                                .frame(width: 100, height: 100)
+                                .blendMode(.destinationOut)
+                        }
+                    )
+                    .compositingGroup()
+                    .accessibilityIdentifier("APPBUTTON_WIDGET_WEATHER")
+            }
+        }
+            else if wp.iconColor == "None" {
+                ZStack{
+                    Rectangle()
+                        .foregroundStyle(ColorService.randomGradient(Palette: wp.theme, opac: wp.transparancy, cycle: updateColors))
+                        .mask(
+                            ZStack {
+                                Rectangle()
+                                    .cornerRadius(20)
+                                WeatherView()
+                                    .frame(width: 100, height: 100)
+                                    .blendMode(.destinationOut)
+                            }
+                        )
+                        .compositingGroup()
+                        .accessibilityIdentifier("APPBUTTON_WIDGET_WEATHER")
+                }
+            }
         
-        ZStack{
-            if wp.iconColor.caseInsensitiveCompare("None") == .orderedSame{
+        else{
+            ZStack{
                 Rectangle()
-                    .reverseMask{
-                        WeatherView()
-                            .padding()
-                    }
-                    .foregroundStyle(ColourService.randomGradient(Palette: wp.theme, opac: wp.transparancy, cycle: updateColors))
-                    .cornerRadius(20)
-                    .accessibilityIdentifier("APPBUTTON_WIDGET_WEATHER")
-                    
-                   
-                
-            }
-           else if wp.labelColor.caseInsensitiveCompare("None") == .orderedSame{
-                Rectangle()
-                    .reverseMask{
-                        WeatherView()
-                            .padding()
-                    }
-                    .foregroundStyle(ColourService.randomGradient(Palette: wp.theme, opac: wp.transparancy, cycle: updateColors))
-                    .cornerRadius(20)
-                    .accessibilityIdentifier("APPBUTTON_WIDGET_WEATHER")
-                    
-                   
-                
-            }
-            else{
-                Rectangle()
-                    .foregroundStyle(ColourService.randomGradient(Palette: wp.theme, opac: wp.transparancy, cycle: updateColors))
+                    .foregroundStyle(ColorService.randomGradient(Palette: wp.theme, opac: wp.transparancy, cycle: updateColors))
                     .cornerRadius(20)
                     .accessibilityIdentifier("APPBUTTON_WIDGET_WEATHER")
                 WeatherView()
-                    
-                    
             }
-            
         }
     }
 }
-
 struct WeatherWidgetView_Previews: PreviewProvider {
     static var previews: some View {
         WeatherWidgetView()
-            .environmentObject(WPService())
+            .environmentObject(ThemeService())
             .environmentObject(NavigationService())
             .environmentObject(WeatherModel())
-            .environmentObject(ColourService())
+            .environmentObject(ColorService())
     }
 }

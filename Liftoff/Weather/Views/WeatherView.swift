@@ -10,12 +10,18 @@ import SwiftUI
 struct WeatherView: View {
     
     @EnvironmentObject var wm: WeatherModel
-    @EnvironmentObject var wp: WPService
+    @EnvironmentObject var wp: ThemeService
    
 
     var body: some View {
-        let themeColour = wp.setIconColor()
+        let themeColor = if wp.iconColor == "None"{
+            Color(.white)
+        }
+        else {
+            wp.setIconColor()
+        }
         VStack(alignment: .leading){
+            
             HStack {
                 VStack(alignment: .leading){
                     Text("\(wm.city) Weather")
@@ -30,7 +36,6 @@ struct WeatherView: View {
 // REFRESH BUTTON
                     wm.updateLocation(city: wm.city)
                     wm.updateTempUnits(units: wm.weatherUnits)
-//                    wm.fetchWeather()
                     wm.refreshWeather()
                 }, label: {Image(systemName: "arrow.counterclockwise.icloud.fill").imageScale(.large)})
                     .padding(.trailing)
@@ -50,7 +55,7 @@ struct WeatherView: View {
                 }
                 .font(.system(size:16))
                 .fontWeight(.bold)
-                                //Conditions
+                //Conditions
                 GridRow{
                     WeatherIcon(condition: wm.conditonId, description: wm.conditionDetail)
                     if wm.dailyWeather.count > 0 {
@@ -63,7 +68,6 @@ struct WeatherView: View {
                         
                 }
                .padding(.top, 2)
-//                .padding(.leading, 3)
                     //Hi Temps
                 GridRow{
                     
@@ -75,15 +79,11 @@ struct WeatherView: View {
                         Text(wm.formatPrecision(temp: wm.dailyWeather[4].temp.max))
                         Text(wm.formatPrecision(temp: wm.dailyWeather[5].temp.max))
                     }
-//                    else{
-//                        Text("Error Loading Highs")
-//                    }
                 }
                 .font(.subheadline)
                 .fontWeight(.bold)
                 //Lo Temps
                 GridRow{
-                    
                     if wm.dailyWeather.count > 0 {
                         Text(wm.formatPrecision(temp: wm.dailyWeather[0].temp.min))
                         Text(wm.formatPrecision(temp: wm.dailyWeather[1].temp.min))
@@ -92,24 +92,20 @@ struct WeatherView: View {
                         Text(wm.formatPrecision(temp: wm.dailyWeather[4].temp.min))
                         Text(wm.formatPrecision(temp: wm.dailyWeather[5].temp.min))
                     }
-                    
-                    
                 }
                 .font(.system(size:11))
-                
-                
             }
         }
         .frame(width: 350, height: 195, alignment: .center)
         .padding(.leading)
-        .foregroundColor(themeColour)
-    }
+        .foregroundColor(themeColor)
+        }
 }
 
 struct WeatherView_Previews: PreviewProvider {
     static var previews: some View {
         WeatherView()
             .environmentObject(WeatherModel())
-            .environmentObject(WPService())
+            .environmentObject(ThemeService())
     }
 }

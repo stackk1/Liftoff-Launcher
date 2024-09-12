@@ -8,12 +8,13 @@
 import Foundation
 import SwiftUI
 
-class WPService:ObservableObject {
+class ThemeService:ObservableObject {
     @Published var wallpaper = false
-    @Published var wallpaperImage = "Space"
-    @Published var theme = "Chromatic"
+    @Published var wallpaperImage = "Black"
+    @Published var theme = "Pastel"
     @Published var iconColor = "White"
     @Published var labelColor = "White"
+    @Published var discoColor = "Chromatic"
     @Published var transparancy: CGFloat = 1.0
     
     func setLabelColor() -> Color{
@@ -23,6 +24,7 @@ class WPService:ObservableObject {
         else if self.labelColor.caseInsensitiveCompare("None") == .orderedSame{
             return Color(.clear)
         }
+
         else{
             return Color(.white)
         }
@@ -35,25 +37,11 @@ class WPService:ObservableObject {
             return Color(.clear)
         }
         else if self.iconColor.caseInsensitiveCompare("Theme") == .orderedSame{
-            return ColourService.randomColor(Palette: self.theme)
+            return ColorService.randomColor(Palette: self.theme)
         }
         else{
             return Color(.white)
         }
     }
-    
-   
-//    func BWC(){
-//            if iconColor.caseInsensitiveCompare("Black") == .orderedSame{
-//                return Color(.black)
-//            }
-//            else if iconColor.caseInsensitiveCompare("None") == .orderedSame{
-//                return Color(.clear)
-//            }
-//            else{
-//                return Color(.white)
-//            }
-//
-//    }
 }
 

@@ -9,11 +9,7 @@ import SwiftUI
 import Foundation
 
 
-class ColourService: ObservableObject {
-    
-    //@Published var randomTheme = randomRGB()
-    //  @Published var disco = 1
-    
+class ColorService: ObservableObject {
     
     static func randomColor(Palette: String = "Chromatic", opac: CGFloat = 1.0, cycle: Int = 1) -> Color {
         

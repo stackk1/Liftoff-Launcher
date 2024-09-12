@@ -8,10 +8,10 @@
 import SwiftUI
 
 struct LauncherView: View {
-    @EnvironmentObject var wp: WPService
+    @EnvironmentObject var wp: ThemeService
     @EnvironmentObject var nav: NavigationService
     @EnvironmentObject var wm: WeatherModel
-    @ObservedObject var cs = ColourService()
+    @ObservedObject var cs = ColorService()
     @State var currentTab = 1
     @State var inApp = false
     @State var updateButtonColors: Int = 1
@@ -33,20 +33,18 @@ struct LauncherView: View {
                             .resizable()
                             .ignoresSafeArea()
                     }
-                                        else{
-                                            Rectangle()
-                                                .ignoresSafeArea()
-                                                .foregroundColor(.black)
-                                        }
+                    else{
+                        Rectangle()
+                            .ignoresSafeArea()
+                            .foregroundColor(.black)
+                    }
+                      
                     
                     VStack(spacing: 0){
                         
                         TabView(selection: $currentTab){
                             //MARK: - Weather Widget
                             VStack {
-//                                Button(action: {
-//                                    wm.updateForcast()
-//                                    updateButtonColors += 1
                                 NavigationLink(
                                     destination: WeatherMainView()
                                         .navigationBarHidden(true),
@@ -92,29 +90,6 @@ struct LauncherView: View {
                             .padding(.horizontal)
                             .tag(1)
                             VStack{
-//                                ZStack{
-//                                    Rectangle()
-//                                        .foregroundColor(ColourService.randomColor(Palette: wp.theme, opac: wp.transparancy))
-//                                        .frame(width: 360, height: 100)
-//                                        .cornerRadius(25)
-//                                        .padding(.bottom)
-//                                    HStack(spacing: 15){
-//                                        Image(systemName: "arrow.down.circle.fill")
-//                                            .resizable()
-//                                            .aspectRatio(contentMode: .fit)
-//                                            .frame(height: 45)
-//                                        //.padding(.bottom)
-//                                        VStack(alignment: .leading){
-//                                            Text("Download")
-//                                            Text("Clients")
-//                                        }
-//                                        .font(.title)
-//                                        .fontWeight(.bold)
-//
-//                                    }
-//                                    .padding(.bottom)
-//                                    .foregroundColor(.white)
-//                                }
                                 LazyVGrid(columns: columns){
                                     AppButton(app: (WebClipView(url: ss.sonarr).edgesIgnoringSafeArea(.vertical)), image: "lifepreserver", label: "Sonarr")
                                     AppButton(app: (WebClipView(url: ss.radarr).edgesIgnoringSafeArea(.vertical)), image: "lifepreserver", label: "Radarr")
@@ -185,10 +160,10 @@ struct LauncherView_Previews: PreviewProvider {
             .environmentObject(BookModel())
             .environmentObject(RecipeModel())
             .environmentObject(ContentModel())
-            .environmentObject(WPService())
+            .environmentObject(ThemeService())
             .environmentObject(NavigationService())
             .environmentObject(WeatherModel())
-            .environmentObject(ColourService())
+            .environmentObject(ColorService())
 
     }
 }
