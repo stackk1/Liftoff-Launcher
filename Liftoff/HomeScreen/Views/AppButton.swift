@@ -24,7 +24,12 @@ struct AppButton<Content: View>: View {
         }
         
     var body: some View {
-        
+        let themeColor = if wp.iconColor == "Animated"{
+            Color(.clear)
+        }
+        else {
+            wp.setIconColor()
+        }
         NavigationLink(
             destination:
                 appView
@@ -34,7 +39,9 @@ struct AppButton<Content: View>: View {
             label: {
                 VStack{
                     ZStack{
-                        if wp.iconColor.caseInsensitiveCompare("None") == .orderedSame{
+                        if wp.iconColor == "Animated"{
+                            AnimatedGradientView()
+                            .frame(width: 45, height: 45)
                             Rectangle()
                                 .reverseMask{(Image(systemName: imageName).resizable()
                                     .aspectRatio(contentMode: .fit)
@@ -44,19 +51,27 @@ struct AppButton<Content: View>: View {
                                 .frame(width: 72, height: 72)
                                 
                         }
+                        else if wp.iconColor == "None"{
+                            Rectangle()
+                                .reverseMask{(Image(systemName: imageName).resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .frame(width: 45, height: 45))}
+                                .foregroundColor(ColorService.randomColor(Palette: wp.theme, opac: wp.transparancy, cycle: updateColors))
+                                .cornerRadius(20)
+                                .frame(width: 72, height: 72)
+                        }
                         else{
                             Rectangle()
                                 .foregroundColor(ColorService.randomColor(Palette: wp.theme, opac: wp.transparancy))
                                 .cornerRadius(20)
                                 .frame(width: 72, height: 72)
                         }
-                        let themeColour = wp.setIconColor()
                         Image(systemName: imageName)
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                             .frame(width: 45, height: 45)
                             .foregroundColor(
-                                themeColour
+                                themeColor
                             )
                         
                     }.accessibilityIdentifier("APPBUTTON_\(appLabel.uppercased())")

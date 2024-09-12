@@ -11,9 +11,9 @@ struct WeatherWidgetView: View {
     @EnvironmentObject var wp: ThemeService
     var updateColors: Int = 0
     var body: some View {
-        if wp.iconColor == "None" {
+        if wp.iconColor == "Animated" {
             ZStack {
-                AnimatedGradientView(palette: wp.theme)
+                AnimatedGradientView()
                 Rectangle()
                     .foregroundStyle(ColorService.randomGradient(Palette: wp.theme, opac: wp.transparancy, cycle: updateColors))
                     .mask(
@@ -28,9 +28,25 @@ struct WeatherWidgetView: View {
                     .compositingGroup()
                     .accessibilityIdentifier("APPBUTTON_WIDGET_WEATHER")
             }
-
-
         }
+            else if wp.iconColor == "None" {
+                ZStack{
+                    Rectangle()
+                        .foregroundStyle(ColorService.randomGradient(Palette: wp.theme, opac: wp.transparancy, cycle: updateColors))
+                        .mask(
+                            ZStack {
+                                Rectangle()
+                                    .cornerRadius(20)
+                                WeatherView()
+                                    .frame(width: 100, height: 100)
+                                    .blendMode(.destinationOut)
+                            }
+                        )
+                        .compositingGroup()
+                        .accessibilityIdentifier("APPBUTTON_WIDGET_WEATHER")
+                }
+            }
+        
         else{
             ZStack{
                 Rectangle()

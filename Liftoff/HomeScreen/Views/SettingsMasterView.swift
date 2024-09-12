@@ -67,6 +67,7 @@ struct SettingsMasterView: View {
                             Text("Black").tag("Black")
                             Text("Theme").tag("Theme")
                             Text("Clear").tag("None")
+                            Text("Disco").tag("Animated")
                         }
                         .pickerStyle(SegmentedPickerStyle())
                     }
@@ -92,6 +93,23 @@ struct SettingsMasterView: View {
                         }
                         .pickerStyle(SegmentedPickerStyle())
                 }
+                    HStack{
+                        Text("Disco Theme:")
+                        Spacer()
+                        Picker("Theme", selection: $wp.discoColor){
+                            Text("Chromatic").tag("Chromatic")
+                            Text("Pastel").tag("Pastel")
+                            Text("Blue Hues").tag("Blue Hues")
+                            Text("Earth Tones").tag("Earth Tones")
+                            Text("Red Hues").tag("Red Hues")
+                            Text("Purple Hues").tag("Purple Hues")
+                            Text("Green Hues").tag("Green Hues")
+                            Text("Grey Scale").tag("Grey Scale")
+                            Text("OLED").tag("OLED")
+                            Text("Gold").tag("Gold")
+                        }
+                        .pickerStyle(MenuPickerStyle())
+                    }
             }
             .padding(.horizontal)
             //MARK: - Weather Settings

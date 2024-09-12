@@ -10,10 +10,11 @@ import SwiftUI
 
 class ThemeService:ObservableObject {
     @Published var wallpaper = false
-    @Published var wallpaperImage = "Space"
-    @Published var theme = "Chromatic"
+    @Published var wallpaperImage = "Black"
+    @Published var theme = "Pastel"
     @Published var iconColor = "White"
     @Published var labelColor = "White"
+    @Published var discoColor = "Chromatic"
     @Published var transparancy: CGFloat = 1.0
     
     func setLabelColor() -> Color{
@@ -23,6 +24,7 @@ class ThemeService:ObservableObject {
         else if self.labelColor.caseInsensitiveCompare("None") == .orderedSame{
             return Color(.clear)
         }
+
         else{
             return Color(.white)
         }

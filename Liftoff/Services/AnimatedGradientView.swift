@@ -1,13 +1,10 @@
 import SwiftUI
 
-struct AnimatedGradientView: View {
-    var palette: String = "Chromatic"
-    var opac: CGFloat = 1
-    @State private var gradientOffset: CGFloat = -1.0 // Start off-screen (top)
-    
+struct AnimatedGradientView: View {    @State private var gradientOffset: CGFloat = -1.0 // Start off-screen (top)
+    @EnvironmentObject var ts: ThemeService
     var body: some View {
-        let startColor =  ColorService.randomColor(Palette: palette, opac: opac)
-        let endColor =  ColorService.randomColor(Palette: palette, opac: opac)
+        let startColor =  ColorService.randomColor(Palette: ts.discoColor)
+        let endColor =  ColorService.randomColor(Palette: ts.discoColor)
         
         Rectangle()
             .fill(
@@ -22,7 +19,7 @@ struct AnimatedGradientView: View {
                 )
             )
             .onAppear {
-                withAnimation(.linear(duration: 10).repeatForever(autoreverses: false)) {
+                withAnimation(.linear(duration: 6).repeatForever(autoreverses: false)) {
                     gradientOffset = 2.0 // Cascades beyond the bottom for continuous effect
                 }
             }
